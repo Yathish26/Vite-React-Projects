@@ -1,0 +1,24 @@
+.servicesContainer {
+    padding: 20px;
+  }
+  
+  .servicesList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .serviceItem {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .serviceItem h2 {
+    margin: 0 0 5px;
+  }
+  
+  .serviceItem p {
+    margin: 5px 0;
+  }
+  

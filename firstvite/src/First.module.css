@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.letter {
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    transition: transform 1s ease;
+}
+
+.move {
+    transform: translateX(-100%);
+}
