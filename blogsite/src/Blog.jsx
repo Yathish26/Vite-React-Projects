@@ -85,6 +85,14 @@ export default function Blog() {
         }
     };
 
+    const truncateContent = (content, maxLength) => {
+        if (content.length > maxLength) {
+            return content.slice(0, maxLength) + '...';
+        }
+        return content;
+    };
+
+
     return (
         <>
             <div className={styles.blogheader}>
@@ -142,7 +150,9 @@ export default function Blog() {
                                 <div className={styles.blogtitle}>{blog.blog_title}</div>
                                 <div className={styles.blogcategory}>{blog.blog_category}</div>
                             </div>
-                            <div className={styles.blogcontent}>{blog.blog_content}</div>
+                            <div className={styles.blogcontent}>
+                                {truncateContent(blog.blog_content, 20)}
+                            </div>
                             <img
                                 className={styles.delete}
                                 src="/icons/delete.svg"
