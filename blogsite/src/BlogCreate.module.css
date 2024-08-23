@@ -3,7 +3,6 @@
     font-weight: bold;
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
-    /* Adjust duration and timing function as needed */
     animation-delay: 1s;
     padding-left: 2rem;
 }
@@ -14,6 +13,11 @@
     }
 }
 
+.docicon{
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 1s;
+}
 
 .createheader {
     padding: 1rem;
@@ -22,6 +26,7 @@
     align-items: center;
     position: relative;
     overflow: hidden; /* Ensure the icon doesn’t overflow the container */
+    justify-content: space-between;
 }
 
 .icon {
@@ -53,6 +58,10 @@
     border: 1px solid #bfb8b8;
 }
 
+.input:focus,.inputblog:focus{
+    outline: 1px solid black;
+}
+
 .inputblog {
     border: 1px solid #bfb8b8;
     padding: 0.5rem;
@@ -60,11 +69,6 @@
     resize: vertical; /* Allow vertical resizing by user */
     overflow: auto; /* Show scroll if content exceeds the box size */
     border-radius: 10px;
-}
-
-.inputblog:focus {
-    border-color: #a0a0a0; /* Change border color on focus for better UX */
-    outline: none;
 }
 
 .button{

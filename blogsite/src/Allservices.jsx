@@ -28,7 +28,7 @@ export default function Allservices() {
         <ul className={styles.servicesList}>
           {services.map((service, index) => (
             <li key={index} className={styles.serviceItem}>
-              <h2>{service.full_name}</h2>
+              <div className={styles.fullname}>{service.full_name}</div>
               <p>Mobile Number: {service.mobile_number}</p>
               <p>Work Category: {service.work_category}</p>
             </li>

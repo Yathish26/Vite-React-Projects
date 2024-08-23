@@ -12,6 +12,7 @@ import Contact from './Contact';
 import RegisterService from './RegisterService';
 import Blog from './Blog';
 import BlogCreate from './BlogCreate';
+import BlogRead from './BlogRead';
 
 function App() {
   return (
@@ -30,8 +31,8 @@ function MainComponent() {
   let home = location.pathname === '/'
   let aboutus = location.pathname === '/aboutus'
   let joinus = location.pathname === '/joinus'
-  let services = location.pathname === '/services' || location.pathname == '/services/register'
-  let blog = location.pathname === '/blogs' || location.pathname === '/blogs/create'
+  let services = location.pathname.startsWith('/services')
+  let blog = location.pathname.startsWith('/blogs')
   let contactus = location.pathname === '/contact'
 
   return (
@@ -46,10 +47,14 @@ function MainComponent() {
         <Route path='/services/register' element={<RegisterService />}/>
         <Route path='/blogs' element={<Blog/>}/>
         <Route path='/blogs/create' element={<BlogCreate/>}/>
+        <Route path='/blogs/read/:slug' element={<BlogRead/>} />
         <Route path='/contact' element={<Contact />}/>
         <Route path='/aboutus' element={<Aboutus />}/>
       </Routes>
+      {!contactus &&
       <Footer footertitle={login? 'Enter the Cosmos': register ?'Who got Zombie Inspiration' : 'Hire Arrive Built By Anonymous'} />
+      }
+      
     </>
   );
 }

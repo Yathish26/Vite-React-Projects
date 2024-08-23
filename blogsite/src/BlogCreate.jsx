@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from './BlogCreate.module.css'
+import { Link } from 'react-router-dom';
 
 export default function BlogCreate() {
 
@@ -7,6 +8,8 @@ export default function BlogCreate() {
     let [title, setTitle] = useState('');
     let [category, setCategory] = useState('');
     let [blog, setBlog] = useState('');
+
+    let blogCategories = ["Lifestyle", "Hobbies and Interests", "Technology", "Education", "News and Current Events", "Business and Entrepreneurship", "Creative Arts", "Health and Wellness", "Travel", "Gaming", "Food", "Personal Blogs", "Humor and Satire", "Academic and Research", "Technical", "Spiritual and Philosophical"]
 
     const handleSubmit = async (event) => {
 
@@ -48,6 +51,9 @@ export default function BlogCreate() {
             <div className={styles.createheader}>
                 <img className={styles.icon} src="/icons/create.svg" alt="Create Blog" />
                 <div className={styles.title}>Create Blog</div>
+                <Link to={'/blogs'}>
+                    <img className={styles.docicon} src="/icons/document.svg" alt="Blogs" />
+                </Link>
             </div>
 
             <form className={styles.inputbox} onSubmit={handleSubmit}>
@@ -57,12 +63,17 @@ export default function BlogCreate() {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)} />
 
-                <input className={styles.input}
-                    type="text"
+                <select
+                    className={styles.input}
                     id="blogCategory"
-                    placeholder='Blog Category'
                     value={category}
-                    onChange={(e) => setCategory(e.target.value)} />
+                    onChange={(e) => setCategory(e.target.value)}
+                >
+                    <option value="" disabled>Select a category</option>
+                    {blogCategories.map((category,index)=>{
+                        return(<option key={index} value={category}>{category}</option>)
+                    })}
+                </select>
 
                 <textarea className={styles.inputblog}
                     id="blogContent"

@@ -21,4 +21,8 @@
   .serviceItem p {
     margin: 5px 0;
   }
+
+  .fullname{
+    font-size: 2rem;
+  }
   

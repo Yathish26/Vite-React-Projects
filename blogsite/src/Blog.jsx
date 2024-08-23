@@ -3,6 +3,11 @@ import styles from './Blog.module.css';
 import { Link } from 'react-router-dom';
 
 export default function Blog() {
+
+    let blogCategories = ["Lifestyle", "Hobbies and Interests", "Technology", "Education", "News and Current Events", "Business and Entrepreneurship", "Creative Arts", "Health and Wellness", "Travel", "Gaming", "Food", "Personal Blogs", "Humor and Satire", "Academic and Research", "Technical", "Spiritual and Philosophical"]
+
+    const [saved, setSaved] = useState('');
+    const [fadeOut, setFadeOut] = useState(false);
     const [isMoved, setisMoved] = useState(false);
     const [blogs, setBlogs] = useState([]);
     const [editingBlog, setEditingBlog] = useState(null);
@@ -76,6 +81,14 @@ export default function Blog() {
 
             if (response.ok) {
                 setBlogs(blogs.map((blog) => (blog.id === blogId ? { ...blog, ...editedData } : blog)));
+                setSaved('Saved...')
+                setTimeout(() => {
+                    setSaved('');
+                }, 2000);
+                setFadeOut(styles.show)
+                setTimeout(() => {
+                    setFadeOut('')
+                }, 1000);
                 setEditingBlog(null);
             } else {
                 console.log('Failed to Update the Blog');
@@ -84,6 +97,8 @@ export default function Blog() {
             console.log('Error', error);
         }
     };
+
+    // Truncate Words
 
     const truncateContent = (content, maxLength) => {
         if (content.length > maxLength) {
@@ -95,80 +110,96 @@ export default function Blog() {
 
     return (
         <>
-            <div className={styles.blogheader}>
-                <div className={styles.title}>Latest Blogs</div>
-                <Link to={'/blogs/create'}>
-                    <img
-                        onClick={handleClick}
-                        className={styles.icon}
-                        src="/icons/create.svg"
-                        alt="Create Blog"
-                    />
-                </Link>
-            </div>
-
-            {blogs.map((blog) => (
-                <div className={styles.blogcontainer} key={blog.id}>
-                    {editingBlog === blog.id ? (
-                        <>
-                            <input
-                                type="text"
-                                name="blog_title"
-                                value={editedData.blog_title}
-                                onChange={handleEditChange}
-                                className={styles.editInput}
-                            />
-                            <input
-                                type="text"
-                                name="blog_category"
-                                value={editedData.blog_category}
-                                onChange={handleEditChange}
-                                className={styles.editInput}
-                            />
-                            <textarea
-                                name="blog_content"
-                                value={editedData.blog_content}
-                                onChange={handleEditChange}
-                                className={styles.editTextarea}
-                            />
-                            <button
-                                className={styles.saveButton}
-                                onClick={() => handleEditSubmit(blog.id)}
-                            >
-                                Save
-                            </button>
-                            <button
-                                className={styles.cancelButton}
-                                onClick={() => setEditingBlog(null)}
-                            >
-                                Cancel
-                            </button>
-                        </>
-                    ) : (
-                        <>
-                            <div className={styles.titleAndCategory}>
-                                <div className={styles.blogtitle}>{blog.blog_title}</div>
-                                <div className={styles.blogcategory}>{blog.blog_category}</div>
-                            </div>
-                            <div className={styles.blogcontent}>
-                                {truncateContent(blog.blog_content, 20)}
-                            </div>
-                            <img
-                                className={styles.delete}
-                                src="/icons/delete.svg"
-                                alt="delete"
-                                onClick={() => handleDelete(blog.id)}
-                            />
-                            <img
-                                className={styles.edit}
-                                src="/icons/edit.svg"
-                                alt="edit"
-                                onClick={() => handleEdit(blog)}
-                            />
-                        </>
-                    )}
+            <div className={styles.blog}>
+                <div className={styles.blogheader}>
+                <div className={`${styles.floatingAlert} ${saved ? fadeOut : ''}`}>{saved}</div>
+                    <div className={styles.title}>Latest Blogs</div>
+                    <Link to={'/blogs/create'}>
+                        <img
+                            onClick={handleClick}
+                            className={styles.icon}
+                            src="/icons/create.svg"
+                            alt="Create Blog"
+                        />
+                    </Link>
                 </div>
-            ))}
+
+                {blogs.map((blog) => (
+                    <div className={styles.blogcontainer} key={blog.id}>
+                        {editingBlog === blog.id ? (
+                            <>
+                                <div className={styles.editBox}>
+                                    <input
+                                        type="text"
+                                        name="blog_title"
+                                        placeholder='Title'
+                                        value={editedData.blog_title}
+                                        onChange={handleEditChange}
+                                        className={styles.editTitle}
+                                    />
+                                    <select
+                                        name="blog_category"
+                                        value={editedData.blog_category}
+                                        onChange={handleEditChange}
+                                        className={styles.editCategory}
+                                    >
+                                        <option value="" disabled>Select a category</option>
+                                        {blogCategories.map((blog, index) => {
+                                            return (
+                                                <option key={index} value={blog}>{blog}</option>
+                                            )
+                                        })}
+                                    </select>
+
+                                    <textarea
+                                        name="blog_content"
+                                        placeholder='Blog'
+                                        value={editedData.blog_content}
+                                        onChange={handleEditChange}
+                                        className={styles.editContent}
+                                    />
+                                </div>
+                                <div className={styles.buttons}>
+                                    <img
+                                        src='icons/correct.svg'
+                                        className={styles.saveButton}
+                                        onClick={() => handleEditSubmit(blog.id)}
+                                    />
+                                    <img
+                                        src='icons/wrong.svg'
+                                        className={styles.cancelButton}
+                                        onClick={() => setEditingBlog(null)}
+                                    />
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div className={styles.titleAndCategory}>
+                                    <div className={styles.blogtitle}>{blog.blog_title}</div>
+                                    <div className={styles.blogcategory}>{blog.blog_category}</div>
+                                </div>
+                                <div className={styles.blogcontent}>
+                                    {truncateContent(blog.blog_content, 20)}
+                                </div>
+                                <div className={styles.deletenedit}>
+                                    <img
+                                        className={styles.edit}
+                                        src="/icons/edit.svg"
+                                        alt="edit"
+                                        onClick={() => handleEdit(blog)}
+                                    />
+                                    <img
+                                        className={styles.delete}
+                                        src="/icons/delete.svg"
+                                        alt="delete"
+                                        onClick={() => handleDelete(blog.id)}
+                                    />
+                                </div>
+                            </>
+                        )}
+                    </div>
+                ))}
+            </div>
         </>
     );
 }

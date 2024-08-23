@@ -10,7 +10,6 @@ export default function Home() {
     return (    
         <>
         <div className={styles.head}>Search for <TypingEffect/></div>
-        
         <Search/>
         </>
     )

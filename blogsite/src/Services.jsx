@@ -10,7 +10,7 @@ export default function Services() {
     </>
   )
 }
-
+  
 export const ListofService = () => {
   let serviceContents = ['All Services', 'Register for Service']
   return (

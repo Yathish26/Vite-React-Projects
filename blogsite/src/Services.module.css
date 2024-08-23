@@ -7,7 +7,7 @@
 .listofservice{
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    background-color: #5e5d5d;
     color: white;
     padding: 1rem;
 }

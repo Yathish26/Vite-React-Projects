@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .blogcontainer{
@@ -16,6 +17,7 @@
     padding: 1rem;
     background-color: #e4e4e4;
     width: 30%;
+    border-radius: 10px;
 }
 
 .blogtitle{
@@ -48,4 +50,133 @@
 
 .edit{
     cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.deletenedit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0.5rem
+}
+
+/* Define the keyframes for fade-in and fade-out */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Apply the animations to the .blog class */
+  .blog {
+    opacity: 1; /* Ensure initial opacity is set to 1 */
+    animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
+  }
+  
+  /* Add a class for fade-out animation */
+  .blog.fade-out {
+    animation: fadeOut 1s ease-in-out; /* Apply fade-out animation */
+  }
+  
+
+
+/*Edit Input Stylings*/
+
+.editTitle{
+    font-size: 2rem;
+    width: 95%;
+}
+
+.editCategory {
+    color: #4f4c4c;
+    width: 49%;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box; 
+}
+
+/* Optional: Style for the dropdown items */
+.editCategory option {
+    text-align: center;
+}
+
+
+.editContent {
+    border: none;
+    border-radius: 4px;
+    min-height: 8rem;
+    font-size: 1rem;
+    padding: 1rem;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+.editContent:focus{
+    outline: none;
+}
+.saveButton,.cancelButton{
+    background-color: black;
+    border-radius: 50%
+}
+
+.buttons{
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 0rem;
+    cursor: pointer;
+}
+
+.editBox{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.floatingAlert {
+    position: absolute;
+    right: 50%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.4rem;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0; /* Initial state */
+    transition: opacity 0.5s ease; /* Smooth fade transition */
+}
+
+.floatingAlert.show {
+    opacity: 1; /* Visible state */
+}
+
+.floatingAlert.fadeOut {
+    opacity: 0; /* Fading out state */
+}
+
+.floatingAlert.hidden {
+    display: none; /* Hide element from the DOM */
+}
+
+
+@media (width<1000px) {
+    .blogcontainer{
+        width: 60%;
+    }
 }

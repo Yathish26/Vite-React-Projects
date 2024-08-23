@@ -35,7 +35,7 @@ export default function Header(props) {
                     </Link>
                     <div className={styles.title}>{props.maintitle}</div>
                     {!isLoginPage && !isRegisterPage &&
-                        <img onClick={menuCollapse} className={`${styles.arrow} ${isMenuVisible ? styles.arrowrotate : ''} `} src="/icons/arrowdown.svg" alt="" />
+                        <img onClick={menuCollapse} className={`${styles.arrow} ${isMenuVisible ? styles.arrowrotate : ''} `} src="/icons/arrowdown.svg" alt="Toggle Menu" />
                     }
                 </div>
                 {!isLoginPage && !isRegisterPage && (
