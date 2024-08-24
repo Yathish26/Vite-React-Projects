@@ -11,9 +11,9 @@ export default function Contact() {
             <br />
             Made for Love
           </h2>
-          <button>
+          <div className='contactbtn'>
             <a href="#footer">Scroll</a>
-          </button>
+          </div>
         </div>
         <footer id="footer">
           <div className="col col1">
@@ -27,21 +27,21 @@ export default function Contact() {
                 target="_blank"
                 className="link"
               >
-                <img src="https://assets.codepen.io/9051928/codepen_1.png" alt="" />
+                <img className='imgg' src="https://assets.codepen.io/9051928/codepen_1.png" alt="" />
               </a>
               <a
                 href="https://x.com/iamyathz"
                 target="_blank"
                 className="link"
               >
-                <img src="https://assets.codepen.io/9051928/x.png" alt="" />
+                <img className='imgg' src="https://assets.codepen.io/9051928/x.png" alt="" />
               </a>
               <a
                 href="https://www.youtube.com/@iamyathz"
                 target="_blank"
                 className="link"
               >
-                <img src="https://assets.codepen.io/9051928/youtube_1.png" alt="" />
+                <img className='imgg' src="https://assets.codepen.io/9051928/youtube_1.png" alt="" />
               </a>
             </div>
             <p style={{ color: "#818181", fontSize: "smaller" }}>

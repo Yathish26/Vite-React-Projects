@@ -54,7 +54,7 @@ h3 {
   position: fixed;
 }
 
-button {
+.contactbtn {
   background-color: #000;
   font-size: calc(0.4 * var(--m));
   border: none;
@@ -134,7 +134,7 @@ footer::before {
   border-radius: calc(0.5 * var(--m));
 }
 
-img {
+.imgg {
   height: calc(0.3 * var(--m));
   object-fit: cover;
 }
