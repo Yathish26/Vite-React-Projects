@@ -23,21 +23,21 @@ export default function Contact() {
             </p>
             <div className="social">
               <a
-                href="https://codepen.io/Juxtopposed"
+                href="https://codepen.io/iamyathz"
                 target="_blank"
                 className="link"
               >
                 <img src="https://assets.codepen.io/9051928/codepen_1.png" alt="" />
               </a>
               <a
-                href="https://twitter.com/juxtopposed"
+                href="https://x.com/iamyathz"
                 target="_blank"
                 className="link"
               >
                 <img src="https://assets.codepen.io/9051928/x.png" alt="" />
               </a>
               <a
-                href="https://youtube.com/@juxtopposed"
+                href="https://www.youtube.com/@iamyathz"
                 target="_blank"
                 className="link"
               >
