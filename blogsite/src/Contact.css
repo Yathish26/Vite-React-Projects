@@ -34,12 +34,12 @@ h2 {
 
 h3 {
   font-weight: 500;
-  font-size: calc(0.6 * var(--m));
+  font-size: 3rem;
   margin: 0;
 }
 
 .card {
-  height: calc(8 * var(--m));
+  height: 50%;
   width: 80%;
   background: linear-gradient(120deg, #ff8064, #725bdc);
   color: black;
@@ -97,7 +97,7 @@ footer::before {
 .backdrop {
   z-index: -5;
   position: absolute;
-  bottom: 0;
+  bottom: 2;
   inset: 0;
 
   backdrop-filter: blur(40px);
@@ -121,17 +121,12 @@ footer::before {
 }
 
 .col {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: calc(0.3 * var(--m)) calc(0.8 * var(--m));
-  width: 28%;
-}
-
-.col2,
-.col3 {
-  background-color: #121212;
-  border-radius: calc(0.5 * var(--m));
+  align-items: center;
+  justify-content: center;
+  margin:1rem;
+  width: auto;
 }
 
 .imgg {
@@ -181,5 +176,8 @@ a {
 @media (width<550px) {
     h2{
         font-size: 3rem;
+    }
+    .card{
+      height: 30%;
     }
 }

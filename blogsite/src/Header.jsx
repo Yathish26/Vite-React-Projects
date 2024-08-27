@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Header.module.css'
 import { Link, useLocation } from 'react-router-dom'
+import DarkModeSwitch from './DarkModeSwitch';
 
 export default function Header(props) {
     const location = useLocation();
@@ -16,7 +17,7 @@ export default function Header(props) {
     const isJoinUs = location.pathname === '/joinus'
     const isContactus = location.pathname === '/contact'
     const isServices = location.pathname === '/services' || location.pathname === '/services/register'
-    const isBlog = location.pathname === '/blogs'|| location.pathname === '/blogs/create'
+    const isBlog = location.pathname === '/blogs' || location.pathname === '/blogs/create'
     const isAboutus = location.pathname === '/aboutus'
 
 
@@ -39,9 +40,14 @@ export default function Header(props) {
                     }
                 </div>
                 {!isLoginPage && !isRegisterPage && (
-                    <Link to='/login'>
-                        <img className={styles.iconlogin} src="/icons/login.svg" alt="" />
-                    </Link>
+                    <>
+                        <div className={styles.switchnlogin}>
+                            <DarkModeSwitch />
+                            <Link to='/login'>
+                                <img className={styles.iconlogin} src="/icons/login.svg" alt="" />
+                            </Link>
+                        </div>
+                    </>
 
                 )}
             </div>

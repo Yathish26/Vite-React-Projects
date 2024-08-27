@@ -179,7 +179,7 @@ export default function Blog() {
                                     <div className={styles.blogcategory}>{blog.blog_category}</div>
                                 </div>
                                 <div className={styles.blogcontent}>
-                                    {truncateContent(blog.blog_content, 20)}
+                                    {truncateContent(blog.blog_content, 60)}
                                 </div>
                                 <div className={styles.deletenedit}>
                                     <img

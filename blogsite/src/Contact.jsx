@@ -16,7 +16,7 @@ export default function Contact() {
           </div>
         </div>
         <footer id="footer">
-          <div className="col col1">
+          <div className="col">
             <h3>Hire Arrive</h3>
             <p>
               Made with <span style={{ color: "#BA6573" }}>❤</span> by Yathish
@@ -47,18 +47,6 @@ export default function Contact() {
             <p style={{ color: "#818181", fontSize: "smaller" }}>
               2024 © All Rights Not Yet Reserved
             </p>
-          </div>
-          <div className="col col2">
-            <p>About</p>
-            <p>Our mission</p>
-            <p>Privacy Policy</p>
-            <p>Terms of service</p>
-          </div>
-          <div className="col col3">
-            <p>Services</p>
-            <p>Products</p>
-            <p>Join our team</p>
-            <p>Partner with us</p>
           </div>
           <div className="backdrop" />
         </footer>

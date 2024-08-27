@@ -122,6 +122,12 @@ li {
     transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
 }
 
+.switchnlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
 
 
 
