@@ -14,7 +14,8 @@ export default function Weather() {
         'light rain': 'lightrain',
         'broken clouds': 'brokencloud',
         'haze': 'haze',
-        'overcast clouds':'overcastclouds'
+        'overcast clouds':'overcastclouds',
+        'mist':'mist'
       };
 
       const description = wdetails.weather[0].description;
