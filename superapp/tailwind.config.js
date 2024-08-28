@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      height:{
+        '90vh':'90vh',
+        'cvh':'200vh',
+        '86vh':'86vh',
+      },
       fontFamily: {
         'bona': ["Bona Nova SC", "serif"],
       },

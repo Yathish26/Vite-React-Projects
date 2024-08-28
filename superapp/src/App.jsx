@@ -6,6 +6,8 @@ import Todolist from './Todolist'
 import More from './More'
 import Profile from './Profile'
 import { useEffect } from 'react'
+import Journey from './Journey'
+import Parallaxt from './Parallax'
 
 function App() {
   const location = useLocation();
@@ -18,7 +20,7 @@ function App() {
     '/weather': '/ Weather',
     '/todolist': '/ Todo List',
     '/more': '/ More',
-    '/profile':'/ Profile'
+    '/profile': '/ Profile'
   };
 
   const appProp = appPropMap[location.pathname] || '';
@@ -26,13 +28,15 @@ function App() {
 
   return (
     <>
-      <Header title="Superapp" app={appProp} />
+      <Header title="Axios" app={appProp} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/weather' element={<Weather />} />
         <Route path='/todolist' element={<Todolist />} />
         <Route path='/more' element={<More />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/profile/journey' element={<Journey />} />
+        <Route path='/parallax' element={<Parallaxt/>}/>
       </Routes>
     </>
   )

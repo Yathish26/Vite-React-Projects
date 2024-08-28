@@ -4,3 +4,56 @@
 @tailwind components;
 @tailwind utilities;
 
+.root-container {
+    position: relative;
+    width: 10vw; /* Use vw for responsive width */
+    height: 30vh; /* Use vh for responsive height */
+    display: flex;
+    justify-content: center;
+}
+
+.rootsketch {
+    position: relative;
+    width: 0.4vw; /* Adjust width using vw for responsiveness */
+    background-color: #8B4513; /* Dark brown color for the root */
+    height: 100%;
+    border-radius: 2px;
+}
+
+.branch {
+    position: absolute;
+    width: 17vw; /* Use vw for responsive branch width */
+    height: 0.4vw; /* Adjust height using vw for responsiveness */
+    background-color: #8B4513;
+    border-radius: 2px;
+}
+
+.branch-left {
+    left: 0;
+    position: relative;
+}
+
+.branch-right {
+    right: 0;
+}
+
+.lower-branch {
+    top: 15vh; /* Adjust position using vh */
+}
+
+.branch-left:not(.lower-branch) {
+    top: 5vh; /* Position for the first left branch */
+}
+
+.branch-right:not(.lower-branch) {
+    top: 10vh; /* Position for the first right branch */
+}
+
+.branch-left.lower-branch {
+    top: 20vh; /* Position for the second left branch */
+}
+
+.branch-right.lower-branch {
+    top: 25vh; /* Position for the second right branch */
+}
+
