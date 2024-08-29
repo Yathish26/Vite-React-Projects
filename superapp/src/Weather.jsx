@@ -7,15 +7,73 @@ export default function Weather() {
   const [loading, setLoading] = useState(false);
   const [weatherChange, setWeatherChange] = useState('clearsky')
 
+  // In Weather Mapping Left is Description and Right is SVG file name 
+
   useEffect(() => {
     if (wdetails) {
       const weatherMapping = {
-        'clear sky': 'clearsky',
-        'light rain': 'lightrain',
-        'broken clouds': 'brokencloud',
-        'haze': 'haze',
-        'overcast clouds':'overcastclouds',
-        'mist':'mist'
+        // Thunderstorm
+        'thunderstorm with light rain':'thunderstorm',
+        'thunderstorm with rain':'thunderstorm',
+        'thunderstorm with heavy rain':'thunderstorm',
+        'light thunderstorm':'thunderstorm',
+        'thunderstorm':'thunderstorm',
+        'heavy thunderstorm':'thunderstorm',
+        'ragged thunderstorm':'thunderstorm',
+        'thunderstorm with light drizzle':'thunderstorm',
+        'thunderstorm with drizzle':'thunderstorm',
+        'thunderstorm with heavy drizzle':'thunderstorm',
+        // Drizzle
+        'light intensity drizzle':'drizzle',
+        'drizzle':'drizzle',
+        'heavy intensity drizzle:':'drizzle',
+        'light intensity drizzle rain':'drizzle',
+        'drizzle rain':'drizzle',
+        'heavy intensity drizzle rain':'drizzle',
+        'shower rain and drizzle':'drizzle',
+        'heavy shower rain and drizzle':'drizzle',
+        'shower drizzle':'drizzle',
+        // Rain
+        'light rain':'rain',
+        'moderate rain':'rain',
+        'heavy intensity rain':'rain',
+        'very heavy rain':'rain',
+        'extreme rain':'rain',
+        'freezing rain':'rain',
+        'light intensity shower rain':'rain',
+        'shower rain':'rain',
+        'heavy intensity shower rain':'rain',
+        'ragged shower rain':'rain',
+        // Snow
+        'light snow':'snow',
+        'snow':'snow',
+        'heavy snow':'snow',
+        'sleet':'snow',
+        'light shower sleet':'snow',
+        'shower sleet':'snow',
+        'light rain and snow':'snow',
+        'rain and snow':'snow',
+        'light shower snow':'snow',
+        'shower snow':'snow',
+        'heavy shower snow':'snow',
+        // Atmosphere
+        'mist':'haze',
+        'smoke':'haze',
+        'haze':'haze',
+        'sand/dust whirls':'haze',
+        'fog':'haze',
+        'sand':'haze',
+        'dust':'haze',
+        'volcanic ash':'haze',
+        'squalls':'haze',
+        'tornado':'haze',
+        // Clear
+        'clear sky':'clear',
+        // Clouds
+        'few clouds':'clouds',
+        'scattered clouds':'clouds',
+        'broken clouds':'clouds',
+        'overcast clouds':'clouds',
       };
 
       const description = wdetails.weather[0].description;
@@ -74,6 +132,8 @@ export default function Weather() {
 
   return (
     <div className={` flex flex-col items-center justify-center min-h-screen ${getBackgroundStyle()} text-white`}>
+      <img className='mb-5' src="weather/clear.svg" alt="" />
+      <div className='text-3xl font-bona'>Weather Report</div>
       <form onSubmit={getData} className="flex flex-col items-center bg-white p-6 m-4 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
         <input
           type="text"
@@ -102,7 +162,7 @@ export default function Weather() {
         </div>
 
       ) : error ? (
-        <div className="mt-8 text-red-500 text-xl font-semibold">{error}</div>
+        <div className="mt-8 text-red-500 text-xl font-semibold drop-shadow-md">{error}</div>
       ) : wdetails ? (
         <div className="mt-8 mb-5 bg-white bg-opacity-20 p-6 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-bold text-center mb-6">
@@ -116,7 +176,7 @@ export default function Weather() {
               <p className="text-4xl font-semibold">{wdetails.main.temp}°C</p>
             </div>
             <div className="flex items-center mt-4">
-              <img src={`tempicons/weather${weatherChange}.svg`} alt="Weather" className="w-10 h-10 mr-2" />
+              <img src={`weather/${weatherChange}.svg`} alt="Weather" className="w-10 h-10 mr-2" />
               <p className="text-xl capitalize">{wdetails.weather[0].description}</p>
             </div>
           </div>

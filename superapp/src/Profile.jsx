@@ -10,12 +10,12 @@ export default function Profile() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pin, setPin] = useState('');
 
-  // User Details
+  // Logo Sets
   const skills = [
     { name: 'React JS', logo: 'react' },
     { name: 'Django', logo: 'django' },
     { name: 'Django REST', logo: 'djangorest' },
-    { name: 'Express JS', logo: 'react' },
+    { name: 'Express JS', logo: 'expressjs' },
     { name: 'JavaScript', logo: 'javascript' },
     { name: 'Python', logo: 'python' },
     { name: 'HTML', logo: 'html' },
@@ -53,7 +53,7 @@ export default function Profile() {
             />
             <button
               onClick={() => setModalIsOpen(true)}
-              className="absolute top-2 right-2 p-2 bg-gray-700 rounded-full"
+              className="absolute top-2 right-2 p-2 bg-gray-700 rounded-full hover:scale-110 transition-transform ease-in-out duration-300"
             >
               <img src="tempicons/visibility.svg" alt="Reveal" className="w-4 h-4" />
             </button>
@@ -71,11 +71,11 @@ export default function Profile() {
           <p><strong>Nationality:</strong> Indian</p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Skills</h2>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside grid grid-cols-2 gap-4">
             {skills.map((skill, index) => (
-              <li key={index} className="flex items-center mb-2">
+              <li key={index} className="flex items-center">
                 <img src={`skillcon/${skill.logo}.svg`} alt={skill.name} className="w-6 h-6 mr-2" />
-                {skill.name}
+                <span className="font-semibold">{skill.name}</span>
               </li>
             ))}
           </ul>
@@ -101,10 +101,11 @@ export default function Profile() {
               placeholder="Enter PIN"
               required
             />
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">Submit</button>
+            <button type="submit" className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition-colors ease-in-out duration-300">Submit</button>
           </form>
         </div>
       </Modal>
     </div>
   );
 }
+
