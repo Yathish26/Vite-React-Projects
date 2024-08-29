@@ -108,9 +108,9 @@ export default function Journey() {
             <Arrow />
             <SkillSet logo={'git'} name={'Git'} description={'Version Control System'} />
             <Arrow />
-            <SkillSet logo={'Bootstrap'} name={'Bootstrap'} description={'CSS Framework'} />
+            <SkillSet logo={'bootstrap'} name={'Bootstrap'} description={'CSS Framework'} />
             <Arrow />
-            <SkillSet logo={'Tailwind'} name={'Tailwind'} description={'CSS Framework'} />
+            <SkillSet logo={'tailwind'} name={'Tailwind'} description={'CSS Framework'} />
         </div>
     );
 }
