@@ -10,6 +10,7 @@ export default {
       },
       fontFamily: {
         'bona': ["Bona Nova SC", "serif"],
+        'cursive': ["Dancing Script", "cursive"],
       },
       keyframes: {
         spin: {
@@ -20,15 +21,9 @@ export default {
       animation: {
         'spin-slow': 'spin 8s linear infinite',
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            fontFamily: 'Dancing Script, cursive',
-            // Other typography options
-          },
-        },
-      }),
+      
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
+  darkMode:'class',
 }

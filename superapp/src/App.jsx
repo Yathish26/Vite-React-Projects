@@ -8,6 +8,8 @@ import Profile from './Profile'
 import { useEffect } from 'react'
 import Journey from './Journey'
 import Parallaxt from './Parallax'
+import PhotoEditor from './PhotoEditor'
+import Passwordgenerator from './Passwordgenerator'
 
 function App() {
   const location = useLocation();
@@ -20,7 +22,9 @@ function App() {
     '/weather': '/ Weather',
     '/todolist': '/ Todo List',
     '/more': '/ More',
-    '/profile': '/ Profile'
+    '/profile': '/ Profile',
+    '/photoeditor':'/ Photo Editor',
+    '/passwordgenerator':'/ Password Generator',
   };
 
   const appProp = appPropMap[location.pathname] || '';
@@ -37,6 +41,8 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/profile/journey' element={<Journey />} />
         <Route path='/parallax' element={<Parallaxt/>}/>
+        <Route path='/photoeditor' element={<PhotoEditor/>}/>
+        <Route path='/passwordgenerator' element={<Passwordgenerator/>}/>
       </Routes>
     </>
   )
