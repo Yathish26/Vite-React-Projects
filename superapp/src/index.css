@@ -57,13 +57,11 @@
   visibility: visible; 
 }
 
-/* -------------------------------End Header Section----------------------------- */
-
 /* --------------------------------------Dark Mode/Light Mode------------------------- */
 
 /* The switch - the box around the slider */
 .switch {
-  font-size: 15px;
+  font-size: 0.938rem;
   position: relative;
   display: inline-block;
   width: 3.5em;
@@ -112,5 +110,25 @@
   background-color: yellow;
   box-shadow: none;
 }
-/* --------------------------------End Dark Mode/Light Mode------------------------- */
 
+
+/* --------------------------Profile Background Animation-------------------------- */
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(52deg, #0042ff, #000000, red);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}

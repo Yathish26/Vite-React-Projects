@@ -4,6 +4,7 @@ export default function Journey() {
     const [scrollTop, setScrollTop] = useState(0);
     const [opacity, setOpacity] = useState(1);
     const [fontSize, setFontSize] = useState(30);
+    const [gradient, setGradient] = useState('linear-gradient(45deg, red, darkblue)');
 
     // Projects List
     const python = ['Instagram Profile Downloader', 'HQ Video Downloader', 'Media to JSON Converter (Vice Verca)', 'PDF to Text Converter', 'Face Detection and Grouping'];
@@ -25,6 +26,9 @@ export default function Journey() {
             setScrollTop(newScrollTop);
             setOpacity(scrollPercent > 5 ? 0 : 1);
             setFontSize(30 + (scrollPercent * 0.1));
+
+            const newGradient = `linear-gradient(45deg, red, darkblue)`;
+            setGradient(newGradient);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -32,7 +36,10 @@ export default function Journey() {
     }, []);
 
     return (
-        <div className="relative flex flex-col h-fit bg-gradient-to-tl from-purple-700 to-yellow-600 overflow-hidden text-white">
+        <div style={{
+            background: gradient,
+            transition:'background 0.3s ease-in',
+            }} className="relative flex flex-col h-fit overflow-hidden text-white">
             <div className="h-screen flex flex-col justify-center items-center">
                 <h1
                     className="font-semibold fixed text-center text-wrap mb-40"
