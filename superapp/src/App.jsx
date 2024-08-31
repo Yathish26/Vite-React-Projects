@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = 'Super App';
+    document.title = 'Axios';
   }, []);
 
   const appPropMap = {
@@ -40,7 +40,7 @@ function App() {
         <Route path='/more' element={<More />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/profile/journey' element={<Journey />} />
-        <Route path='/parallax' element={<Parallaxt/>}/>
+        {/* <Route path='/parallax' element={<Parallaxt/>}/> */}
         <Route path='/photoeditor' element={<PhotoEditor/>}/>
         <Route path='/passwordgenerator' element={<Passwordgenerator/>}/>
       </Routes>
