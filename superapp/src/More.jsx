@@ -22,7 +22,7 @@ export default function More() {
         <div className="flex flex-col items-center mt-4">
           <p className="text-center mb-4">The source code can be found in this repository ⤶</p>
           <a
-            href="https://github.com/Yathish26?tab=repositories"
+            href="https://github.com/Yathish26/Vite-React-Projects/tree/main/superapp"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition-all duration-300 ease-in-out"

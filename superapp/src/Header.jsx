@@ -89,10 +89,10 @@ export default function Header(props) {
           {/* Right Section */}
           <div className=' flex items-center gap-4 mt-4 lg:mt-0 lg:flex-none lg:ml-auto'>
             {/* Dark Mode Switch */}
-            <label className="switch relative">
+            {/* <label className="switch relative">
               <input type="checkbox" checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} />
               <span className="slider"></span>
-            </label>
+            </label> */}
             <Link to={'/profile'}>
               <img className='p-2 hover:bg-slate-700 rounded' src="/icons/user.svg" alt="User" />
             </Link>

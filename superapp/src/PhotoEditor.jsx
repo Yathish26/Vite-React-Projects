@@ -60,9 +60,14 @@ export default function PhotoEditor() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white">
             <div className="flex flex-col items-center">
-                <img src="icons/photoeditor.svg" alt="Photo Editor Icon" className="w-16 h-16 mb-4" />
-                <h1 className="text-4xl md:text-5xl font-bona mb-2 text-center">Photo Editor</h1>
-                <p className='font-cursive text-xl mb-8'>Edit your images with ease !</p>
+                {!image && (
+                    <>
+                    <img src="icons/photoeditor.svg" alt="Photo Editor Icon" className="w-16 h-16 mb-4" />
+                    <h1 className="text-4xl md:text-5xl font-bona mb-2 text-center">Photo Editor</h1>
+                    <p className='font-cursive text-xl mb-8'>Edit your images with ease !</p>
+                    </>)
+                }
+                
                 {!image && (
                     <label className="mb-6 flex items-center bg-gray-700 p-4 rounded-lg cursor-pointer shadow-inner hover:bg-gray-600 transition duration-200 ease-in-out">
                         <img src="/icons/upload.svg" alt="Upload" className="h-8 w-8 mr-3" />

@@ -6,7 +6,7 @@ export default function Home() {
       <div className=" min-h-screen bg-gradient-to-r from-blue-800 to-blue-500 text-white flex flex-col justify-center items-center">
         <h1 className="text-5xl font-bold mb-8 m-4">Welcome to Axios Zone</h1>
         <p className="text-lg mb-6 max-w-xl text-center m-4">
-          This Super App provides you with the latest weather updates, to-do lists, and more. Explore the features to make your life easier and more organized.
+          <b>Hola</b>, I am Yathish This is my Person Portfolio Project where i learn and update the things in here You can check some of these apps below or go through the Apps Section on the Navbar for more Apps.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
@@ -23,8 +23,8 @@ export default function Home() {
           </div>
 
           <div className="bg-white m-4 bg-opacity-20 p-6 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold mb-4">More Features</h2>
-            <p>Explore additional features that make this app a comprehensive tool for your everyday needs.</p>
+            <h2 className="text-3xl font-semibold mb-4">About this Project</h2>
+            <p>This project was done as a practice project using: React, Tailwind CSS, Vite.</p>
             <a href="/more" className="mt-4 inline-block bg-yellow-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition-all duration-300 ease-in-out">Discover More</a>
           </div>
 

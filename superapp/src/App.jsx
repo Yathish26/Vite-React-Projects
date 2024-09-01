@@ -21,7 +21,7 @@ function App() {
   const appPropMap = {
     '/weather': '/ Weather',
     '/todolist': '/ Todo List',
-    '/more': '/ More',
+    '/more': '/ About',
     '/profile': '/ Profile',
     '/photoeditor':'/ Photo Editor',
     '/passwordgenerator':'/ Password Generator',
