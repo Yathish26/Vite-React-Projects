@@ -75,7 +75,7 @@ export default function Journey() {
                     <li className="text-xl md:text-2xl font-semibold animate-fadeInUp">✦ Vanilla JavaScript Projects ✦</li>
                     {javascript.map((project, index) => (
                         <li
-                            className="text-base md:text-lg transition-transform transform-gpu hover:scale-110 transition-all duration-300 ease-out"
+                            className="text-base md:text-lg transform-gpu hover:scale-110 transition-all duration-300 ease-out"
                             key={index}
                         >
                             {project}
@@ -147,7 +147,7 @@ const SkillSet = ({ logo, name, list = [], listhead, description }) => {
                         <li className="text-xl md:text-2xl font-semibold animate-fadeInUp">✦ {listhead} ✦</li>
                         {list.map((item, index) => (
                             <li
-                                className="text-base md:text-lg transition-transform transform-gpu hover:scale-110 transition-all duration-300 ease-out"
+                                className="text-base md:text-lg transform-gpu hover:scale-110 transition-all duration-300 ease-out"
                                 key={index}
                             >
                                 {item}

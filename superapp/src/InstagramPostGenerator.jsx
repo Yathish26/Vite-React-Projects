@@ -3,22 +3,20 @@ import { toJpeg } from 'html-to-image'
 
 export default function InstagramPostGenerator() {
     const [theme, setTheme] = useState('Light')
-
     const [username, setUsername] = useState('johndoe')
     const [location, setLocation] = useState('New York, USA')
     const [caption, setCaption] = useState('This is a sample post text. @mentions, #hashtags,https://links.com are all automatically converted.')
     const [likes, setLikes] = useState('1234')
     const [comments, setComments] = useState('1234')
     const [image, setImage] = useState('/images/nodp.jpg');
-    const [postimage, setPostImage] = useState('/images/cat.jpg');
-    // const [likebtn,setLikebtn] = useState(likeSvg)
+    const [postimage, setPostImage] = useState('/images/cat.jpg')
     const [cmtdisplay, setCmtdisplay] = useState(true)
     const [tagged, setTagged] = useState(true)
     const [isStory, setIsStory] = useState(true)
     const [isverified, setVerified] = useState(true)
     const [isliked, setIsLiked] = useState(false)
-    const [time,setTime] = useState('h')
-    const [timedigit,setTimedigit] = useState('2')
+    const [time, setTime] = useState('h')
+    const [timedigit, setTimedigit] = useState('2')
     const exportRef = useRef(null);
 
 
@@ -53,58 +51,58 @@ export default function InstagramPostGenerator() {
     const highlightText = (text) => {
         const regex = /(@\w+|#\w+|https?:\/\/[^\s]+)/g;
         const parts = text.split(regex);
-    
-        return parts.map((part, index) => {
-          if (part.match(/@\w+/)) {
-            return <span key={index} className="text-[#00376B] dark:text-[#E0F1FF]">{part}</span>;
-          } else if (part.match(/#\w+/)) {
-            return <span key={index} className="text-[#00376B] dark:text-[#E0F1FF]">{part}</span>;
-          } else if (part.match(/https?:\/\/[^\s]+/)) {
-            return <span key={index} className="text-[#00376B] dark:text-[#E0F1FF]">{part}</span>;
-          }
-          return part;
-        });
-      };
 
-    const handleLike = () =>{
+        return parts.map((part, index) => {
+            if (part.match(/@\w+/)) {
+                return <span key={index} className="text-[#00376B] dark:text-[#E0F1FF]">{part}</span>;
+            } else if (part.match(/#\w+/)) {
+                return <span key={index} className="text-[#00376B] dark:text-[#E0F1FF]">{part}</span>;
+            } else if (part.match(/https?:\/\/[^\s]+/)) {
+                return <span key={index} className="text-[#00376B] dark:text-[#E0F1FF]">{part}</span>;
+            }
+            return part;
+        });
+    };
+
+    const handleLike = () => {
         setIsLiked(!isliked)
     }
 
     const handleExport = () => {
         if (exportRef.current === null) {
-          return;
+            return;
         }
-    
+
         // Options to increase quality
         const scale = 2; // Increase this value for higher resolution
         const node = exportRef.current;
         const width = node.offsetWidth * scale;
         const height = node.offsetHeight * scale;
-    
+
         toJpeg(node, {
-          quality: 1, //Quality
-          width: width,
-          height: height,
-          style: {
-            transform: `scale(${scale})`,
-            transformOrigin: 'top left',
-          },
+            quality: 1, //Quality
+            width: width,
+            height: height,
+            style: {
+                transform: `scale(${scale})`,
+                transformOrigin: 'top left',
+            },
         })
-          .then((dataUrl) => {
-            const link = document.createElement('a');
-            link.download = 'image.jpg';
-            link.href = dataUrl;
-            link.click();
-          })
-          .catch((err) => {
-            console.error('Failed to export image', err);
-          });
-      };
+            .then((dataUrl) => {
+                const link = document.createElement('a');
+                link.download = 'image.jpg';
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch((err) => {
+                console.error('Failed to export image', err);
+            });
+    };
 
     return (
         <>
             <div className='min-h-screen w-screen flex justify-center items-center bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'>
-                <div className={`mo:flex-col mo:items-center mo:gap-8 flex ${theme}`}>
+                <div className={`mo:flex-col  mo:items-center mo:gap-8 flex ${theme}`}>
                     <div className=' mo:ml-4 mo:mr-4 mo:mt-4 border-8 w-fit h-fit rounded-md'>
                         <div ref={exportRef} className='dark:bg-black bg-white'>
                             {/* Upper Part */}
@@ -116,7 +114,7 @@ export default function InstagramPostGenerator() {
 
                                     <div className='flex flex-col'>
                                         <div className='flex gap-1 items-center'>
-                                            <p className='font-bold text-sm dark:text-white '>{username}</p>
+                                            <p className='font-semibold text-sm dark:text-white '>{username}</p>
                                             {isverified && <svg aria-label="Verified" className="x1lliihq x1n2onr6" fill="rgb(0, 149, 246)" height="12" role="img" viewBox="0 0 40 40" width="12"><title>Verified</title><path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fillRule="evenodd"></path></svg>}
                                             <p className='text-[#737373] dark:text-[#A8A8A8] font-normal'>•</p>
                                             <p className='text-[#737373] dark:text-[#A8A8A8] text-sm font-normal'>{timedigit}{time}</p>
@@ -167,40 +165,51 @@ export default function InstagramPostGenerator() {
                         </div>
                     </div>
                     {/* Controls Section */}
-                    <div className='ml-4 mo:ml-0 mo:mb-4 w-full max-w-lg mx-auto bg-white border rounded-lg shadow-lg p-6'>
-                        <div className='m-4 flex justify-between items-center'>
+                    <div className='ml-4 mo:ml-0 mo:mb-4 w-96 h-fit flex flex-col gap-4  max-w-lg bg-white border rounded-lg shadow-lg p-6'>
+
+                        <div className=' flex justify-between items-center'>
                             <h1 className='font-system font-semibold text-2xl text-gray-800'>Post Body</h1>
                             <button onClick={handleExport} className='py-2 px-4 text-white font-semibold bg-blue-500 rounded'>Export</button>
                         </div>
-                        
 
-                        <div className=' flex mb-6 '>
+
+                        <div className='w-full flex justify-between items-center '>
                             {/* <button onClick={handleTheme} className='border rounded bg-black text-white px-2 py-1'>{theme ? 'Light Mode': 'Dark Mode'}</button> */}
-                            <select value={theme} onChange={handleTheme} className='border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-fit' defaultValue={'Theme'}>
+                            <select value={theme} onChange={handleTheme} className='border py-3 px-12 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-fit' defaultValue={'Theme'}>
                                 <option value="light">Light</option>
                                 <option value="dark">Dark</option>
                             </select>
-                            <div className='border border-gray-300 py-2 rounded-md flex items-center flex-1 ml-2'>
+                            <div className='border border-gray-300 py-1 rounded-md flex items-center'>
                                 <input value={username} onChange={e => setUsername(e.target.value)} className='outline-none px-2 w-full' type="text" placeholder='Username' />
                                 <button value={isverified} onClick={() => setVerified(!isverified)} className={`${isverified ? 'bg-blue-700' : 'bg-blue-400'} font-semibold text-white rounded-md py-2 px-4 mx-1 hover:bg-blue-600`}>{isverified ? `Verfied` : `Verify `}</button>
                             </div>
                         </div>
 
-                        <div className='flex'>
-                            <input value={location} onChange={e => setLocation(e.target.value)} type="text" className='border border-gray-300 px-4 py-2 mx-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full' placeholder='Location' />
-                            <input value={timedigit} onChange={e => setTimedigit(e.target.value)} type="number" className='border border-gray-300 px-4 py-2 mx-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full' placeholder='Time' />
-                            <select value={time} onChange={e => setTime(e.target.value)} className='border border-gray-300 rounded-md'>
-                                <option value="s">s</option>
-                                <option value="m">m</option>
-                                <option value="h">h</option>
-                                <option value="d">d</option>
-                                <option value="w">w</option> 
-                            </select>
+                        <div className='flex gap-2'>
+                            <div>
+                                <label className='text-gray-600'>Location</label>
+                                <input value={location} onChange={e => setLocation(e.target.value)} type="text" className='border border-gray-300 px-4 py-2  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full' placeholder='Location' />
+                            </div>
+                            <div>
+                                <label className='text-gray-600'>Time</label>
+                                <div className='flex relative'>
+                                    <input value={timedigit} onChange={e => setTimedigit(e.target.value)} type="number" className='border border-gray-300 px-4 py-2  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full' placeholder='Time' />
+                                    <select value={time} onChange={e => setTime(e.target.value)} className='absolute right-0 h-full border border-gray-300 rounded-md'>
+                                        <option value="s">s</option>
+                                        <option value="m">m</option>
+                                        <option value="h">h</option>
+                                        <option value="d">d</option>
+                                        <option value="w">w</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
                         </div>
 
-                        <div className='flex mb-6 justify-between'>
+                        <div className='flex justify-between'>
                             <div className='flex flex-col'>
-                                <label className='text-gray-600 mb-1'>Avatar</label>
+                                <label className='text-gray-600 mb-1'>Profile Picture</label>
                                 <label className="cursor-pointer border border-gray-300 px-4 py-2 rounded-md bg-white text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     Choose File
                                     <input type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
@@ -215,8 +224,10 @@ export default function InstagramPostGenerator() {
                             </div>
                         </div>
 
-                        <textarea value={caption} onChange={(e) => setCaption(e.target.value)} className='border border-gray-300 w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6' placeholder='Post Caption' rows={3}></textarea>
-                        <h1 className='font-system mb-6 font-semibold text-2xl text-gray-800'>Stats & States</h1>
+                        <textarea value={caption} onChange={(e) => setCaption(e.target.value)} className='border border-gray-300 w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' placeholder='Post Caption' rows={3}></textarea>
+
+
+                        {/* <h1 className='font-system my-3 font-semibold text-2xl text-gray-800'>Stats & States</h1> */}
 
                         <div className='flex mb-6 space-x-4'>
                             {/* Number of Images */}
@@ -230,36 +241,40 @@ export default function InstagramPostGenerator() {
                                 </select>
                             </div> */}
                             <div>
-                                <label>Like Count</label>
+                                <label className='text-gray-600'>Like Count</label>
                                 <input value={likes} onChange={(e) => setLikes(e.target.value)} type="number" className='border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full' placeholder='Like Count' />
                             </div>
                             <div>
-                                <label>Comment Count</label>
+                                <label className='text-gray-600'>Comment Count</label>
                                 <input value={comments} onChange={(e) => setComments(e.target.value)} type="number" className='border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full' placeholder='Comment Count' />
                             </div>
                         </div>
 
-                        <div className='flex mb-6 space-x-4'>
-                            <div className='flex items-center space-x-2'>
-                                <input checked={isliked} onChange={() => setIsLiked(!isliked)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
-                                <p className='text-gray-600'>Is Post liked by Viewer?</p>
+                        <div>
+                            <div className='flex mb-6 justify-between'>
+                                <div className='flex items-center space-x-2'>
+                                    <input checked={isliked} onChange={() => setIsLiked(!isliked)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
+                                    <p className='text-gray-600'>Is Post liked by Viewer?</p>
+                                </div>
+                                <div className='flex items-center space-x-2'>
+                                    <input checked={tagged} onChange={() => setTagged(!tagged)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
+                                    <p className='text-gray-600'>Is Someone Tagged?</p>
+                                </div>
                             </div>
-                            <div className='flex items-center space-x-2'>
-                                <input checked={tagged} onChange={() => setTagged(!tagged)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
-                                <p className='text-gray-600'>Is Someone Tagged?</p>
+
+                            <div className='flex justify-between'>
+                                <div className='flex items-center space-x-2'>
+                                    <input checked={isStory} onChange={() => setIsStory(!isStory)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
+                                    <p className='text-gray-600'>Has An Instagram Story?</p>
+                                </div>
+                                <div className='flex items-center space-x-2'>
+                                    <input checked={cmtdisplay} onChange={() => setCmtdisplay(!cmtdisplay)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
+                                    <p className='text-gray-600'>Are Comments Displayed?</p>
+                                </div>
                             </div>
+
                         </div>
 
-                        <div className='flex space-x-4'>
-                            <div className='flex items-center space-x-2'>
-                                <input checked={isStory} onChange={() => setIsStory(!isStory)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
-                                <p className='text-gray-600'>Has An Instagram Story?</p>
-                            </div>
-                            <div className='flex items-center space-x-2'>
-                                <input checked={cmtdisplay} onChange={() => setCmtdisplay(!cmtdisplay)} type="checkbox" className='form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-500' />
-                                <p className='text-gray-600'>Are Comments Displayed?</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
