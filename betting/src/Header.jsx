@@ -21,7 +21,7 @@ export default function Header() {
         {/* Navigation Menu */}
         <nav className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-6">
           <a href="/" className="hover:text-green-300">Home</a>
-          <a href="/about" className="hover:text-green-300">Play</a>
+          <Link to={'/sports'}>Sports</Link>
           <a href="/contact" className="hover:text-green-300">Contact</a>
           <a href="/faq" className="hover:text-green-300">FAQ</a>
         </nav>

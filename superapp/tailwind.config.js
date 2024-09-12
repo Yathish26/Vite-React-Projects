@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         'bona': ["Bona Nova SC", "serif"],
         'cursive': ["Dancing Script", "cursive"],
+        system: "var(--font-family-system)",
       },
       keyframes: {
         spin: {

@@ -76,6 +76,10 @@ export default function Header(props) {
                   <img className='w-6 h-6 mr-2' src="/icons/passwordgenerator.svg" alt="Password Generator" />
                   Password Generator
                 </Link>
+                <Link to={'/apps'} className='flex items-center p-3'>
+                  <img className='w-6 h-6 mr-2' src="/icons/moreapps.svg" alt="More Apps" />
+                  More Apps
+                </Link>
               </div>
             </li>
             {/* -------------------------Apps Section Close------------------------- */}

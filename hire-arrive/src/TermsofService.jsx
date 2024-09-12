@@ -15,8 +15,7 @@ export default function TermsofService() {
       <p className="mb-8">Last updated: {updatedDate}</p>
 
       <h2 className="text-2xl font-semibold text-purple-500 mb-4">
-        Welcome to {companyname}! These terms and conditions outline the rules and regulations for the use of {companyname}'s Website, located at 
-        <a href={website} className="text-purple-500 underline hover:text-purple-400 ml-1">{website}</a>
+        Welcome to {companyname}! These Terms and Conditions govern your use of our services, including the deployment of gig workers/laborers to clients. By using our services, you agree to these terms.
       </h2>
 
       <ul className="list-disc list-inside space-y-6">
@@ -52,7 +51,25 @@ export default function TermsofService() {
 
         <li className="font-semibold text-xl text-purple-500">Contact Information</li>
         <p className="ml-6">If you have any questions about these terms, please contact us at <a href={`mailto:${compmail}`} className="text-purple-500 underline hover:text-purple-400">{compmail}</a></p>
+
       </ul>
     </div>
+  )
+}
+
+const Terms = (props) => {
+  const { title, clause, nonclause, clients, workers, finaltip, example } = props;
+
+  return (
+    <>
+      {title && <li className="font-semibold text-xl text-purple-500">{title}</li>}
+      {clause && <p className="ml-6">Clause -{clause}</p>}
+      {nonclause && <p className="ml-6">Non Sharing Clause -{nonclause}</p>}
+      {clients && <p className="ml-6">For Clients -{clients}</p>}
+      {workers && <p className="ml-6">For Workers -{workers}</p>}
+      {finaltip && <p className="ml-6">Final Tip -{finaltip}</p>}
+      {example && <p className="ml-6">Example -{example}</p>}
+
+    </>
   )
 }

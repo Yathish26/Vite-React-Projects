@@ -1,5 +1,5 @@
 import Header from './Header'
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom'
 import Weather from './Weather'
 import Home from './Home'
 import Todolist from './Todolist'
@@ -7,9 +7,9 @@ import More from './More'
 import Profile from './Profile'
 import { useEffect } from 'react'
 import Journey from './Journey'
-import Parallaxt from './Parallax'
 import PhotoEditor from './PhotoEditor'
 import Passwordgenerator from './Passwordgenerator'
+import Applications from './Applications'
 
 function App() {
   const location = useLocation();
@@ -25,6 +25,7 @@ function App() {
     '/profile': '/ Profile',
     '/photoeditor':'/ Photo Editor',
     '/passwordgenerator':'/ Password Generator',
+    '/apps':'/ Applications',
   };
 
   const appProp = appPropMap[location.pathname] || '';
@@ -43,6 +44,12 @@ function App() {
         {/* <Route path='/parallax' element={<Parallaxt/>}/> */}
         <Route path='/photoeditor' element={<PhotoEditor/>}/>
         <Route path='/passwordgenerator' element={<Passwordgenerator/>}/>
+        {/* <Route path='/apps' element={<Applications/>}/> */}
+        <Route path='/apps' element={<Navigate to="/apps/instagram-post-generator"/>}/>
+        <Route path='/apps/currencyconverter' element={<Applications/>}/>
+        <Route path='/apps/weightconverter' element={<Applications/>}/> 
+        <Route path='/apps/instagram-post-generator' element={<Applications/>}/> 
+        <Route path='/apps/text-to-speech' element={<Applications/>}/>
       </Routes>
     </>
   )
