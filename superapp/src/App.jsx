@@ -10,6 +10,7 @@ import Journey from './Journey'
 import PhotoEditor from './PhotoEditor'
 import Passwordgenerator from './Passwordgenerator'
 import Applications from './Applications'
+import Parallaxt from './Parallax'
 
 function App() {
   const location = useLocation();
@@ -41,7 +42,7 @@ function App() {
         <Route path='/more' element={<More />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/profile/journey' element={<Journey />} />
-        {/* <Route path='/parallax' element={<Parallaxt/>}/> */}
+        <Route path='/parallax' element={<Parallaxt/>}/>
         <Route path='/photoeditor' element={<PhotoEditor/>}/>
         <Route path='/passwordgenerator' element={<Passwordgenerator/>}/>
         {/* <Route path='/apps' element={<Applications/>}/> */}

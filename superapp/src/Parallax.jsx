@@ -1,83 +1,63 @@
-import React from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import React, {useEffect,useRef} from 'react';
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-export default function Parallaxt() {
-    return (
-        <div className="h-screen overflow-hidden">
-            <Parallax pages={4} className="w-full h-full" easing="cubic-bezier(0.5, 0, 0.5, 1)">
-                {/* First Layer */}
-                <ParallaxLayer
-                    offset={0}
-                    speed={1}
-                    factor={1}
-                    style={{
-                        background: 'linear-gradient(135deg, rgba(245, 209, 66, 1) 0%, rgba(245, 209, 66, 0) 100%)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        fontSize: '2xl',
-                        fontWeight: 'semibold',
-                    }}>
-                    <h2 className="animate-fade-in">Welcome to the Journey of Me Starting Full Stack Web Development</h2>
-                    <h2 className="animate-bounce mt-4">⇣ Scroll ⇣</h2>
-                </ParallaxLayer>
+const ParallaxT = () => {
+    const mountRef = useRef(null);
 
-                {/* Second Layer */}
-                <ParallaxLayer
-                    offset={1}
-                    speed={1}
-                    factor={2}
-                    style={{
-                        display: 'flex',
-                        background: 'linear-gradient(135deg, rgba(167, 235, 187, 1) 0%, rgba(167, 235, 187, 0) 100%)',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        flexDirection: 'column',
-                        fontSize: '2xl',
-                        fontWeight: 'semibold',
-                    }}>
-                    <img src="/skillcon/html.svg" alt="" className="w-24 h-24 animate-fade-in" />
-                    <h2 className="animate-fade-in">Yup Hello World Everyone Starts from Here</h2>
-                    <h2 className="animate-fade-in">And also the Most viewed Line </h2>
-                </ParallaxLayer>
+  useEffect(() => {
+    // Create a scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    mountRef.current.appendChild(renderer.domElement);
 
-                {/* Third Layer */}
-                <ParallaxLayer
-                    offset={2}
-                    speed={1}
-                    factor={1}
-                    sticky={{ start: 2.5, end: 4 }}
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'start',
-                        alignItems: 'center',
-                        background: 'linear-gradient(135deg, rgba(245, 47, 172, 1) 0%, rgba(245, 47, 172, 0) 100%)',
-                        fontSize: '2xl',
-                        fontWeight: 'semibold',
-                    }}>
-                    <h2 className="animate-fade-in">I Started Learning Python as my first programming Language</h2>
-                    <img src="skillcon/python.svg" alt="" className="w-24 h-24 animate-fade-in" />
-                </ParallaxLayer>
+    // Create a sphere (globe)
+    const geometry = new THREE.SphereGeometry(1, 32, 32); // Sphere geometry for globe
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x00ff00,
+      wireframe: true, // You can set this to false for a solid sphere
+    });
+    const globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
 
-                {/*Sticky Layers*/}
-                <ParallaxLayer
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        fontSize: '4xl',
-                        fontWeight: 'semibold',
-                    }}
-                    sticky={{ start: 1.3, end: 1.7 }}>
-                    <h1 className="animate-bounce">⇣Keep on Scrolling ⇣</h1>
-                </ParallaxLayer>
+    camera.position.z = 3; // Adjust camera position to fit the globe in the view
 
-            </Parallax>
-        </div>
-    );
-}
+    // Add OrbitControls for mouse interaction
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; // Smooth out the movement
+    controls.dampingFactor = 0.05;
+    controls.rotateSpeed = 0.5; // Control speed of rotation
+
+    // Animation loop
+    const animate = function () {
+      requestAnimationFrame(animate);
+      controls.update(); // Update controls on each frame
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Handle window resize
+    const handleResize = () => {
+      const { innerWidth, innerHeight } = window;
+      camera.aspect = innerWidth / innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth, innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Clean up on unmount
+    return () => {
+      mountRef.current.removeChild(renderer.domElement);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return <div ref={mountRef} />;
+};
+  
+  export default ParallaxT;
 
 
 
