@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function More() {
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-blue-800 to-blue-500 text-white flex flex-col justify-center items-center p-8">
-      <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg w-full max-w-4xl">
+    <div className="mo:justify-start min-h-screen bg-gradient-to-tr from-blue-800 to-blue-500 text-white flex flex-col justify-center items-center p-8">
+      <div className=" mo:mt-12 bg-white bg-opacity-20 p-6 rounded-lg shadow-lg w-full max-w-4xl">
         <h1 className="text-3xl font-bold mb-4 text-center">About This Project</h1>
         <p className="text-lg mb-6 text-center">
           This project was done as a practice project using:

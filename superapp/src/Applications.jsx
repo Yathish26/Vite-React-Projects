@@ -13,11 +13,11 @@ export default function Applications() {
 
     return (
         <>
-            <div className='flex'>
-                <nav className="bg-black text-white w-72 min-h-screen top-0 left-0 flex flex-col p-4">
+            <div className='flex mo:flex-col'>
+                <nav className=" mo:flex-row mo:w-screen mo:h-fit bg-black text-white w-72 h-screen top-0 left-0 flex flex-col p-4">
                     <div className="mb-8">
                         {/* Logo or Brand Name */}
-                        <div className="text-2xl font-bold">
+                        <div className="mo:hidden text-2xl font-bold">
                             Apps
                         </div>
                     </div>
@@ -30,7 +30,7 @@ export default function Applications() {
                                 onClick={()=>setIsUnitopen(!isUnitopen)}
                             >
                                 <img className="w-6 h-6 mr-2" src="/apps/currency.svg" alt="Unit Converter" />
-                                <p className="hover:text-blue-300">Unit Converter Tools</p>
+                                <p className="mo:hidden hover:text-blue-300">Unit Converter Tools</p>
                                 <svg
                                     className={`w-4 h-4 ml-2 transition-transform duration-300 ease-in-out ${isUnitopen ? 'transform rotate-180' : ''
                                         }`}
@@ -50,13 +50,13 @@ export default function Applications() {
                                     <li>
                                         <Link to={'/apps/weightconverter'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/weight.svg" alt="" />
-                                            Weight Converter
+                                            <p className=''>Weight Converter</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={'/apps/currencyconverter'} className="hover:text-blue-300 flex gap-2">
                                             <img className='w-6 h-6' src="/apps/currency.svg" alt="" />
-                                            Currency Converter
+                                            <p className=''>Currency Converter</p>
                                         </Link>
                                     </li>
                                     {/* Add more submenu items here */}
@@ -72,7 +72,7 @@ export default function Applications() {
                                 onClick={()=>setIsSocialopen(!isSocialopen)}
                             >
                                 <img className="w-6 h-6 mr-2" src="/apps/socialmedia.svg" alt="Unit Converter" />
-                                <p className="hover:text-blue-300">Social Media Tools</p>
+                                <p className="mo:hidden hover:text-blue-300 ">Social Media Tools</p>
                                 <svg
                                     className={`w-4 h-4 ml-2 transition-transform duration-300 ease-in-out ${isSocialopen ? 'transform rotate-180' : ''
                                         }`}
@@ -92,13 +92,13 @@ export default function Applications() {
                                     <li>
                                         <Link to={'/apps/instagram-post-generator'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/insta.svg" alt="" />
-                                            Instagram Post Generator
+                                            <p className=''>Instagram Post Generator</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={'/apps/text-to-speech'} className="hover:text-blue-300 flex gap-2">
                                             <img className='w-6 h-6' src="/apps/text2speech.svg" alt="" />
-                                            Text to Speech
+                                            <p className=''>Text to Speech</p>
                                         </Link>
                                     </li>
                                     {/* Add more submenu items here */}

@@ -39,8 +39,8 @@ export default function Passwordgenerator() {
 
     return (
         <>
-            <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-4">
-                <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
+            <div className="mo:items-start min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-4">
+                <div className="mt-12 bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
                     <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">Password Generator</h1>
                     <div className="flex items-center mb-4">
                         <input

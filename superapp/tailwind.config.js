@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'mo':{'max':'1000px'},
+      },
       height:{
         '90vh':'90vh',
         'cvh':'200vh',
