@@ -170,13 +170,14 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Journey() {
     const [scrollTop, setScrollTop] = useState(0);
     // const [gradient, setGradient] = useState('linear-gradient(45deg, red, black)');
-    
+
     // Refs for each section
     const titleRef = useRef(null);
     const arrowRef = useRef(null);
-    const testRef = useRef(null);
     const skillRefs = useRef([]);
     skillRefs.current = [];
+
+    const pyref = useRef(null);
 
     const python = ['Instagram Profile Downloader', 'HQ Video Downloader', 'Media to JSON Converter', 'PDF to Text Converter', 'Face Detection and Grouping'];
     const flask = ['Twitter Social Clone'];
@@ -195,54 +196,42 @@ export default function Journey() {
     };
 
     useEffect(() => {
-    //     const handleScroll = () => {
-    //         const newScrollTop = window.scrollY;
-    //         const documentHeight = document.documentElement.scrollHeight;
-    //         const windowHeight = window.innerHeight;
-    //         const scrollPercent = (newScrollTop / (documentHeight - windowHeight)) * 100;
+        //     const handleScroll = () => {
+        //         const newScrollTop = window.scrollY;
+        //         const documentHeight = document.documentElement.scrollHeight;
+        //         const windowHeight = window.innerHeight;
+        //         const scrollPercent = (newScrollTop / (documentHeight - windowHeight)) * 100;
 
-    //         setScrollTop(newScrollTop);
+        //         setScrollTop(newScrollTop);
 
-    //         const newGradient = `linear-gradient(${scrollPercent * 3.6}deg, hsl(${scrollPercent * 3.6}, 100%, 50%), black)`;
-    //         setGradient(newGradient);
-    //     };
+        //         const newGradient = `linear-gradient(${scrollPercent * 3.6}deg, hsl(${scrollPercent * 3.6}, 100%, 50%), black)`;
+        //         setGradient(newGradient);
+        //     };
 
-    //     // Scroll-triggered animations
-    //     window.addEventListener('scroll', handleScroll);
+        //     // Scroll-triggered animations
+        //     window.addEventListener('scroll', handleScroll);
 
         // GSAP Animations
         gsap.fromTo(titleRef.current, { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' });
         gsap.fromTo(arrowRef.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 2, delay: 1.5, ease: 'bounce.out', repeat: -1 });
-        gsap.to('.head', {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            duration: 1.2,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '.head',
-                start: 'top 75%',
-                end: 'bottom 25%',
-                scrub: 0.5,
-                toggleActions: 'restart pause reset',
-            }
-        });
-        gsap.to(testRef.current, {
+        gsap.fromTo('.head', { y: -150 }, { y: 0, duration: 1.2, ease: 'power2.out' });
+        gsap.to(pyref.current, {
             y: 0,
             x: -500,
             duration: 1,
-            ease: 'power2.out',
+            ease: 'power1.inOut',  // Smoother ease for gliding effect
             scrollTrigger: {
-                trigger: testRef.current,
-                start: 'top 30%',
+                trigger: pyref.current,
+                start: 'top 30%',  // Adjust the scroll position for smoother trigger
                 end: 'bottom top',
-                scrub: true,
-                pin: true,
-                pinSpacing: false,
+                scrub: 1,  // Use a scrub value to smooth the scrolling animation
+                pin: true,  // Pin the element during the animation
+                pinSpacing: false,  // Keep spacing to avoid layout shifts
                 toggleActions: 'restart pause reset',
-                markers:true,
+                markers: true,  // Useful for debugging, can be removed later
             },
         });
+
 
         // Animate skill sets
         skillRefs.current.forEach((el, index) => {
@@ -272,9 +261,9 @@ export default function Journey() {
                 </h1>
                 <h1 ref={arrowRef} className="animate-bounce pt-40 text-lg md:text-xl">⇣ Scroll ⇣</h1>
             </div>
-            
+
             {/* Skill Sets */}
-            <SkillSet ref={testRef} logo={'python'} name={'Python'} list={python} listhead={'Python Projects'} description={'My First Programming Language'} />
+            <SkillSet ref={pyref} logo={'python'} name={'Python'} list={python} listhead={'Python Projects'} description={'My First Programming Language'} />
             <Arrow />
             <SkillSet ref={addToRefs} logo={'flask'} name={'Flask'} list={flask} listhead={'Flask Projects'} description={'A Web Framework'} />
             <Arrow />
