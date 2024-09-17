@@ -90,7 +90,7 @@ export default function InstagramPostGenerator() {
         })
             .then((dataUrl) => {
                 const link = document.createElement('a');
-                link.download = 'image.jpg';
+                link.download = `${username}.jpg`;
                 link.href = dataUrl;
                 link.click();
             })

@@ -30,4 +30,5 @@ export default {
   },
   plugins: [],
   darkMode:'class',
+  dimMode:'class',
 }

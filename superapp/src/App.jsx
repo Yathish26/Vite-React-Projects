@@ -51,6 +51,7 @@ function App() {
         <Route path='/apps/weightconverter' element={<Applications/>}/> 
         <Route path='/apps/instagram-post-generator' element={<Applications/>}/> 
         <Route path='/apps/text-to-speech' element={<Applications/>}/>
+        <Route path='/apps/tweet-generator' element={<Applications/>}/>
       </Routes>
     </>
   )

@@ -5,6 +5,7 @@ import Weight from './Weight';
 import InstagramPostGenerator from './InstagramPostGenerator';
 import AppUI from './AppUI';
 import Text2speech from './Text2speech';
+import TweetGenerator from './TweetGenerator';
 
 export default function Applications() {
     const [isUnitopen, setIsUnitopen] = useState(false);
@@ -13,8 +14,8 @@ export default function Applications() {
 
     return (
         <>
-            <div className='flex mo:flex-col'>
-                <nav className=" mo:flex-row mo:w-screen mo:h-fit bg-black text-white w-72 h-screen top-0 left-0 flex flex-col p-4">
+            <div className='flex mo:flex-col h-full'>
+                <nav className=" mo:flex-row mo:w-screen mo:h-fit bg-black text-white w-72 top-0 left-0 flex flex-col p-4">
                     <div className="mb-8">
                         {/* Logo or Brand Name */}
                         <div className="mo:hidden text-2xl font-bold">
@@ -96,6 +97,12 @@ export default function Applications() {
                                         </Link>
                                     </li>
                                     <li>
+                                        <Link to={'/apps/tweet-generator'} className="hover:text-blue-300 flex gap-2">
+                                            <img className='w-6 h-6' src="/apps/tweet.svg" alt="" />
+                                            <p className=''>Tweet Generator</p>
+                                        </Link>
+                                    </li>
+                                    <li>
                                         <Link to={'/apps/text-to-speech'} className="hover:text-blue-300 flex gap-2">
                                             <img className='w-6 h-6' src="/apps/text2speech.svg" alt="" />
                                             <p className=''>Text to Speech</p>
@@ -113,6 +120,7 @@ export default function Applications() {
                 {location.pathname === "/apps/weightconverter" && <Weight />}
                 {location.pathname === "/apps/instagram-post-generator" && <InstagramPostGenerator/>}
                 {location.pathname === '/apps/text-to-speech' && <Text2speech/>}
+                {location.pathname === '/apps/tweet-generator' && <TweetGenerator/>}
             </div>
         </>
     );
