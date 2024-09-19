@@ -53,6 +53,7 @@ function App() {
         <Route path='/apps/text-to-speech' element={<Applications/>}/>
         <Route path='/apps/tweet-generator' element={<Applications/>}/>
         <Route path='/apps/text-case-converter' element={<Applications/>}/>
+        <Route path='/apps/qr-generator' element={<Applications/>}/>
       </Routes>
     </>
   )

@@ -11,8 +11,8 @@ export default function Text2speech() {
   };
 
   return (
-    <div className="min-h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-900 to-blue-600 p-6">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-xl w-full">
+    <div className="min-h-screen w-screen flex flex-col items-center mo:justify-start justify-center bg-gradient-to-r from-blue-900 to-blue-600 p-6">
+      <div className="mo:mt-12 bg-white shadow-lg rounded-lg p-8 max-w-xl w-full">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Text to Speech Converter</h1>
         
         <textarea

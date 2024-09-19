@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default function Header(props) {
   const [appProp, setAppProp] = useState(props.app);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const fadeOut = () => {
@@ -16,15 +15,6 @@ export default function Header(props) {
 
     fadeOut();
   }, [props.app]);
-
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
 
   return (
       <div className='bg-black p-4 py-6 relative top-0 left-0 w-full z-50 flex flex-col lg:flex-row lg:items-center items-center '>
