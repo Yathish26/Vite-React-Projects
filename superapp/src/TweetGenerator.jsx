@@ -90,8 +90,8 @@ export default function TweetGenerator() {
     return (
         <>
             <div className='w-full min-h-screen bg-gradient-to-tr from-blue-800 to-blue-500 flex justify-center items-center'>
-                <div className={`w-3/5 h-fit mo:w-full bg-gray-300 p-2 rounded-lg flex flex-col gap-2 ${theme} my-4 `}>
-                    <div className='w-full bg-white h-fit flex rounded justify-center p-4 '>
+                <div className={`w-3/5 h-fit mo:w-full mo:bg-transparent bg-gray-300 p-2 rounded-lg flex flex-col gap-2 ${theme} my-4 `}>
+                    <div className='w-full bg-white h-fit flex rounded justify-center p-4  '>
                         <div ref={exportRef} className=' dark:bg-black dark:border-black bg-white flex border w-[600px]  p-4 font-system'>
                             <div className='mr-2 min-w-fit'>
                                 {profimage ?

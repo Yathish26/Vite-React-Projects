@@ -103,7 +103,7 @@ export default function InstagramPostGenerator() {
         <>
             <div className='min-h-screen w-screen flex justify-center items-center bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'>
                 <div className={`mo:flex-col  mo:items-center mo:gap-8 flex ${theme}`}>
-                    <div className=' mo:ml-4 mo:mr-4 mo:mt-4 border-8 w-fit h-fit rounded-md'>
+                    <div className=' mo:ml-4 mo:mr-4 mo:mt-4 mo:border-none border-8 w-fit h-fit rounded-md'>
                         <div ref={exportRef} className='dark:bg-black bg-white'>
                             {/* Upper Part */}
                             <div className='flex justify-between items-center px-4 py-2'>
@@ -175,7 +175,7 @@ export default function InstagramPostGenerator() {
 
                         <div className='w-full flex justify-between items-center '>
                             {/* <button onClick={handleTheme} className='border rounded bg-black text-white px-2 py-1'>{theme ? 'Light Mode': 'Dark Mode'}</button> */}
-                            <select value={theme} onChange={handleTheme} className='border py-3 px-12 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-fit' defaultValue={'Theme'}>
+                            <select value={theme} onChange={handleTheme} className='border py-3 px-12 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-fit' >
                                 <option value="light">Light</option>
                                 <option value="dark">Dark</option>
                             </select>
