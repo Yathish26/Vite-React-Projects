@@ -225,7 +225,7 @@ export default function Journey() {
         gsap.fromTo(arrowRef.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 2, delay: 1.5, ease: 'bounce.out', repeat: -1 });
         gsap.fromTo('.head', { y: -150 }, { y: 0, duration: 1.2, ease: 'power2.out' });
         gsap.to(pyref.current, {
-            y: 0,
+            y: -300,
             x: -900,
             duration: 1,
             ease: 'power1.inOut',  // Smoother ease for gliding effect
@@ -242,7 +242,7 @@ export default function Journey() {
         });
         gsap.to(flaskref.current, {
             y: 0,
-            x: -900,
+            x: 900,
             duration: 1,
             ease: 'power1.inOut',  // Smoother ease for gliding effect
             scrollTrigger: {
@@ -274,7 +274,7 @@ export default function Journey() {
         });
         gsap.to(jsref.current, {
             y: 0,
-            x: -900,
+            x: 900,
             duration: 1,
             ease: 'power1.inOut',  // Smoother ease for gliding effect
             scrollTrigger: {
@@ -306,7 +306,7 @@ export default function Journey() {
         });
         gsap.to(reactref.current, {
             y: 0,
-            x: -900,
+            x: 900,
             duration: 1,
             ease: 'power1.inOut',  // Smoother ease for gliding effect
             scrollTrigger: {
@@ -338,7 +338,7 @@ export default function Journey() {
         });
         gsap.to(noderef.current, {
             y: 0,
-            x: -900,
+            x: 900,
             duration: 1,
             ease: 'power1.inOut',  // Smoother ease for gliding effect
             scrollTrigger: {

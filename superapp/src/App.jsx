@@ -54,6 +54,7 @@ function App() {
         <Route path='/apps/tweet-generator' element={<Applications/>}/>
         <Route path='/apps/text-case-converter' element={<Applications/>}/>
         <Route path='/apps/qr-generator' element={<Applications/>}/>
+        <Route path='/apps/gambling' element={<Applications/>}/>
       </Routes>
     </>
   )

@@ -8,6 +8,7 @@ import Text2speech from './Text2speech';
 import TweetGenerator from './TweetGenerator';
 import CaseConverter from './CaseConverter';
 import QRgenerator from './QRgenerator';
+import Gamble from './Gamble';
 
 export default function Applications() {
     const [isUnitopen, setIsUnitopen] = useState(false);
@@ -231,6 +232,12 @@ export default function Applications() {
                                             <p className=''>QR Code Generator</p>
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link to={'/apps/gambling'} className="hover:text-blue-300 flex gap-2 items-center">
+                                            <img className='w-6 h-6' src="/apps/gamble.svg" alt="" />
+                                            <p className=''>Wheel of Fortune</p>
+                                        </Link>
+                                    </li>
                                     {/* Add more submenu items here */}
                                 </ul>
                             )}
@@ -246,6 +253,7 @@ export default function Applications() {
                 {location.pathname === '/apps/tweet-generator' && <TweetGenerator />}
                 {location.pathname === '/apps/text-case-converter' && <CaseConverter />}
                 {location.pathname === '/apps/qr-generator' && <QRgenerator />}
+                {location.pathname === '/apps/gambling' && <Gamble />}
             </div>
         </>
     );
