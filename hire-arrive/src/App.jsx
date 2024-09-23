@@ -12,6 +12,8 @@ import TermsofService from './TermsofService';
 import PrivacyPolicy from './Privacypolicy';
 import Login from './Login';
 import Register from './Register';
+import UserProfile from './UserProfile';
+import EditProfile from './EditProfile';
 
 function MainApp() {
   const url = useLocation(); 
@@ -31,6 +33,8 @@ function MainApp() {
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register/>}/>
+        <Route path='/user' element={<UserProfile/>}/>
+        <Route path='/user/editprofile' element={<EditProfile/>}/>
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>
