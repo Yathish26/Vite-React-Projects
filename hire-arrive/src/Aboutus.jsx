@@ -14,7 +14,7 @@ export default function AboutUs() {
 
                 {/* Our Mission */}
                 <section className="mb-12">
-                    <h2 className="text-3xl font-semibold mb-6">Our Mission</h2>
+                    <h2 className="text-3xl text-center font-semibold mb-6">Our Mission</h2>
                     <p className="text-lg max-w-2xl mx-auto">
                         Our mission is to revolutionize the industry with innovative solutions and exceptional service. We strive to be leaders in our field and create lasting impacts through our work.
                     </p>
@@ -22,25 +22,19 @@ export default function AboutUs() {
 
                 {/* Our Team */}
                 <section className="mb-12">
-                    <h2 className="text-3xl font-semibold mb-6">Meet Our Team</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <h2 className="text-3xl text-center font-semibold mb-6">Meet Our Team</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                            <img src="path/to/team-member1.jpg" alt="Team Member 1" className="w-24 h-24 rounded-full mx-auto mb-4"/>
-                            <h3 className="text-xl font-semibold mb-2">John Doe</h3>
-                            <p className="text-gray-400">CEO</p>
-                            <p className="mt-4">John is the visionary behind our company, driving our mission forward with a passion for innovation and excellence.</p>
+                            <img src="/creator_images/yathish.jpg" alt="Team Member 1" className="w-24 h-24 rounded-full object-cover mx-auto mb-4"/>
+                            <h3 className="text-xl text-center font-semibold mb-2">Yathish Acharya</h3>
+                            <p className="text-gray-400 text-center">Building</p>
+                            <p className="mt-4">Yathish is Building Hire Arrive Adding New Features and making it upto date from Bugs</p>
                         </div>
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                            <img src="path/to/team-member2.jpg" alt="Team Member 2" className="w-24 h-24 rounded-full mx-auto mb-4"/>
-                            <h3 className="text-xl font-semibold mb-2">Jane Smith</h3>
-                            <p className="text-gray-400">CTO</p>
-                            <p className="mt-4">Jane leads our tech team, bringing cutting-edge solutions and ensuring our products remain at the forefront of technology.</p>
-                        </div>
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                            <img src="path/to/team-member3.jpg" alt="Team Member 3" className="w-24 h-24 rounded-full mx-auto mb-4"/>
-                            <h3 className="text-xl font-semibold mb-2">Emily Johnson</h3>
-                            <p className="text-gray-400">COO</p>
-                            <p className="mt-4">Emily ensures our operations run smoothly and efficiently, making sure every client receives top-notch service.</p>
+                            <img src="/creator_images/justin.jpg" alt="Team Member 2" className="w-24 h-24 rounded-full object-cover mx-auto mb-4"/>
+                            <h3 className="text-xl text-center font-semibold mb-2">Justin D'souza</h3>
+                            <p className="text-center text-gray-400">Marketing</p>
+                            <p className="mt-4">Justin Leads the Marketing of Hire Arrive getting us more reach and customers and elightening the sales</p>
                         </div>
                     </div>
                 </section>

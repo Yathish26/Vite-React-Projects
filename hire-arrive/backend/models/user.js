@@ -20,6 +20,22 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  businessName:{
+    type: String,
+    default: '',
+  },
+  description: {
+    type: String,
+    default: '',
+  },
+  contactEmail: {
+    type: String,
+    default: '',
+  },
+  phoneNumber: {
+    type: String,
+    default: '',
+  },
 });
 
 // Pre-save hook to hash passwords before saving to DB

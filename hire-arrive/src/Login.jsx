@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <div className="min-h-[90vh] flex items-center justify-center bg-gray-900">
-      <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-md">
+      <div className="w-full max-w-md mo:m-4 bg-gray-800 p-8 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold text-center text-purple-700 mb-6">Login</h1>
         {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
         <form className="space-y-4" onSubmit={handleSubmit}>
