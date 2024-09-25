@@ -76,7 +76,7 @@ function Header() {
 
 
             try {
-                const response = await fetch('http://localhost:5000/api/auth/user', {
+                const response = await fetch('https://ytx-hire-arrive-a1ddd7b53764.herokuapp.com/api/auth/user', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }

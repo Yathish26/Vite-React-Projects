@@ -13,7 +13,7 @@ export default function Login() {
     setErrorMessage(''); // Reset error message
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://ytx-hire-arrive-a1ddd7b53764.herokuapp.com/api/auth/login', {
         email,
         password,
       });

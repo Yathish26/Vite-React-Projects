@@ -15,7 +15,7 @@ export default function Listing() {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/auth/user', {
+        const response = await axios.get('https://ytx-hire-arrive-a1ddd7b53764.herokuapp.com/api/auth/user', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data); // Set user data from the response
@@ -38,7 +38,7 @@ export default function Listing() {
   
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put('http://localhost:5000/api/auth/user', user, {
+      const response = await axios.put('https://ytx-hire-arrive-a1ddd7b53764.herokuapp.com/api/auth/user', user, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(response.data); // Update local state with the updated user data
