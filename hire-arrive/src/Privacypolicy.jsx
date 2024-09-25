@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 
 export default function PrivacyPolicy() {
   const updatedDate = '01/09/2024'
   const companyname = 'Hire Arrive'
   const compmail = 'f9oqB@example.com'
   const website = 'https://www.hirearrive.vercel.app'
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <div className="bg-gray-900 text-gray-300 p-6 md:p-12">

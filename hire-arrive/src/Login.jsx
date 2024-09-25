@@ -18,8 +18,8 @@ export default function Login() {
         password,
       });
 
-      console.log(response.data); // Store the token or handle post-login here
-      localStorage.setItem('token', response.data.token);
+      // console.log(response.data); // Store the token or handle post-login here
+      localStorage.setItem('token', response.data.token); 
       navigate('/'); // Redirect to home or another route after login
     } catch (error) {
       if (error.response && error.response.data) {

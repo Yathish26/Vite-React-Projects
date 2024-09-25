@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Services() {
     const services = [
@@ -11,6 +11,10 @@ export default function Services() {
         "IT Solutions"
         // Add more services here as needed
     ];
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
     return (
         <div className="bg-gray-900 text-white min-h-screen py-8 px-4">

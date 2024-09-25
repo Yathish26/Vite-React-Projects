@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function AboutUs() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
+
     return (
         <div className="bg-gray-900 text-white min-h-screen py-8 px-4">
             <div className="container mx-auto">
@@ -25,13 +30,13 @@ export default function AboutUs() {
                     <h2 className="text-3xl text-center font-semibold mb-6">Meet Our Team</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                            <img src="/creator_images/yathish.jpg" alt="Team Member 1" className="w-24 h-24 rounded-full object-cover mx-auto mb-4"/>
+                            <img src="/creator_images/yathish.jpg" alt="Team Member 1" className="w-24 h-24 rounded-full object-cover mx-auto mb-4" />
                             <h3 className="text-xl text-center font-semibold mb-2">Yathish Acharya</h3>
                             <p className="text-gray-400 text-center">Building</p>
                             <p className="mt-4">Yathish is Building Hire Arrive Adding New Features and making it upto date from Bugs</p>
                         </div>
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                            <img src="/creator_images/justin.jpg" alt="Team Member 2" className="w-24 h-24 rounded-full object-cover mx-auto mb-4"/>
+                            <img src="/creator_images/justin.jpg" alt="Team Member 2" className="w-24 h-24 rounded-full object-cover mx-auto mb-4" />
                             <h3 className="text-xl text-center font-semibold mb-2">Justin D'souza</h3>
                             <p className="text-center text-gray-400">Marketing</p>
                             <p className="mt-4">Justin Leads the Marketing of Hire Arrive getting us more reach and customers and elightening the sales</p>

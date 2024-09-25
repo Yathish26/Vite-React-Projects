@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Contact Information */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
                         <p className="mb-2">Address: 1234 Your Street, City, Country</p>
                         <p className="mb-2">Phone: +123 456 7890</p>
@@ -17,7 +17,7 @@ export default function Footer() {
                             <a href="https://twitter.com" className="text-purple-400 hover:underline">Twitter</a>
                             <a href="https://linkedin.com" className="text-purple-400 hover:underline">LinkedIn</a>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Navigation Links */}
                     <div>
@@ -37,7 +37,7 @@ export default function Footer() {
                         <ul>
                             <li className="mb-2"><Link to="/privacy-policy" className="text-purple-400 hover:underline">Privacy Policy</Link></li>
                             <li className="mb-2"><Link to="/terms-of-service" className="text-purple-400 hover:underline">Terms of Service</Link></li>
-                            <li className="mb-4">© 2024 Your Company Name</li>
+                            <li className="mb-4">© 2024 Hire Arrive</li>
                         </ul>
                     </div>
                 </div>

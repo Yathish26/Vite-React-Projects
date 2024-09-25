@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Contact() {
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
+
     return (
         <div className="bg-gray-900 text-white min-h-screen py-8 px-4">
             <div className="container mx-auto">
