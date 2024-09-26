@@ -11,6 +11,8 @@ import PhotoEditor from './PhotoEditor'
 import Passwordgenerator from './Passwordgenerator'
 import Applications from './Applications'
 import Parallaxt from './Parallax'
+import Games from './Games'
+import Snake from './Games/Snake'
 
 function App() {
   const location = useLocation();
@@ -55,6 +57,8 @@ function App() {
         <Route path='/apps/text-case-converter' element={<Applications/>}/>
         <Route path='/apps/qr-generator' element={<Applications/>}/>
         <Route path='/apps/gambling' element={<Applications/>}/>
+        <Route path='/games' element={<Games/>}/>
+        <Route path='/games/snake-xenzia' element={<Snake/>}/>
       </Routes>
     </>
   )

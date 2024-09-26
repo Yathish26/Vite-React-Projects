@@ -70,6 +70,10 @@ export default function Header(props) {
                   <img className='w-6 h-6 mr-2' src="/icons/moreapps.svg" alt="More Apps" />
                   More Apps
                 </Link>
+                <Link to={'/games'} className='flex items-center p-3'>
+                  <img className='w-6 h-6 mr-2' src="/icons/games.svg" alt="Games" />
+                  Games (BETA)
+                </Link>
               </div>
             </li>
             {/* -------------------------Apps Section Close------------------------- */}
