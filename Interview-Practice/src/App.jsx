@@ -2,6 +2,7 @@ import React from "react"
 import Countrylist from "./Countrylist"
 import Deletelist from "./Deletelist"
 import Radio from "./Radio"
+import Search from "./Search"
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
       <Countrylist/>
       <Deletelist/>
       <Radio/>
+      <Search/>
     </>
   )
 }
