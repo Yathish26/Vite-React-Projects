@@ -10,7 +10,7 @@ export default function EditProfile() {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://https://hire-arrive-server.onrender.com/api/auth/user', {
+        const response = await axios.get('https://hire-arrive-server.onrender.com/api/auth/user', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data);
@@ -33,7 +33,7 @@ export default function EditProfile() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put('https://https://hire-arrive-server.onrender.com/api/auth/user', user, {
+      const response = await axios.put('https://hire-arrive-server.onrender.com/api/auth/user', user, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(response.data); // Update local state with the updated user

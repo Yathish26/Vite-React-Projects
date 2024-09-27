@@ -79,7 +79,7 @@ function Header() {
             }
 
             try {
-                const response = await fetch('https://https://hire-arrive-server.onrender.com/api/auth/user', {
+                const response = await fetch('https://hire-arrive-server.onrender.com/api/auth/user', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }

@@ -13,7 +13,7 @@ export default function Login() {
     setErrorMessage(''); // Reset error message
 
     try {
-      const response = await axios.post('https://https://hire-arrive-server.onrender.com/api/auth/login', {
+      const response = await axios.post('https://hire-arrive-server.onrender.com/api/auth/login', {
         email,
         password,
       });
