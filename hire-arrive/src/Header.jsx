@@ -17,7 +17,6 @@ function Header() {
 
     const login = url.pathname === '/login' || url.pathname === '/register';
 
-    // Fetch the reverse geocode based on the user's coordinates
 
 
     useEffect(() => {
@@ -31,7 +30,7 @@ function Header() {
                 })
                 .catch(error => console.log('Error fetching location:', error));
         }
-    }, [login ,location]);
+    }, [login, location]);
 
     // Get the user's current location using the browser's geolocation API
     useEffect(() => {
@@ -68,17 +67,17 @@ function Header() {
     }, [menu]);
 
 
-    
+
 
     useEffect(() => {
         // Fetch user data (replace with your API endpoint)
         const fetchUserData = async () => {
-            const   token = localStorage.getItem('token');
+            const token = localStorage.getItem('token');
 
-            if(!token) {
-                navigate('/login');
-                return;
-            }
+            // if (!token) {
+            //     navigate('/login');
+            //     return;
+            // }
 
             try {
                 const response = await fetch('https://hire-arrive-server.onrender.com/api/auth/user', {
