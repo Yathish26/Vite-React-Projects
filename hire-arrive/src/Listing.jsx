@@ -155,7 +155,7 @@ export default function Listing() {
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen flex items-center mo:items-start justify-center p-4">
+    <div className="bg-gray-900 min-h-[80vh] flex items-center mo:items-start justify-center p-4">
       {token ?
         (<div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full">
           <h2 className="text-3xl font-bold text-white mb-6">Register Your Work / Business</h2>
