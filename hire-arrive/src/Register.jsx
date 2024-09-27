@@ -59,7 +59,7 @@ export default function Register() {
     if (!isFormValid) return;
 
     try {
-      const response = await fetch('https://ytx-hire-arrive-a1ddd7b53764.herokuapp.com/api/auth/register', {
+      const response = await fetch('https://https://hire-arrive-server.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
