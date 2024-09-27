@@ -18,8 +18,10 @@ function Header() {
     const login = url.pathname === '/login' || url.pathname === '/register';
 
     // Fetch the reverse geocode based on the user's coordinates
+
+
     useEffect(() => {
-        if (location.lat && location.lon) {
+        if (!login && location.lat && location.lon) {
             fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${location.lat}&lon=${location.lon}&apiKey=4626726a7987421297b4a38a4a88cf6c`)
                 .then(response => response.json())
                 .then(result => {
@@ -29,7 +31,7 @@ function Header() {
                 })
                 .catch(error => console.log('Error fetching location:', error));
         }
-    }, [location]);
+    }, [login ,location]);
 
     // Get the user's current location using the browser's geolocation API
     useEffect(() => {
@@ -71,7 +73,7 @@ function Header() {
     useEffect(() => {
         // Fetch user data (replace with your API endpoint)
         const fetchUserData = async () => {
-            const token = localStorage.getItem('token');
+            const   token = localStorage.getItem('token');
 
             if(!token) {
                 navigate('/login');

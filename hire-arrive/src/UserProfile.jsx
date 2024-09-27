@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
   const [showContact, setShowContact] = useState(false); // To toggle phone number visibility
+  const [loading, setLoading] = useState(true); // Loading state
 
   const navigate = useNavigate();
-  
 
   useEffect(() => {
     // Fetch user data (replace with your API endpoint)
     const fetchUserData = async () => {
       const token = localStorage.getItem('token');
-
-      
 
       try {
         const response = await fetch('https://hire-arrive-server.onrender.com/api/auth/user', {
@@ -26,24 +24,51 @@ export default function UserProfile() {
         setUser(data); // Assuming the response has the user object
       } catch (error) {
         console.error('Error fetching user data:', error);
+      } finally {
+        setLoading(false); // Set loading to false after fetching
       }
     };
 
     fetchUserData();
   }, []);
 
-  // Function to log out the user
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Clear the token
-    setUser(null); // Clear user state
-    navigate('/login'); // Redirect to login page
+    localStorage.removeItem('token');
+    setUser(null);
+    navigate('/login');
   };
+
+  // Loading spinner component
+  const LoadingSpinner = () => (
+    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+      <div className="relative flex items-center justify-center">
+        <div className="animate-spin h-12 w-12 border-4 border-t-4 border-purple-700 border-t-transparent rounded-full">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-700 to-purple-500 opacity-30"></div>
+        </div>
+        <div className="absolute h-10 w-10 rounded-full bg-purple-700 opacity-60"></div>
+      </div>
+    </div>
+  );
+  
+
+  if (loading) {
+    return <LoadingSpinner />; // Show loading spinner while fetching data
+  }
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-900 flex items-center pb-48 justify-center">
         <div className="text-center">
-          <p className="text-white text-lg mb-4">You are not logged in.</p>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <circle cx="12" cy="10" r="3" fill="#ffffff"></circle>
+              <circle cx="12" cy="12" r="9" stroke="#ffffff" strokeWidth="1.2"></circle>
+              <path d="M17.8719 18.8083C17.9489 18.7468 17.9799 18.6436 17.9452 18.5513C17.5693 17.5518 16.8134 16.6706 15.7814 16.0332C14.6966 15.3632 13.3674 15 12 15C10.6326 15 9.30341 15.3632 8.21858 16.0332C7.18663 16.6706 6.43066 17.5518 6.05477 18.5513C6.02009 18.6436 6.05115 18.7468 6.12813 18.8083C9.56196 21.552 14.438 21.552 17.8719 18.8083Z" fill="#2A4157" fillOpacity="0.24" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round"></path>
+            </g>
+          </svg>
+          <p className="text-white text-lg mb-4">Sign In to see the User Profile</p>
           <Link
             to="/login"
             className="bg-purple-700 text-white py-2 px-4 rounded hover:bg-purple-800 transition duration-300"
