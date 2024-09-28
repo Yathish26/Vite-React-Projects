@@ -101,7 +101,7 @@ export default function UserProfile() {
 
         {/* User Bio Section */}
         <div className="mb-6">
-          <h3 className="text-lg font-semibold text-purple-700">About</h3>
+          <h3 className="text-lg font-semibold text-purple-700">Bio</h3>
           <p className="text-gray-300">
             {user.bio ? user.bio : 'No bio available'}
           </p>

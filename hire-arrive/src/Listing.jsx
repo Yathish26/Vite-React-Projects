@@ -9,6 +9,7 @@ export default function Listing() {
     businessName: '',
     description: '',
     workcategory: '',
+    prefferedLocation: '',
     phoneNumber: '',
   });
 
@@ -60,19 +61,17 @@ export default function Listing() {
     'Painter',
     'Plumber',
     'Carpenter',
-    'Mason',
+    'Cargo Truck Driver',
     'AC Technician',
     'Locksmith',
-    'Roofing',
-    'Flooring',
-    'Handyman',
-    'Landscaping',
-    'Tree Service',
-    'Fencing',
-    'Siding',
-    'Gutter Cleaning',
+    'Goldsmith',
+    'Home Cleaning',
+    'Photographer',
+    'Car Washing',
     'Window Cleaning',
     'Pressure Washing',
+    'Driver',
+    'Laundry Services',
   ];
 
   const workCategory = [
@@ -107,6 +106,7 @@ export default function Listing() {
     'Pharmaceutical',
     'Real Estate',
     'Retail',
+    'Student',
     'Telecommunications',
     'Transportation',
     'Travel & Tourism',
@@ -229,6 +229,19 @@ export default function Listing() {
                 <option value="" disabled>Select a category</option>
                 {workCategory.map((work, id) => (<option key={id} value={work}>{work}</option>))}
               </select>
+            </div>
+            <div>
+              <label htmlFor="preferredLocation" className="block text-gray-300 font-semibold mb-2">Service Location</label>
+              <input
+                id="preferredLocation"
+                name="preferredLocation"
+                type="text"
+                value={user.prefferedLocation}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
+                placeholder="Area of Business"
+                required
+              />
             </div>
             <div>
               <label htmlFor="phoneNumber" className="block text-gray-300 font-semibold mb-2">Phone Number</label>

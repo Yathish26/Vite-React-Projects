@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-function Header() {
+export function Header() {
     // const [menu, setMenu] = useState(true);
     // const [logorotate, setlogorotate] = useState(true);
     // const menuRef = useRef(null);
