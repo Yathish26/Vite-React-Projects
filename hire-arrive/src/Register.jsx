@@ -12,7 +12,7 @@ export default function Register() {
   const [passMessage, setPassMessage] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState(''); // New state for success message
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
@@ -36,7 +36,7 @@ export default function Register() {
   };
 
   const validateForm = (passwordValue) => {
-    const isPasswordValid = passwordValue.length >= 10 && spclchars.some((char) => passwordValue.includes(char));
+    const isPasswordValid = passwordValue.length >= 8 ;
     const isEmailValid = email.includes('@') && email.includes('.');
     const isNameValid = name.trim().length > 0;
 
