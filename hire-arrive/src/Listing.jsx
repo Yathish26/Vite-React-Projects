@@ -9,7 +9,7 @@ export default function Listing() {
     businessName: '',
     description: '',
     workcategory: '',
-    prefferedLocation: '',
+    location: '',
     phoneNumber: '',
   });
 
@@ -33,7 +33,7 @@ export default function Listing() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({ ...prevUser, [name]: value })); // Update the user state
-    setSuccessMessage(''); // Clear success message on change
+    setSuccessMessage('');
   };
 
   const handleSubmit = async (e) => {
@@ -231,12 +231,12 @@ export default function Listing() {
               </select>
             </div>
             <div>
-              <label htmlFor="preferredLocation" className="block text-gray-300 font-semibold mb-2">Service Location</label>
+              <label htmlFor="location" className="block text-gray-300 font-semibold mb-2">Service Location</label>
               <input
-                id="preferredLocation"
-                name="preferredLocation"
+                id="location"
+                name="location"
                 type="text"
-                value={user.prefferedLocation}
+                value={user.location}
                 onChange={handleChange}
                 className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
                 placeholder="Area of Business"
@@ -248,12 +248,18 @@ export default function Listing() {
               <input
                 id="phoneNumber"
                 name="phoneNumber"
-                type="tel"
-                value={user.phoneNumber} // Changed from formData to user
+                type="number"
+                value={user.phoneNumber}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
+                className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none appearance-none hover:cursor-text"
                 placeholder="Enter your phone number"
                 required
+                onWheel={(e) => e.target.blur()} // Prevent scrolling
+                onKeyDown={(e) => {
+                  if (e.key === 'e' || e.key === 'E' || e.key === '-') {
+                    e.preventDefault(); // Prevent entering 'e', 'E', or '-'
+                  }
+                }}
               />
             </div>
             {successMessage ? <Submitted /> : errorMessage ? <Error /> : (
