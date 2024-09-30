@@ -90,7 +90,7 @@ export default function Applications() {
 
 
                             {isUnitopen && (
-                                <ul className="r mt-4 ml-8 rounded  space-y-2 flex flex-col gap-2">
+                                <ul className="r mt-4 ml-8 rounded mo:hidden  space-y-2 flex flex-col gap-2">
                                     <li>
                                         <Link to={'/apps/weightconverter'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/weight.svg" alt="" />
@@ -110,7 +110,7 @@ export default function Applications() {
                     </ul>
                     {/* ------------------------------------------------------------------------------------------------------------------- */}
                     <ul className="flex flex-col my-2 space-y-4">
-                        <li className="flex flex-col">
+                        <li className="flex flex-col mo:justify-center mo:items-center">
                             <div
                                 className="flex items-center cursor-pointer justify-between mo:justify-start"
                                 onClick={() => setIsSocialopen(!isSocialopen)}
@@ -135,7 +135,7 @@ export default function Applications() {
 
 
                             {isSocialopen && (
-                                <ul className="r mt-4 ml-8 rounded  space-y-2 flex flex-col gap-2">
+                                <ul className="r mt-4 ml-8 rounded mo:hidden space-y-2 flex flex-col gap-2">
                                     <li>
                                         <Link to={'/apps/instagram-post-generator'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/insta.svg" alt="" />
@@ -186,7 +186,7 @@ export default function Applications() {
 
 
                             {istextopen && (
-                                <ul className="r mt-4 ml-8 rounded  space-y-2 flex flex-col gap-2">
+                                <ul className="r mt-4 ml-8 rounded mo:hidden space-y-2 flex flex-col gap-2">
                                     <li>
                                         <Link to={'/apps/text-case-converter'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/textconv.svg" alt="" />
@@ -225,7 +225,7 @@ export default function Applications() {
 
 
                             {isothertools && (
-                                <ul className="r mt-4 ml-8 rounded  space-y-2 flex flex-col gap-2">
+                                <ul className="r mt-4 ml-8 rounded mo:hidden space-y-2 flex flex-col gap-2">
                                     <li>
                                         <Link to={'/apps/qr-generator'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/qrcode.svg" alt="" />
@@ -245,6 +245,77 @@ export default function Applications() {
                     </ul>
 
                 </nav>
+                {/* This Down options is for the Mobile Menu Responsive */}
+                <div className='hidden mo:block' >
+                    {isUnitopen && (
+                        <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
+                            <li>
+                                <Link to={'/apps/weightconverter'} className="hover:text-blue-300 flex gap-2 items-center">
+                                    <img className='w-6 h-6' src="/apps/weight.svg" alt="" />
+                                    <p className='text-white'>Weight Converter</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/apps/currencyconverter'} className="hover:text-blue-300 flex gap-2">
+                                    <img className='w-6 h-6' src="/apps/currency.svg" alt="" />
+                                    <p className='text-white'>Currency Converter</p>
+                                </Link>
+                            </li>
+                            {/* Add more submenu items here */}
+                        </ul>
+                    )}
+                    {isSocialopen && (
+                        <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
+                            <li>
+                                <Link to={'/apps/instagram-post-generator'} className="hover:text-blue-300 flex gap-2 items-center">
+                                    <img className='w-6 h-6' src="/apps/insta.svg" alt="" />
+                                    <p className='text-white'>Instagram Post Generator</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/apps/tweet-generator'} className="hover:text-blue-300 flex gap-2">
+                                    <img className='w-6 h-6' src="/apps/tweet.svg" alt="" />
+                                    <p className='text-white'>Tweet Generator</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/apps/text-to-speech'} className="hover:text-blue-300 flex gap-2">
+                                    <img className='w-6 h-6' src="/apps/text2speech.svg" alt="" />
+                                    <p className='text-white'>Text to Speech</p>
+                                </Link>
+                            </li>
+                            {/* Add more submenu items here */}
+                        </ul>
+                    )}
+                    {istextopen && (
+                        <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
+                            <li>
+                                <Link to={'/apps/text-case-converter'} className="hover:text-blue-300 flex gap-2 items-center">
+                                    <img className='w-6 h-6' src="/apps/textconv.svg" alt="" />
+                                    <p className='text-white'>Text Case Converters</p>
+                                </Link>
+                            </li>
+                            {/* Add more submenu items here */}
+                        </ul>
+                    )}
+                    {isothertools && (
+                        <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
+                            <li>
+                                <Link to={'/apps/qr-generator'} className="hover:text-blue-300 flex gap-2 items-center">
+                                    <img className='w-6 h-6' src="/apps/qrcode.svg" alt="" />
+                                    <p className='text-white'>QR Code Generator</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/apps/gambling'} className="hover:text-blue-300 flex gap-2 items-center">
+                                    <img className='w-6 h-6' src="/apps/gamble.svg" alt="" />
+                                    <p className='text-white'>Wheel of Fortune</p>
+                                </Link>
+                            </li>
+                            {/* Add more submenu items here */}
+                        </ul>
+                    )}
+                </div>
                 {location.pathname === "/apps" && <AppUI />}
                 {location.pathname === "/apps/currencyconverter" && <Currency />}
                 {location.pathname === "/apps/weightconverter" && <Weight />}
