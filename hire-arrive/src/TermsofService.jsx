@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react'
+import TermSheet from './terms'
 
 export default function TermsofService() {
-  const updatedDate = '01/09/2024'
+  const updatedDate = '01/10/2024'
   const companyname = 'Hire Arrive'
-  const compmail = 'f9oqB@example.com'
-  const website = 'https://www.hirearrive.vercel.app'
-  const Jurisdiction = 'Karnataka High Court'
-  const Jurisdictionstate = 'Karnataka'
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -23,57 +20,36 @@ export default function TermsofService() {
       </h2>
 
       <ul className="list-disc list-inside space-y-6">
-        <li className="font-semibold text-xl text-purple-500">Acceptance of Terms</li>
-        <p className="ml-6">By accessing this website, we assume you accept these terms and conditions. Do not continue to use {companyname} if you do not agree to take all of the terms and conditions stated on this page.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Data Collection</li>
-        <p className="ml-6">- Personal Data: When you register on our website, subscribe to our newsletter, or fill out a form, you may be asked to provide personal information such as your name, email address, and other relevant details.</p>
-        <p className="ml-6">- Non-Personal Data: We may collect non-personal information such as browser type, device information, and other anonymous data to enhance user experience.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Use of Collected Data</li>
-        <p className="ml-6">- Purpose: The data collected is used to improve our services, provide customer support, and communicate with users.</p>
-        <p className="ml-6">- Data Sharing: We do not share your personal information with third parties except for partners who help us in operating our website and conducting our business, provided those parties agree to keep this information confidential.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Cookies</li>
-        <p className="ml-6">We employ the use of cookies. By accessing {companyname}, you agreed to use cookies in agreement with the {companyname}'s Privacy Policy. Cookies are used to enhance the user experience, and you can choose to disable cookies via your browser settings.</p>
-
-        <li className="font-semibold text-xl text-purple-500">User Responsibilities</li>
-        <p className="ml-6">- Account Security: Users are responsible for maintaining the confidentiality of their account information, including passwords.</p>
-        <p className="ml-6">- Prohibited Activities: Users agree not to engage in activities that could harm the website, other users, or violate applicable laws.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Intellectual Property</li>
-        <p className="ml-6">All content provided on this website, including text, graphics, logos, and images, is the intellectual property of {companyname}. You may not reproduce or distribute any content without our explicit permission.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Limitation of Liability</li>
-        <p className="ml-6">{companyname} shall not be held liable for any damages arising out of the use or inability to use the website, including but not limited to direct, indirect, incidental, punitive, and consequential damages.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Changes to Terms and Conditions</li>
-        <p className="ml-6">We reserve the right to modify these terms and conditions at any time. Changes will be posted on this page, and continued use of the website implies acceptance of the modified terms.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Governing Law</li>
-        <p className="ml-6">These terms and conditions are governed by and construed in accordance with the laws of {Jurisdiction}, and you submit to the non-exclusive jurisdiction of the courts located in {Jurisdictionstate} for the resolution of any disputes.</p>
-
-        <li className="font-semibold text-xl text-purple-500">Contact Information</li>
-        <p className="ml-6">If you have any questions about these terms, please contact us at <a href={`mailto:${compmail}`} className="text-purple-500 underline hover:text-purple-400">{compmail}</a></p>
-
+        {TermSheet.map((term, index) => (
+          <Terms
+            key={index}
+            title={term.title}
+            p={term.p}
+            p1={term.p1}
+            p2={term.p2}
+            p3={term.p3}
+            p4={term.p4}
+            p5={term.p5}
+            p6={term.p6}
+          />
+        ))}
       </ul>
     </div>
   )
 }
 
-const Terms = (props) => {
-  const { title, clause, nonclause, clients, workers, finaltip, example } = props;
-
+const Terms = ({ title, p, p1, p2, p3, p4, p5, p6 }) => {
   return (
     <>
       {title && <li className="font-semibold text-xl text-purple-500">{title}</li>}
-      {clause && <p className="ml-6">Clause -{clause}</p>}
-      {nonclause && <p className="ml-6">Non Sharing Clause -{nonclause}</p>}
-      {clients && <p className="ml-6">For Clients -{clients}</p>}
-      {workers && <p className="ml-6">For Workers -{workers}</p>}
-      {finaltip && <p className="ml-6">Final Tip -{finaltip}</p>}
-      {example && <p className="ml-6">Example -{example}</p>}
 
+      {p && <p className="ml-6">- {p}</p>}
+      {p1 && <p className="ml-6">- {p1}</p>}
+      {p2 && <p className="ml-6">- {p2}</p>}
+      {p3 && <p className="ml-6">- {p3}</p>}
+      {p4 && <p className="ml-6">- {p4}</p>}
+      {p5 && <p className="ml-6">- {p5}</p>}
+      {p6 && <p className="ml-6">- {p6}</p>}
     </>
   )
 }
