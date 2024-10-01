@@ -3,7 +3,7 @@ import React, { useEffect} from 'react'
 export default function PrivacyPolicy() {
   const updatedDate = '01/09/2024'
   const companyname = 'Hire Arrive'
-  const compmail = 'f9oqB@example.com'
+  const compmail = 'hirearrive@proton.me'
   const website = 'https://www.hirearrive.vercel.app'
 
   useEffect(()=>{

@@ -20,34 +20,37 @@ export default function Contact() {
                 {/* Contact Information */}
                 <section className="mb-12">
                     <h2 className="text-3xl font-semibold mb-6">Contact Information</h2>
-                    <div className="space-y-6">
+                    <div className="space-y-6 ">
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold mb-2">Address</h3>
-                            <p className="text-gray-400">1234 Your Street, Your City, Your Country</p>
+                            <p className="text-gray-400">Kinnigoli</p>
+                            <p className="text-gray-400">Mangalore,DK</p>
+                            <p className="text-gray-400">Karnataka IN</p>
+                            <p className="text-gray-400">574150</p>
                         </div>
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                        {/* <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold mb-2">Phone Number</h3>
                             <p className="text-gray-400">+123 456 7890</p>
-                        </div>
+                        </div> */}
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold mb-2">Email Address</h3>
                             <p className="text-gray-400">
-                                <a href="mailto:info@yourdomain.com" className="text-purple-400 hover:underline">info@yourdomain.com</a>
+                                <a href="mailto:hirearrive@proton.me" className="text-purple-400 hover:underline">hirearrive@proton.me</a>
                             </p>
                         </div>
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
                             <div className="flex space-x-4">
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Facebook</a>
-                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Twitter</a>
-                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">LinkedIn</a>
+                                {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Facebook</a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Twitter</a> */}
+                                <a href="https://www.instagram.com/hire_arrive/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Instagram</a>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Contact Form */}
-                <section>
+                {/* <section>
                     <h2 className="text-3xl font-semibold mb-6">Send Us a Message</h2>
                     <form className="bg-gray-800 p-8 rounded-lg shadow-lg">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -66,7 +69,7 @@ export default function Contact() {
                         </div>
                         <button type="submit" className="bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500">Send Message</button>
                     </form>
-                </section>
+                </section> */}
             </div>
         </div>
     );
