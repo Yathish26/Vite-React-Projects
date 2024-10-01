@@ -29,6 +29,14 @@ function App() {
     '/photoeditor':'/ Photo Editor',
     '/passwordgenerator':'/ Password Generator',
     '/apps':'/ Applications',
+    '/games':'/ Games',
+    '/apps/weightconverter':'/ Weight Converter',
+    '/apps/currencyconverter':'/ Currency Converter',
+    '/apps/instagram-post-generator':'/ Insta Generator',
+    '/apps/tweet-generator':'/ Tweet Generator',
+    '/apps/text-to-speech':'/ Text <-> Speech',
+    '/apps/text-case-converter':'/ Text Case Converter',
+    '/apps/qr-generator':'/ QR Generator',
   };
 
   const appProp = appPropMap[location.pathname] || '';

@@ -77,7 +77,7 @@ export default function Profile() {
 
 
           <div>
-            <h2 className="text-2xl font-semibold mt-8 mb-2">Skills</h2>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">Tools I work with</h2>
             <ul className="list-disc list-inside grid grid-cols-2 gap-6">
               {skills.map((skill, index) => (
                 <li key={index} className="flex items-center">
