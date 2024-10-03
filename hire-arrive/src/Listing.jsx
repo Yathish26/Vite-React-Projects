@@ -14,6 +14,8 @@ export default function Listing() {
   });
 
   const token = localStorage.getItem('token')
+  console.log(token ? 'Yes': 'No');
+  
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -197,7 +199,7 @@ export default function Listing() {
 
                     {/* Tooltip */}
                     <div className="hidden group-hover:block absolute right-0 bottom-full mb-2 w-48 p-2 bg-gray-700 text-white text-sm rounded-lg shadow-lg">
-                      Suggestion: Enter the full name of your business, e.g., "Tech Solutions Inc."
+                      Suggestion: Enter the full name of your business
                     </div>
                   </div>
                 </div>
