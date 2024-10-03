@@ -55,7 +55,7 @@ export default function UserProfile() {
     return <LoadingSpinner />; // Show loading spinner while fetching data
   }
 
-  if (!token) {
+  if (!user) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center pb-48 justify-center">
         <div className="text-center">
