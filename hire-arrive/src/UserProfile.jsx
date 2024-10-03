@@ -7,9 +7,9 @@ export default function UserProfile() {
   const [loading, setLoading] = useState(true); // Loading state
 
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    // Fetch user data (replace with your API endpoint)
     const fetchUserData = async () => {
       const token = localStorage.getItem('token');
 
@@ -55,7 +55,7 @@ export default function UserProfile() {
     return <LoadingSpinner />; // Show loading spinner while fetching data
   }
 
-  if (!user) {
+  if (!token) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center pb-48 justify-center">
         <div className="text-center">
@@ -89,11 +89,6 @@ export default function UserProfile() {
       <div className="bg-gray-800 rounded-lg shadow-md mo:mt-16 p-8 w-96">
         {/* User Profile Section */}
         <div className="flex flex-col items-center mb-6">
-          {/* <img
-            src="https://via.placeholder.com/150"
-            alt="Profile"
-            className="w-32 h-32 rounded-full border-4 border-purple-700 mb-4"
-          /> */}
           <svg className="w-32 h-32 rounded-full border-4 border-purple-700 mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" strokeWidth="0.00024000000000000003"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.5" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="#ffffff"></path> <path d="M16.807 19.0112C15.4398 19.9504 13.7841 20.5 12 20.5C10.2159 20.5 8.56023 19.9503 7.193 19.0111C6.58915 18.5963 6.33109 17.8062 6.68219 17.1632C7.41001 15.8302 8.90973 15 12 15C15.0903 15 16.59 15.8303 17.3178 17.1632C17.6689 17.8062 17.4108 18.5964 16.807 19.0112Z" fill="#ffffff"></path> <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3432 6 9.00004 7.34315 9.00004 9C9.00004 10.6569 10.3432 12 12 12Z" fill="#ffffff"></path> </g></svg>
           <h2 className="text-2xl font-bold text-white">{user.name}</h2>
           <p className="text-gray-400">{user.email}</p>
