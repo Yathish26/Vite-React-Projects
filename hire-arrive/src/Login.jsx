@@ -61,14 +61,17 @@ export default function Login() {
           </div>
           <button 
             type="submit" 
-            className="w-full py-2 mt-4 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-lg transition duration-300"
+            className="w-full py-3 mt-4 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-lg transition duration-300"
           >
             Sign In
           </button>
         </form>
-        <Link to={'/register'}>
-          <p className='text-center text-gray-300 mt-3 hover:text-purple-700 cursor-pointer'>Create Account</p>
+        <div className='w-full flex justify-center'>
+          <Link to={'/register'}>
+          <button className='bg-gray-700 rounded-lg py-2 px-6 w-full text-center text-white mt-3 hover:bg-purple-800 cursor-pointer'>Create Account</button>
         </Link>
+        </div>
+        
       </div>
     </div>
   );
