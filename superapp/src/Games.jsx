@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Games() {
-  // Sample list of games (you can replace this with dynamic data)
   const games = [
     { id: 1, title: 'Snake Xenzia', img: '/gameimages/snake.jpg' },
     { id: 2, title: 'Game Two', img: 'https://via.placeholder.com/150' },
