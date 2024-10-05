@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;    
+
+
+@font-face {
+    font-family: 'Montreal';
+    src: url('/src/fonts/Neue Montreal/NeueMontreal-Regular.otf') format('truetype'); 
+  }
+  
+
