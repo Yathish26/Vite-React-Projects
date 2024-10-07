@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-export default function Airport() {
+export default function Search() {
     return (
         <>
-            <div className='flex flex-col gap-4 justify-center items-center p-6'>
-                <h1 className='font-montreal  text-[32px]'>Good Afternoon, Brian</h1>
+            <div className='flex flex-col gap-4 h-screen w-full items-center p-6'>
+                <h1 className='font-montreal mt-28  text-[32px]'>Good Afternoon, Brian</h1>
                 <div className='w-fit h-[252px] flex flex-col gap-6  p-6 border border-[#E6E8EB] rounded-[12px] shadow-[0px_1px_11px_3px_#0000000F]'>
                     <div className='flex flex-col gap-4'>
                         <div className='bg-[#F5F7FA] w-[127px] h-[36px] rounded-[6px] font-montreal text-[#000C0B] flex justify-center items-center font-semibold text-[16px]'>Flights</div>

@@ -1,10 +1,12 @@
-import Airport from "./Airport"
+import ResultLoad from "./ResultLoad"
+import Search from "./Search"
 
 function App() {
 
   return (
     <>
-      <Airport/>
+      <Search/>
+      <ResultLoad/>
     </>
   )
 }
