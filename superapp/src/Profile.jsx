@@ -27,11 +27,28 @@ export default function Profile() {
     { name: 'Illustrator', logo: 'illustrator' },
   ];
 
+  // Projects Data
+  const projects = [
+    {
+      title: 'Hire Arrive',
+      description: 'Hire Arrive is a service startup where users can connect with service providers.',
+      previewLink: 'https://hirearrive.in',
+      image: '/projects/hirearrive.png',
+      theme: 'purple'
+    },
+    {
+      title: 'Axios Portfolio',
+      description: 'A personal portfolio that showcases multiple React apps with API Integrations.',
+      previewLink: 'https://axiosx.vercel.app',
+      image: '/projects/axios.png',
+      theme: 'blue'
+    },
+  ];
+
   const handlePinSubmit = (event) => {
     event.preventDefault();
     if (pin === '2603') {
       setContactVisible(true);
-      setDOBVisible(true);
       setModalIsOpen(false);
     } else {
       alert('Incorrect PIN');
@@ -72,21 +89,60 @@ export default function Profile() {
 
         <div className="text-lg space-y-4 flex flex-col ">
 
-
-
-
-
+          {/* Skills Section */}
           <div>
             <h2 className="text-2xl font-semibold mt-8 mb-4">Tools I work with</h2>
-            <ul className="list-disc list-inside grid grid-cols-2 gap-6">
+            <ul className="list-disc list-inside grid grid-cols-3 gap-4">
               {skills.map((skill, index) => (
                 <li key={index} className="flex items-center">
-                  <img src={`skillcon/${skill.logo}.svg`} alt={skill.name} className="w-8 h-8 mr-3" />
-                  <span className="font-semibold text-lg">{skill.name}</span>
+                  <img src={`skillcon/${skill.logo}.svg`} alt={skill.name} className="w-6 h-6 mr-2" />
+                  <span className="font-semibold text-md">{skill.name}</span>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Projects Section */}
+          <div className="mt-8">
+            <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="relative bg-gray-800 bg-opacity-80 p-4 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+                >
+                  {/* Gradient overlay on container */}
+                  <div className={`absolute inset-0 bg-gradient-to-r from-${project.theme}-900 to-black-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+                  <div className="relative z-10">
+                    {/* Image */}
+                    <div className="overflow-hidden rounded-lg">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover transition-transform duration-300 transform group-hover:scale-110"
+                      />
+                    </div>
+
+                    {/* Project Details */}
+                    <h3 className="text-xl font-bold mt-4">{project.title}</h3>
+                    <p className="text-sm text-gray-300 mb-4">{project.description}</p>
+
+                    {/* Preview Button */}
+                    <a
+                      href={project.previewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white bg-opacity-20 text-white border border-red-500 px-5 py-2 rounded-full hover:bg-opacity-30 transition-colors duration-300 backdrop-blur-md shadow-lg"
+                    >
+                      Preview Project
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 

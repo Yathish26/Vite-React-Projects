@@ -8,7 +8,8 @@ import Text2speech from './Text2speech';
 import TweetGenerator from './TweetGenerator';
 import CaseConverter from './CaseConverter';
 import QRgenerator from './QRgenerator';
-import Gamble from './Gamble';
+import Gamble from './Bgremove';
+import Bgremove from './Bgremove';
 
 export default function Applications() {
     const [isUnitopen, setIsUnitopen] = useState(false);
@@ -324,7 +325,7 @@ export default function Applications() {
                 {location.pathname === '/apps/tweet-generator' && <TweetGenerator />}
                 {location.pathname === '/apps/text-case-converter' && <CaseConverter />}
                 {location.pathname === '/apps/qr-generator' && <QRgenerator />}
-                {location.pathname === '/apps/gambling' && <Gamble />}
+                {location.pathname === '/apps/gambling' && <Bgremove />}
             </div>
         </>
     );
