@@ -13,18 +13,16 @@ export default function Profile() {
   const skills = [
     { name: 'React JS', logo: 'react' },
     { name: 'Django', logo: 'django' },
-    { name: 'Django REST', logo: 'djangorest' },
+    { name: 'Django REST', logo: 'rest.jpg' },
     { name: 'Node JS', logo: 'nodejs' },
     { name: 'JavaScript', logo: 'javascript' },
     { name: 'Python', logo: 'python' },
-    { name: 'HTML', logo: 'html' },
-    { name: 'CSS', logo: 'css' },
     { name: 'MongoDB', logo: 'mongodb' },
     { name: 'PostgreSQL', logo: 'postgresql' },
     { name: 'Git', logo: 'git' },
     { name: 'Tailwind CSS', logo: 'tailwind' },
-    { name: 'Bootstrap', logo: 'bootstrap' },
-    { name: 'Illustrator', logo: 'illustrator' },
+    { name: 'GoLang', logo: 'go' },
+    { name: 'C++', logo: 'cpp' },
   ];
 
   // Projects Data
@@ -41,6 +39,13 @@ export default function Profile() {
       description: 'A personal portfolio that showcases multiple React apps with API Integrations.',
       previewLink: 'https://axiosx.vercel.app',
       image: '/projects/axios.png',
+      theme: 'blue'
+    },
+    {
+      title: 'Telegram Bot',
+      description: 'A Bot which has conversion tools and Media downloaders from Youtube Instagram and more',
+      previewLink: 'https://t.me/masterwingbot',
+      image: '/projects/wing.png',
       theme: 'blue'
     },
   ];
@@ -94,9 +99,9 @@ export default function Profile() {
             <h2 className="text-2xl font-semibold mt-8 mb-4">Tools I work with</h2>
             <ul className="list-disc list-inside grid grid-cols-3 gap-4">
               {skills.map((skill, index) => (
-                <li key={index} className="flex items-center">
-                  <img src={`skillcon/${skill.logo}.svg`} alt={skill.name} className="w-6 h-6 mr-2" />
-                  <span className="font-semibold text-md">{skill.name}</span>
+                <li key={index} className="flex items-center pmo:justify-center">
+                  <img src={`skillcon/${skill.logo}${skill.logo.endsWith('.jpg') ? '' : '.svg'}`} alt={skill.name} className="w-6 h-6 mr-2 pmo:w-12 pmo:h-12" />
+                  <span className="font-semibold text-md pmo:hidden">{skill.name}</span>
                 </li>
               ))}
             </ul>

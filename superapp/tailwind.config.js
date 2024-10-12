@@ -5,6 +5,7 @@ export default {
     extend: {
       screens: {
         'mo':{'max':'1000px'},
+        'pmo':{'max':'550px'},
       },
       height:{
         '90vh':'90vh',

@@ -236,7 +236,7 @@ export default function Applications() {
                                     <li>
                                         <Link to={'/apps/gambling'} className="hover:text-blue-300 flex gap-2 items-center">
                                             <img className='w-6 h-6' src="/apps/gamble.svg" alt="" />
-                                            <p className=''>Wheel of Fortune</p>
+                                            <p className=''>Image BG Remove</p>
                                         </Link>
                                     </li>
                                     {/* Add more submenu items here */}
@@ -310,7 +310,7 @@ export default function Applications() {
                             <li>
                                 <Link to={'/apps/gambling'} className="hover:text-blue-300 flex gap-2 items-center">
                                     <img className='w-6 h-6' src="/apps/gamble.svg" alt="" />
-                                    <p className='text-white'>Wheel of Fortune</p>
+                                    <p className='text-white'>Image BG Remove</p>
                                 </Link>
                             </li>
                             {/* Add more submenu items here */}
