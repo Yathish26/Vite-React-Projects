@@ -13,6 +13,7 @@ import Applications from './Applications'
 import Parallaxt from './Parallax'
 import Games from './Games'
 import Snake from './Games/Snake'
+import Sudoku from './Games/Sudoku'
 
 function App() {
   const location = useLocation();
@@ -37,6 +38,8 @@ function App() {
     '/apps/text-to-speech':'/ Text <-> Speech',
     '/apps/text-case-converter':'/ Text Case Converter',
     '/apps/qr-generator':'/ QR Generator',
+    '/apps/audio-trimmer':'/ Audio Trimmer',
+    '/apps/image-bg-remove':'/ Image Background Remove',
   };
 
   const appProp = appPropMap[location.pathname] || '';
@@ -64,9 +67,11 @@ function App() {
         <Route path='/apps/tweet-generator' element={<Applications/>}/>
         <Route path='/apps/text-case-converter' element={<Applications/>}/>
         <Route path='/apps/qr-generator' element={<Applications/>}/>
-        <Route path='/apps/gambling' element={<Applications/>}/>
+        <Route path='/apps/audio-trimmer' element={<Applications/>}/>
+        <Route path='/apps/image-bg-remove' element={<Applications/>}/>
         <Route path='/games' element={<Games/>}/>
         <Route path='/games/snake-xenzia' element={<Snake/>}/>
+        <Route path='/games/sudoku' element={<Sudoku/>}/>
       </Routes>
     </>
   )

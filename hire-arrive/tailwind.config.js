@@ -7,6 +7,7 @@ export default {
     extend: {
       screens: {
         'mo': { 'max': '1000px' },
+        'mo2': { 'max': '450px' },
       },
       fontFamily: {
         spartan: ['League Spartan', 'sans-serif'],

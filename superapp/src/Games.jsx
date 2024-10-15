@@ -3,7 +3,7 @@ import React from 'react';
 export default function Games() {
   const games = [
     { id: 1, title: 'Snake Xenzia', img: '/gameimages/snake.jpg' },
-    { id: 2, title: 'Game Two', img: 'https://via.placeholder.com/150' },
+    { id: 2, title: 'Sudoku', img: 'https://via.placeholder.com/150' },
     { id: 3, title: 'Game Three', img: 'https://via.placeholder.com/150' },
     { id: 4, title: 'Game Four', img: 'https://via.placeholder.com/150' },
     { id: 5, title: 'Game Five', img: 'https://via.placeholder.com/150' },
