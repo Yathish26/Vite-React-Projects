@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex items-center mo:items-start justify-center p-6">
+      {/* <div className="min-h-screen bg-gray-100 flex items-center mo:items-start justify-center p-6">
         <div className="max-w-3xl bg-white shadow-lg rounded-lg p-8 text-center">
           <h1 className="text-4xl font-bold text-purple-700 mb-4">Welcome to Hire Arrive</h1>
           <p className="text-lg text-gray-700 mb-6">
@@ -26,7 +26,7 @@ export default function Home() {
             option above to get started.
           </p>
         </div>
-      </div>
+      </div> */}
       {/* -----------------------------Home Section Update------------------------------- */}
 
       {/* Search Bar */}
