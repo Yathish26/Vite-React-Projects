@@ -1,10 +1,10 @@
 const services = {
-    "Agriculture and Farming": {
-      icon: "/categories/agriculture.svg"
-    },
-    "Landscaping and Gardening": {
-      icon: "/categories/gardening.svg"
-    },
+    // "Agriculture and Farming": {
+    //   icon: "/categories/agriculture.svg"
+    // },
+    // "Landscaping and Gardening": {
+    //   icon: "/categories/gardening.svg"
+    // },
     "Construction and Building": {
       icon: "/categories/construction.svg"
     },
@@ -20,18 +20,18 @@ const services = {
     "Carpentry and Woodwork": {
       icon: "/categories/carpentry.svg"
     },
-    "Flooring and Tiling": {
-      icon: "/categories/flooring.svg"
-    },
-    "Maintenance and Repair": {
-      icon: "/categories/repair.svg"
-    },
-    "Specialized Craftwork": {
-      icon: "/categories/craftwork.svg"
-    },
-    "Cleaning and Waste Management": {
-      icon: "/categories/cleaning.svg"
-    },
+    // "Flooring and Tiling": {
+    //   icon: "/categories/flooring.svg"
+    // },
+    // "Maintenance and Repair": {
+    //   icon: "/categories/repair.svg"
+    // },
+    // "Specialized Craftwork": {
+    //   icon: "/categories/craftwork.svg"
+    // },
+    // "Cleaning and Waste Management": {
+    //   icon: "/categories/cleaning.svg"
+    // },
     "Automotive and Mechanical": {
       icon: "/categories/mechanical.svg"
     },
@@ -44,9 +44,9 @@ const services = {
     "Security and Surveillance": {
       icon: "/categories/security.svg"
     },
-    "Roofing and Insulation": {
-      icon: "/categories/roofing.svg"
-    },
+    // "Roofing and Insulation": {
+    //   icon: "/categories/roofing.svg"
+    // },
     "Energy and Utilities": {
       icon: "/categories/energy.svg"
     },
@@ -56,9 +56,9 @@ const services = {
     "Transport and Logistics": {
       icon: "/categories/transport.svg"
     },
-    "Glass and Glazing Services": {
-      icon: "/categories/glass.svg"
-    }
+    // "Glass and Glazing Services": {
+    //   icon: "/categories/glass.svg"
+    // }
   };
 
   export default services;
