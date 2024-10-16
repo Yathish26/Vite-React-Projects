@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import LoadingSpinner from './smallcomponents/Loading.jsx';
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
@@ -38,21 +39,10 @@ export default function UserProfile() {
     navigate('/login');
   };
 
-  // Loading spinner component
-  const LoadingSpinner = () => (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
-      <div className="relative flex items-center justify-center">
-        <div className="animate-spin h-12 w-12 border-4 border-t-4 border-purple-700 border-t-transparent rounded-full">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-700 to-purple-500 opacity-30"></div>
-        </div>
-        <div className="absolute h-10 w-10 rounded-full bg-purple-700 opacity-60"></div>
-      </div>
-    </div>
-  );
 
 
   if (loading) {
-    return <LoadingSpinner />; // Show loading spinner while fetching data
+    return <LoadingSpinner />; 
   }
 
   if (!user) {

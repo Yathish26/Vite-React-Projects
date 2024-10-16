@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import { useLocation } from 'react-router-dom';
 import services from '../categories';
+import LoadingSpinner from '../smallcomponents/Loading';
 
 export default function CategoryUI() {
     const [constructors, setConstructors] = useState([]);
+    const [loading, setLoading] = useState(true);
     const url = useLocation();
     const currentCategory = url.pathname.split('/')[1];
+
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+      },[])
 
     // Get category based on current URL path
     const rowCategory = Object.values(services).find(serv => serv.location === `/${currentCategory}`)?.alias;
@@ -24,14 +30,19 @@ export default function CategoryUI() {
                         // Filter by the dynamic category
                         const filteredData = result.data.filter((row) => row.Category === rowCategory);
                         setConstructors(filteredData);
+                        setLoading(false);
                     },
                 });
             });
     }, [rowCategory]);  // Added rowCategory as a dependency to rerun when it changes
 
+    if (loading) {
+        return <LoadingSpinner />; // Show spinner while loading
+    }
+
     return (
         <div className="min-h-screen bg-gray-700 text-white p-8">
-            <h1 className="text-4xl font-bold text-purple-700 mb-6 text-center">{rowCategory} Listings</h1>
+            <h1 className="text-4xl font-bold text-white mb-6 text-center">{rowCategory} Listings</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {constructors.map((constructor, index) => (
                     <div
