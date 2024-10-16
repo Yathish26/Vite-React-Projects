@@ -14,6 +14,7 @@ import Login from './Login';
 import Register from './Register';
 import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
+import Construction from './Categories/Construction';
 
 function MainApp() {
   const url = useLocation(); 
@@ -35,6 +36,18 @@ function MainApp() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/user' element={<UserProfile/>}/>
         <Route path='/user/editprofile' element={<EditProfile/>}/>
+        <Route path='/construction' element={<Construction/>}/>
+        <Route path='/electrical' element={<Construction/>}/>
+        <Route path='/plumbing' element={<Construction/>}/>
+        <Route path='/painting' element={<Construction/>}/>
+        <Route path='/carpenter' element={<Construction/>}/>
+        <Route path='/mechanical' element={<Construction/>}/>
+        <Route path='/welding' element={<Construction/>}/>
+        <Route path='/pestcontrol' element={<Construction/>}/>
+        <Route path='/security' element={<Construction/>}/>
+        <Route path='/energy' element={<Construction/>}/>
+        <Route path='/event' element={<Construction/>}/>
+        <Route path='/transport' element={<Construction/>}/>
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>

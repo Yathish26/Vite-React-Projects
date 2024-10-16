@@ -47,12 +47,14 @@ export default function Home() {
       {/* Categories Section */}
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 m-8">
         {Object.keys(services).map((service, index) => (
-          <div className="p-6 flex flex-col justify-center items-center bg-gray-100 rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer" key={index}>
-            <img src={services[service].icon} alt={service} className="w-24 h-24 mx-auto mb-4 mo2:mb-0" />
-            <h3 className="text-xl font-semibold mo2:hidden text-purple-700">
-              {service}
-            </h3>
-          </div>
+          <Link to={services[service].location} key={index}>
+            <div className="p-6 flex flex-col justify-center items-center bg-gray-100 rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer" key={index}>
+              <img src={services[service].icon} alt={service} className="w-24 h-24 mx-auto mb-4 mo2:mb-0" />
+              <h3 className="text-xl font-semibold mo2:hidden text-purple-700">
+                {service}
+              </h3>
+            </div>
+          </Link>
         ))}
       </div>
     </>
