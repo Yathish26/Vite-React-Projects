@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import { useLocation } from 'react-router-dom';
 import services from '../categories';
 
-export default function Construction() {
+export default function CategoryUI() {
     const [constructors, setConstructors] = useState([]);
     const url = useLocation();
     const currentCategory = url.pathname.split('/')[1];

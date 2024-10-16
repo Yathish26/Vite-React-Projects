@@ -14,7 +14,7 @@ import Login from './Login';
 import Register from './Register';
 import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
-import Construction from './Categories/Construction';
+import CategoryUI from './Categories/CategoryUI';
 
 function MainApp() {
   const url = useLocation(); 
@@ -36,18 +36,18 @@ function MainApp() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/user' element={<UserProfile/>}/>
         <Route path='/user/editprofile' element={<EditProfile/>}/>
-        <Route path='/construction' element={<Construction/>}/>
-        <Route path='/electrical' element={<Construction/>}/>
-        <Route path='/plumbing' element={<Construction/>}/>
-        <Route path='/painting' element={<Construction/>}/>
-        <Route path='/carpenter' element={<Construction/>}/>
-        <Route path='/mechanical' element={<Construction/>}/>
-        <Route path='/welding' element={<Construction/>}/>
-        <Route path='/pestcontrol' element={<Construction/>}/>
-        <Route path='/security' element={<Construction/>}/>
-        <Route path='/energy' element={<Construction/>}/>
-        <Route path='/event' element={<Construction/>}/>
-        <Route path='/transport' element={<Construction/>}/>
+        <Route path='/construction' element={<CategoryUI/>}/>
+        <Route path='/electrical' element={<CategoryUI/>}/>
+        <Route path='/plumbing' element={<CategoryUI/>}/>
+        <Route path='/painting' element={<CategoryUI/>}/>
+        <Route path='/carpenter' element={<CategoryUI/>}/>
+        <Route path='/mechanical' element={<CategoryUI/>}/>
+        <Route path='/welding' element={<CategoryUI/>}/>
+        <Route path='/pestcontrol' element={<CategoryUI/>}/>
+        <Route path='/security' element={<CategoryUI/>}/>
+        <Route path='/energy' element={<CategoryUI/>}/>
+        <Route path='/event' element={<CategoryUI/>}/>
+        <Route path='/transport' element={<CategoryUI/>}/>
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>
