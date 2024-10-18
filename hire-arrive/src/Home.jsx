@@ -44,6 +44,7 @@ export default function Home() {
   // Clear search term and results
   const handleClear = useCallback(() => {
     setSearchTerm('');
+    setDebouncedTerm('');
     setClear(false);
   }, []);
 
