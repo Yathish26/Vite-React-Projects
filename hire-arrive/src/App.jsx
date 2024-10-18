@@ -15,10 +15,13 @@ import Register from './Register';
 import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
 import CategoryUI from './Categories/CategoryUI';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function MainApp() {
-  const url = useLocation(); 
+  const url = useLocation();
   const login = url.pathname === '/login' || url.pathname === '/register';
+
+
 
   return (
     <>
@@ -33,21 +36,21 @@ function MainApp() {
         <Route path='/terms-of-service' element={<TermsofService />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/user' element={<UserProfile/>}/>
-        <Route path='/user/editprofile' element={<EditProfile/>}/>
-        <Route path='/construction' element={<CategoryUI/>}/>
-        <Route path='/electrical' element={<CategoryUI/>}/>
-        <Route path='/plumbing' element={<CategoryUI/>}/>
-        <Route path='/painting' element={<CategoryUI/>}/>
-        <Route path='/carpenter' element={<CategoryUI/>}/>
-        <Route path='/mechanical' element={<CategoryUI/>}/>
-        <Route path='/welding' element={<CategoryUI/>}/>
-        <Route path='/pestcontrol' element={<CategoryUI/>}/>
-        <Route path='/security' element={<CategoryUI/>}/>
-        <Route path='/energy' element={<CategoryUI/>}/>
-        <Route path='/event' element={<CategoryUI/>}/>
-        <Route path='/transport' element={<CategoryUI/>}/>
+        <Route path='/register' element={<Register />} />
+        <Route path='/user' element={<UserProfile />} />
+        <Route path='/user/editprofile' element={<EditProfile />} />
+        <Route path='/construction' element={<CategoryUI />} />
+        <Route path='/electrical' element={<CategoryUI />} />
+        <Route path='/plumbing' element={<CategoryUI />} />
+        <Route path='/painting' element={<CategoryUI />} />
+        <Route path='/carpenter' element={<CategoryUI />} />
+        <Route path='/mechanical' element={<CategoryUI />} />
+        <Route path='/welding' element={<CategoryUI />} />
+        <Route path='/pestcontrol' element={<CategoryUI />} />
+        <Route path='/security' element={<CategoryUI />} />
+        <Route path='/energy' element={<CategoryUI />} />
+        <Route path='/event' element={<CategoryUI />} />
+        <Route path='/transport' element={<CategoryUI />} />
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>
@@ -55,10 +58,13 @@ function MainApp() {
 }
 
 function App() {
+  const clientId = '515733859331-52g64ecis313qso8ejdtbjhlcbohnfg2.apps.googleusercontent.com';
   return (
-    <BrowserRouter>
-      <MainApp />
-    </BrowserRouter>
+    <GoogleOAuthProvider clientId={clientId}>
+      <BrowserRouter>
+        <MainApp />
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 

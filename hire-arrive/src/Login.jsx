@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import GoogleSignIn from './GoogleSignIn'; // Import the GoogleSignIn component
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ export default function Login() {
         password,
       });
 
-      // console.log(response.data); // Store the token or handle post-login here
+      // Store the token or handle post-login here
       localStorage.setItem('token', response.data.token); 
       navigate('/'); // Redirect to home or another route after login
     } catch (error) {
@@ -31,9 +32,32 @@ export default function Login() {
     }
   };
 
+  // Handle Google Sign-In success
+  const handleGoogleSignInSuccess = async (credentialResponse) => {
+    try {
+      const { credential } = credentialResponse;
+      // You can send the credential to your backend for verification
+      const response = await axios.post('https://hire-arrive-server.onrender.com/api/auth/google-login', {
+        idToken: credential, // Adjust this based on your backend implementation
+      });
+
+      // Store the token or handle post-login here
+      localStorage.setItem('token', response.data.token); 
+      navigate('/'); // Redirect to home or another route after login
+    } catch (error) {
+      setErrorMessage('Google sign-in failed. Please try again.');
+      console.error('Google Sign-In Error:', error);
+    }
+  };
+
+  const handleGoogleSignInFailure = (error) => {
+    setErrorMessage('Google sign-in failed. Please try again.');
+    console.error('Google Sign-In Error:', error);
+  };
+
   return (
     <div className="min-h-[90vh] flex items-center justify-center bg-gray-900">
-      <div className="w-full max-w-md mo:m-4 bg-gray-800 p-8 rounded-lg shadow-md">
+      <div className="w-full max-w-md m-4 bg-gray-800 p-8 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold text-center text-purple-700 mb-6">Login</h1>
         {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -65,13 +89,14 @@ export default function Login() {
           >
             Sign In
           </button>
+          {/* Google Sign-In Component */}
+          <GoogleSignIn onSuccess={handleGoogleSignInSuccess} onFailure={handleGoogleSignInFailure} />
         </form>
         <div className='w-full flex justify-center'>
           <Link to={'/register'}>
-          <button className='bg-gray-700 rounded-lg py-2 px-6 w-full text-center text-white mt-3 hover:bg-purple-800 cursor-pointer'>Create Account</button>
-        </Link>
+            <button className='bg-gray-700 rounded-lg py-2 px-6 w-full text-center text-white mt-3 hover:bg-purple-800 cursor-pointer'>Create Account</button>
+          </Link>
         </div>
-        
       </div>
     </div>
   );
