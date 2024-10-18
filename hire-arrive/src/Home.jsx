@@ -123,7 +123,7 @@ export default function Home() {
             <Link to={services[service].location} key={index}>
               <div className="p-6 flex flex-col justify-center items-center bg-gray-100 rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
                 <img src={services[service].icon} alt={service} className="w-24 h-24 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-purple-700">{service}</h3>
+                <h3 className="text-xl mo2:hidden font-semibold text-purple-700">{service}</h3>
               </div>
             </Link>
           ))}
