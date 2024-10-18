@@ -51,6 +51,11 @@ function MainApp() {
         <Route path='/energy' element={<CategoryUI />} />
         <Route path='/event' element={<CategoryUI />} />
         <Route path='/transport' element={<CategoryUI />} />
+        <Route path='/interiordesigners' element={<CategoryUI />} />
+        <Route path='/ac-repair' element={<CategoryUI />} />
+        <Route path='/carpenters' element={<CategoryUI />} />
+        <Route path='/cleaning' element={<CategoryUI />} />
+        <Route path='/home-renovation' element={<CategoryUI />} />
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>
