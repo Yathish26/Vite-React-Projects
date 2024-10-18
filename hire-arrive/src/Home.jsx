@@ -100,7 +100,7 @@ export default function Home() {
               </div>
               <div className="flex items-center mt-2">
                 <img className="w-4 h-4 mr-2" src="/logos/call.svg" alt="Contact:" />
-                <p className="text-gray-400">Contact: {result.Contact}</p>
+                <p className="text-gray-400">{result.Contact}</p>
               </div>
               <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
                 {result.Category}
