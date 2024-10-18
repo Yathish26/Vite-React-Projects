@@ -89,8 +89,10 @@ export default function Login() {
           >
             Sign In
           </button>
-          {/* Google Sign-In Component */}
-          <GoogleSignIn onSuccess={handleGoogleSignInSuccess} onFailure={handleGoogleSignInFailure} />
+          <div className='flex justify-center'>
+            <GoogleSignIn onSuccess={handleGoogleSignInSuccess} onFailure={handleGoogleSignInFailure} />
+          </div>
+          
         </form>
         <div className='w-full flex justify-center'>
           <Link to={'/register'}>
