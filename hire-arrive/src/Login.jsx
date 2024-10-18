@@ -38,7 +38,7 @@ export default function Login() {
       const { credential } = credentialResponse;
       // You can send the credential to your backend for verification
       const response = await axios.post('https://hire-arrive-server.onrender.com/api/auth/google-login', {
-        idToken: credential, // Adjust this based on your backend implementation
+        token: credential, 
       });
 
       // Store the token or handle post-login here
