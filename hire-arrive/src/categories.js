@@ -1,9 +1,4 @@
 const services = {
-    // "Construction and Building": {
-    //   icon: "/categories/construction.svg",
-    //   location: "/construction",
-    //   alias: "Construction",
-    // },
     "Electricians": {
       icon: "/categories/electrical.svg",
       location: "/electrical",
@@ -14,46 +9,11 @@ const services = {
       location: "/plumbing",
       alias: "Plumbers",
     },
-    // "Carpentry and Woodwork": {
-    //   icon: "/categories/carpentry.svg",
-    //   location: "/carpenter",
-    //   alias: "Carpenter",
-    // },
-    // "Automotive and Mechanical": {
-    //   icon: "/categories/mechanical.svg",
-    //   location: "/mechanical",
-    //   alias: "Mechanical",
-    // },
-    // "Welding and Metalwork": {
-    //   icon: "/categories/welding.svg",
-    //   location: "/welding",
-    //   alias: "Welding",
-    // },
     "Pest Control Services": {
       icon: "/categories/pest.svg",
       location: "/pestcontrol",
       alias: "Pest Control",
     },
-    // "Security and Surveillance": {
-    //   icon: "/categories/security.svg",
-    //   location: "/security",
-    //   alias: "Security",
-    // },
-    // "Energy and Utilities": {
-    //   icon: "/categories/energy.svg",
-    //   location: "/energy",
-    //   alias: "Energy",
-    // },
-    // "Event and Stage Setup": {
-    //   icon: "/categories/event.svg",
-    //   location: "/event",
-    //   alias: "Event",
-    // },
-    // "Transport and Logistics": {
-    //   icon: "/categories/transport.svg",
-    //   location: "/transport",
-    //   alias: "Logistics",
-    // },
     "Interior Designer": {
       icon: "/categories/interiordesign.svg",
       location: "/interiordesigners",
@@ -88,6 +48,61 @@ const services = {
       icon: "/categories/homerenovation.svg",
       location: "/home-renovation",
       alias: "Home Renovation",
+    },
+    "Counselor": {
+      icon: "/categories/counselor.svg",
+      location: "/counselors",
+      alias: "Counselors",
+    },
+    "Dentists": {
+      icon: "/categories/dentist.svg",
+      location: "/dentists",
+      alias: "Dentists",
+    },
+    "Dieticians": {
+      icon: "/categories/diet.svg",
+      location: "/dieticians",
+      alias: "Dieticians",
+    },
+    "Doctors": {
+      icon: "/categories/doctor.svg",
+      location: "/doctors",
+      alias: "Doctors",
+    },
+    "Massage Therapy": {
+      icon: "/categories/massage.svg",
+      location: "/massage-therapists",
+      alias: "Massage Therapists",
+    },
+    "Nursing": {
+      icon: "/categories/nursing.svg",
+      location: "/nursing",
+      alias: "Nursing",
+    },
+    "Personal Trainer": {
+      icon: "/categories/trainer.svg",
+      location: "/personal-trainer",
+      alias: "Personal Trainers",
+    },
+    "Physiotherapists": {
+      icon: "/categories/physiotherapists.svg",
+      location: "/physiotherapists",
+      alias: "Physiotherapists",
+    },
+    "Psychologists": {
+      icon: "/categories/psychologists.svg",
+      location: "/psychologists",
+      alias: "Psychologists",
+    },
+    "Spa Services": {
+      icon: "/categories/spa.svg",
+      location: "/spa-Services",
+      alias: "Spa Services",
+    },
+    "Yoga Instructors": {
+      icon: "/categories/yoga.svg",
+      location: "/yoga-instructors",
+      alias: "Yoga Instructors",
     },
   };
 
