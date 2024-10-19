@@ -67,6 +67,15 @@ function MainApp() {
         <Route path='/psychologists' element={<CategoryUI />} />
         <Route path='/spa-services' element={<CategoryUI />} />
         <Route path='/yoga-instructors' element={<CategoryUI />} />
+        <Route path='/car-repair' element={<CategoryUI />} />
+        <Route path='/bike-repair' element={<CategoryUI />} />
+        <Route path='/car-wash' element={<CategoryUI />} />
+        <Route path='/towing' element={<CategoryUI />} />
+        <Route path='/driving-schools' element={<CategoryUI />} />
+        <Route path='/vehicle-rental' element={<CategoryUI />} />
+        <Route path='/tyre-battery' element={<CategoryUI />} />
+        <Route path='/auto-mechanics' element={<CategoryUI />} />
+        <Route path='/roadside-assistance' element={<CategoryUI />} />
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>

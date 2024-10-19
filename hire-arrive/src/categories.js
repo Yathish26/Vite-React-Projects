@@ -104,6 +104,56 @@ const services = {
       location: "/yoga-instructors",
       alias: "Yoga Instructors",
     },
+    "Car Repair": {
+      icon: "/categories/carrepair.svg",
+      location: "/car-repair",
+      alias: "Car Repair",
+    },
+    "Bike Repair": {
+      icon: "/categories/bikerepair.svg",
+      location: "/bike-repair",
+      alias: "Bike Repair",
+    },
+    "Car Wash": {
+      icon: "/categories/carwash.svg",
+      location: "/car-wash",
+      alias: "Car Wash",
+    },
+    "Towing Services": {
+      icon: "/categories/towing.svg",
+      location: "/towing",
+      alias: "Towing Service",
+    },
+    "Driving Schools": {
+      icon: "/categories/drivingschool.svg",
+      location: "/driving-schools",
+      alias: "Driving School",
+    },
+    "Vehicle Rental Services": {
+      icon: "/categories/vehiclerental.svg",
+      location: "/vehicle-rental",
+      alias: "Vehicle Rental",
+    },
+    "Tyre & Battery": {
+      icon: "/categories/tyreandbattery.svg",
+      location: "/tyre-battery",
+      alias: "Tyre and Battery",
+    },
+    "Driving Schools": {
+      icon: "/categories/drivingschool.svg",
+      location: "/driving-schools",
+      alias: "Driving Schools",
+    },
+    "Auto Mechanics": {
+      icon: "/categories/automechanics.svg",
+      location: "/auto-mechanics",
+      alias: "Auto Mechanics",
+    },
+    "Roadside Assistance": {
+      icon: "/categories/roadside.svg",
+      location: "/roadside-assistance",
+      alias: "Roadside Assist",
+    },
   };
 
   export default services;
