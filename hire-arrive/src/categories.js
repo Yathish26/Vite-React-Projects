@@ -154,6 +154,21 @@ const services = {
       location: "/roadside-assistance",
       alias: "Roadside Assist",
     },
+    "Home Tutors": {
+      icon: "/categories/hometutors.svg",
+      location: "/home-tutors",
+      alias: "Home Tutors",
+    },
+    "Online Tutors": {
+      icon: "/categories/onlinetutors.svg",
+      location: "/online-tutors",
+      alias: "Online Tutors",
+    },
+    "Language Classes": {
+      icon: "/categories/language.svg",
+      location: "/language-classes",
+      alias: "Language Classes",
+    },
   };
 
   export default services;
