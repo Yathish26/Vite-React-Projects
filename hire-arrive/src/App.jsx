@@ -16,6 +16,7 @@ import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
 import CategoryUI from './Categories/CategoryUI';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Error404 from './Error404';
 
 function MainApp() {
   const url = useLocation();
@@ -79,6 +80,7 @@ function MainApp() {
         <Route path='/home-tutors' element={<CategoryUI />} />
         <Route path='/online-tutors' element={<CategoryUI />} />
         <Route path='/language-classes' element={<CategoryUI />} />
+        <Route path='*' element={<Error404/>} />
       </Routes>
       {!login && <Footer />} {/* Conditionally render Footer */}
     </>

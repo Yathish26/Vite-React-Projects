@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Metadata from './Meta';
 
 export function Header() {
     // const [menu, setMenu] = useState(true);
@@ -107,6 +108,7 @@ export function Header() {
     return (
 
         <div className="bg-gray-900 h-fit flex flex-col ">
+            <Metadata/>
             {login ? <LoginHeader /> :
                 (
                     <>
