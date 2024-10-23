@@ -21,8 +21,7 @@ export default function CategoryUI() {
     const rowCategory = Object.values(services).find(serv => serv.location === `/${currentCategory}`)?.alias;
 
     useEffect(() => {
-        const googleSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-SIrG6BIe7bteDoL60lDX1jKgKHNUcLSv_ARXnX-5V_SRsbREQdCf3H3xmqoixS8FOM8MUjyOo44G/pub?output=csv';
-
+        const googleSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTePvkgiIXq5cAyKL-3MrVsf_MhRoYZxHWAnhFjTqT6WZyrNMVg0r9ITNNIDxUELdwKbEtAps058fHW/pub?output=csv';
         fetch(googleSheet)
             .then((response) => response.text())
             .then((data) => {

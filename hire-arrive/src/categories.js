@@ -32,7 +32,7 @@ const services = {
     "AC Repair & Services": {
       icon: "/categories/acrepair.svg",
       location: "/ac-repair",
-      alias: "AC Repair ",
+      alias: "AC Repair",
     },
     "Carpenters": {
       icon: "/categories/carpenters.svg",
