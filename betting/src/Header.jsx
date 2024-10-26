@@ -24,6 +24,7 @@ export default function Header() {
           <Link to={'/sports'}>Sports</Link>
           <a href="/contact" className="hover:text-green-300">Contact</a>
           <a href="/faq" className="hover:text-green-300">FAQ</a>
+          <a href="/dice" className="hover:text-green-300">Dice</a>
         </nav>
 
         {/* Login/Signup Button */}

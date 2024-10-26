@@ -4,6 +4,7 @@ import Header from './Header'
 import Home from './Home'
 import Footer from './Footer'
 import Sports from './Sports'
+import Dicegame from './Dice'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sports' element={<Sports />} />
+        <Route path='/dice' element={<Dicegame/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

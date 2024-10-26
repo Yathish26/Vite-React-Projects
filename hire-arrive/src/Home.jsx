@@ -1,7 +1,12 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Papa from 'papaparse';
-import services from './categories';
+import services from './Editable Tool/categories';
+import HomeTile from './Editable Tool/Tile';
+import Subcatslider from './Components/Subcatslider';
+import Mediumposter from './Components/Mediumposter';
+import subslider from './Editable Tool/subslider';
+import DB from './Data/sheet';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,8 +16,7 @@ export default function Home() {
 
   // Load CSV Data
   useEffect(() => {
-    // const googleSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-SIrG6BIe7bteDoL60lDX1jKgKHNUcLSv_ARXnX-5V_SRsbREQdCf3H3xmqoixS8FOM8MUjyOo44G/pub?output=csv';
-    const googleSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTePvkgiIXq5cAyKL-3MrVsf_MhRoYZxHWAnhFjTqT6WZyrNMVg0r9ITNNIDxUELdwKbEtAps058fHW/pub?output=csv';
+    const googleSheet = DB;
 
     const fetchData = async () => {
       const response = await fetch(googleSheet);
@@ -27,29 +31,25 @@ export default function Home() {
     fetchData();
   }, []);
 
-  // Debounce search term to limit filter frequency
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedTerm(searchTerm);
-    }, 300);
+    }, 1000);
 
     return () => clearTimeout(handler);
   }, [searchTerm]);
 
-  // Handle input change with clear button visibility
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
     setClear(e.target.value !== '');
   };
 
-  // Clear search term and results
   const handleClear = useCallback(() => {
     setSearchTerm('');
     setDebouncedTerm('');
     setClear(false);
   }, []);
 
-  // Filter results based on the debounced search term
   const filteredResults = useMemo(() => {
     if (!debouncedTerm.trim()) return [];
 
@@ -65,12 +65,17 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const createSlug = (name) => {
+    return name.toLowerCase().replace(/\s+/g, '-'); // Replace spaces with hyphens
+  };
+
+
   return (
     <>
       {/* Search Bar */}
       <div className="flex items-center justify-center my-4">
         <div className="flex w-2/3 items-center border border-gray-300 rounded-full focus-within:ring-2 focus-within:ring-purple-700">
-          <div className="px-3">
+          <div className="px-3 mo:pr-0">
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -94,7 +99,8 @@ export default function Home() {
       {searchTerm.trim() && filteredResults.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8">
           {filteredResults.map((result, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300">
+            <Link to={`/${result.Category}/${createSlug(result.Name)}`} key={index}>
+            <div  className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300">
               <h2 className="text-2xl font-semibold text-purple-500 mb-2">{result.Name}</h2>
               <div className="flex items-center">
                 <img className="w-4 h-4 mr-2" src="/logos/address.svg" alt="Address:" />
@@ -104,10 +110,17 @@ export default function Home() {
                 <img className="w-4 h-4 mr-2" src="/logos/call.svg" alt="Contact:" />
                 <p className="text-gray-400">{result.Contact}</p>
               </div>
-              <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
-                {result.Category}
-              </p>
+              <div className='flex justify-between'>
+                <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
+                  {result.Category}
+                </p>
+                <div className="mt-2 flex gap-1 justify-center items-center px-3 py-1 border border-green-500 text-green-500 rounded-full text-sm">
+                  <svg className='w-4 h-4' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.6211 8.45C19.5711 3.83 15.5411 1.75 12.0011 1.75C12.0011 1.75 12.0011 1.75 11.9911 1.75C8.46107 1.75 4.42107 3.82 3.37107 8.44C2.20107 13.6 5.36107 17.97 8.22107 20.72C9.28107 21.74 10.6411 22.25 12.0011 22.25C13.3611 22.25 14.7211 21.74 15.7711 20.72C18.6311 17.97 21.7911 13.61 20.6211 8.45ZM12.0011 13.46C10.2611 13.46 8.85107 12.05 8.85107 10.31C8.85107 8.57 10.2611 7.16 12.0011 7.16C13.7411 7.16 15.1511 8.57 15.1511 10.31C15.1511 12.05 13.7411 13.46 12.0011 13.46Z" fill="#3F9C6E"></path> </g></svg>
+                  <p className='font-semibold'>{result.Location}</p>
+                </div>
+              </div>
             </div>
+            </Link>
           ))}
         </div>
       ) : searchTerm.trim() && filteredResults.length === 0 ? (
@@ -119,17 +132,57 @@ export default function Home() {
           <p className="text-gray-400">We couldn’t find any matches for "{searchTerm}". Please try again with a different keyword.</p>
         </div>
       ) : (
-        /* Categories Section (Shown when there's no search) */
-        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 m-8">
-          {Object.keys(services).map((service, index) => (
-            <Link to={services[service].location} key={index}>
-              <div className="p-6 flex flex-col justify-center items-center bg-gray-100 rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
-                <img src={services[service].icon} alt={service} className="w-24 h-24 mx-auto mb-4" />
-                <h3 className="text-xl mo2:hidden font-semibold text-purple-700">{service}</h3>
-              </div>
+        /* Categories and Home Section (Shown when there's no search) */
+        <>
+          <div className="flex mo:px-2 mo:justify-start justify-center items-center gap-7 mo:py-2 my-8 mo:gap-2 mo:overflow-y-auto mo:scrollbar-hide mo:flex-nowrap">
+            {Object.values(HomeTile).map((data, key) => (
+              <Link to={data.location} key={key}>
+                <div className="w-52 h-fit flex-shrink-0 cursor-pointer">
+                  <img className="rounded-3xl" src={`/images/${data.image}`} alt={`${data.alt}`} />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+
+
+          <h1 className='text-2xl text-center font-bold m-4 mb-8'>Top Categories</h1>
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
+            {Object.keys(services).map((service, index) => (
+              services[service].display !== "none" && (
+                <Link to={services[service].location} key={index}>
+                  <div className="p-4 flex flex-col justify-center items-center bg-gray-50 mo:bg-transparent rounded-lg shadow-md mo:shadow-none hover:bg-gray-100 cursor-pointer transition duration-200">
+                    <img
+                      src={services[service].icon}
+                      alt={service}
+                      className="w-16 h-16 mx-auto mb-2"
+                    />
+                    <h3 className="text-base font-semibold text-purple-700 text-center hidden md:block">
+                      {service}
+                    </h3>
+                    {/* Mobile view */}
+                    <h3 className="text-sm font-semibold text-purple-700 text-center md:hidden">
+                      {service}
+                    </h3>
+                  </div>
+                </Link>
+              )
+            ))}
+          </div>
+
+
+
+
+
+          <Subcatslider head={"Doctors"} title={Object.keys(subslider.Doctors)} />
+          <div className='flex justify-center mo:flex-col'>
+            <Link to={'/bridal-makeup'}>
+              <Mediumposter img={"/images/bridal.png"} />
             </Link>
-          ))}
-        </div>
+            <Mediumposter img={"/images/skin.png"} />
+          </div>
+          <Subcatslider head={"Popular Services"} title={Object.keys(subslider.MoreCategory)} />
+        </>
       )}
     </>
   );

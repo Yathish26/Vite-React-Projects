@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Error404() {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    })
+    
     return (
         <div className="flex items-start justify-center min-h-screen bg-gray-800">
             <div className="flex items-center flex-col">

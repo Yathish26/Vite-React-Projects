@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import TermSheet from './terms'
+import TermSheet from './Editable Tool/terms'
 
 export default function TermsofService() {
   const updatedDate = '01/10/2024'
