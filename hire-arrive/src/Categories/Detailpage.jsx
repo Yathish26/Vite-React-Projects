@@ -12,6 +12,7 @@ export default function Detailpage() {
     const [error, setError] = useState(null); 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchConstructorDetails = async () => {
             try {
                 const response = await fetch(DB); // Fetch the CSV file
