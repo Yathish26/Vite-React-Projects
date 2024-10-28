@@ -2,11 +2,11 @@ import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Papa from 'papaparse';
 import services from './Editable Tool/categories';
-import HomeTile from './Editable Tool/Tile';
 import Subcatslider from './Components/Subcatslider';
 import Mediumposter from './Components/Mediumposter';
 import subslider from './Editable Tool/subslider';
 import DB from './Data/sheet';
+import Carousel from './Components/Carousel';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -100,26 +100,26 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8">
           {filteredResults.map((result, index) => (
             <Link to={`/${result.Category}/${createSlug(result.Name)}`} key={index}>
-            <div  className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300">
-              <h2 className="text-2xl font-semibold text-purple-500 mb-2">{result.Name}</h2>
-              <div className="flex items-center">
-                <img className="w-4 h-4 mr-2" src="/logos/address.svg" alt="Address:" />
-                <p className="text-gray-300">{result.Address}</p>
-              </div>
-              <div className="flex items-center mt-2">
-                <img className="w-4 h-4 mr-2" src="/logos/call.svg" alt="Contact:" />
-                <p className="text-gray-400">{result.Contact}</p>
-              </div>
-              <div className='flex justify-between'>
-                <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
-                  {result.Category}
-                </p>
-                <div className="mt-2 flex gap-1 justify-center items-center px-3 py-1 border border-green-500 text-green-500 rounded-full text-sm">
-                  <svg className='w-4 h-4' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.6211 8.45C19.5711 3.83 15.5411 1.75 12.0011 1.75C12.0011 1.75 12.0011 1.75 11.9911 1.75C8.46107 1.75 4.42107 3.82 3.37107 8.44C2.20107 13.6 5.36107 17.97 8.22107 20.72C9.28107 21.74 10.6411 22.25 12.0011 22.25C13.3611 22.25 14.7211 21.74 15.7711 20.72C18.6311 17.97 21.7911 13.61 20.6211 8.45ZM12.0011 13.46C10.2611 13.46 8.85107 12.05 8.85107 10.31C8.85107 8.57 10.2611 7.16 12.0011 7.16C13.7411 7.16 15.1511 8.57 15.1511 10.31C15.1511 12.05 13.7411 13.46 12.0011 13.46Z" fill="#3F9C6E"></path> </g></svg>
-                  <p className='font-semibold'>{result.Location}</p>
+              <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300">
+                <h2 className="text-2xl font-semibold text-purple-500 mb-2">{result.Name}</h2>
+                <div className="flex items-center">
+                  <img className="w-4 h-4 mr-2" src="/logos/address.svg" alt="Address:" />
+                  <p className="text-gray-300">{result.Address}</p>
+                </div>
+                <div className="flex items-center mt-2">
+                  <img className="w-4 h-4 mr-2" src="/logos/call.svg" alt="Contact:" />
+                  <p className="text-gray-400">{result.Contact}</p>
+                </div>
+                <div className='flex justify-between'>
+                  <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
+                    {result.Category}
+                  </p>
+                  <div className="mt-2 flex gap-1 justify-center items-center px-3 py-1 border border-green-500 text-green-500 rounded-full text-sm">
+                    <svg className='w-4 h-4' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.6211 8.45C19.5711 3.83 15.5411 1.75 12.0011 1.75C12.0011 1.75 12.0011 1.75 11.9911 1.75C8.46107 1.75 4.42107 3.82 3.37107 8.44C2.20107 13.6 5.36107 17.97 8.22107 20.72C9.28107 21.74 10.6411 22.25 12.0011 22.25C13.3611 22.25 14.7211 21.74 15.7711 20.72C18.6311 17.97 21.7911 13.61 20.6211 8.45ZM12.0011 13.46C10.2611 13.46 8.85107 12.05 8.85107 10.31C8.85107 8.57 10.2611 7.16 12.0011 7.16C13.7411 7.16 15.1511 8.57 15.1511 10.31C15.1511 12.05 13.7411 13.46 12.0011 13.46Z" fill="#3F9C6E"></path> </g></svg>
+                    <p className='font-semibold'>{result.Location}</p>
+                  </div>
                 </div>
               </div>
-            </div>
             </Link>
           ))}
         </div>
@@ -134,15 +134,14 @@ export default function Home() {
       ) : (
         /* Categories and Home Section (Shown when there's no search) */
         <>
-          <div className="flex mo:px-2 mo:justify-start justify-center items-center gap-7 mo:py-2 my-8 mo:gap-2 mo:overflow-y-auto mo:scrollbar-hide mo:flex-nowrap">
-            {Object.values(HomeTile).map((data, key) => (
-              <Link to={data.location} key={key}>
-                <div className="w-52 h-fit flex-shrink-0 cursor-pointer">
-                  <img className="rounded-3xl" src={`/images/${data.image}`} alt={`${data.alt}`} />
-                </div>
-              </Link>
-            ))}
+
+          <div className='flex mo:px-2 mo:justify-start justify-center items-center gap-7 mo:py-2 my-8 mo:gap-2 mo:overflow-y-auto mo:scrollbar-hide mo:flex-nowrap'>
+            <Carousel title="GYMS" description="NEAR YOU" image="gym" bgcolor="#00BF63" link="/gym" />
+            <Carousel title="DOCTORS" description="NEAR YOU" image="doc" bgcolor="#FF3131" link='/doctors' />
+            <Carousel title="YOGA INSTRUCTORS" description="NEAR YOU" image="yoga" bgcolor="orange" link='/yoga-meditation' />
+            <Carousel title="CONTRACTORS" description="NEAR YOU" image="cont" bgcolor="#004AAD" link='/contractors' />
           </div>
+
 
 
 

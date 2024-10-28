@@ -16,6 +16,8 @@ export default {
         japan: ['Noto Serif JP', 'serif'],
         macondo: ['Macondo', 'cursive'],
         bree: ["Bree Serif", 'serif'],
+        anton:["Anton", "sans-serif"],
+        bebas:["Bebas Neue", "sans-serif"],
       }
     },
   },
