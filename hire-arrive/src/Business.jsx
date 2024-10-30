@@ -59,11 +59,11 @@ export default function Business() {
         <div className="min-h-[80vh] bg-gray-900 text-white flex justify-center items-center p-6">
             <div className="w-full max-w-2xl bg-gray-800 rounded-lg shadow-lg p-8">
                 {/* Header Section */}
-                <div className="flex items-center mb-8">
+                <div className="flex mo:flex-col mo:justify-center items-center mb-8">
                     <div className="w-24 h-24 rounded-full bg-purple-500 flex-shrink-0 flex items-center justify-center">
-                        <span className="text-4xl font-semibold text-gray-100">B</span>
+                        <span className="text-4xl font-semibold text-gray-100">{details.businessName[0]}</span>
                     </div>
-                    <div className="ml-6">
+                    <div className="ml-6 mo:m-0 mo:flex mo:flex-col mo:justify-center mo:items-center">
                         <h1 className="text-3xl font-bold text-purple-500">{details.businessName}</h1>
                         <p className="text-gray-400">{details.email}</p>
                     </div>
