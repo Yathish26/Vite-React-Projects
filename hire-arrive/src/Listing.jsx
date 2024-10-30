@@ -10,12 +10,18 @@ export default function Listing() {
     description: '',
     workcategory: '',
     location: '',
+    inplaceShop: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    zipCode: '',
     phoneNumber: '',
   });
+  const [shop, setShop] = useState(user.inplaceShop === "Yes");
 
   const token = localStorage.getItem('token')
-  console.log(token ? 'Yes': 'No');
-  
+  console.log(token ? 'Yes' : 'No');
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,8 +41,23 @@ export default function Listing() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser((prevUser) => ({ ...prevUser, [name]: value })); // Update the user state
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
     setSuccessMessage('');
+  };
+
+  useEffect(() => {
+    setShop(user.inplaceShop === "Yes"); 
+  }, [user.inplaceShop]);
+
+  const handleShopToggle = () => {
+    const newShopValue = !shop;
+    setShop(newShopValue); 
+    handleChange({
+      target: {
+        name: 'inplaceShop',
+        value: newShopValue ? "Yes" : "No"
+      }
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -125,13 +146,13 @@ export default function Listing() {
 
   if (successMessage) {
     setTimeout(() => {
-      setSuccessMessage(!successMessage);
+      setSuccessMessage('');
     }, 2000);
   }
 
   if (errorMessage) {
     setTimeout(() => {
-      setErrorMessage(!errorMessage)
+      setErrorMessage('')
     }, 2000);
   }
 
@@ -162,19 +183,6 @@ export default function Listing() {
       {token ?
         (<div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full">
           <h2 className="text-3xl font-bold text-white mb-6">Register Your Work / Business</h2>
-
-          {/* Success Message
-          {successMessage && (
-            <div className="bg-green-500 text-white p-2 mb-4 rounded">
-              {successMessage}
-            </div>
-          )}
-          Error Message
-          {errorMessage && (
-            <div className="bg-red-500 text-white p-2 mb-4 rounded">
-              {errorMessage}
-            </div>
-          )} */}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -246,6 +254,76 @@ export default function Listing() {
                 required
               />
             </div>
+
+            <div className="mb-4 flex gap-2 items-center">
+              <span className="font-medium text-gray-300 dark:text-gray-300">Does this have an in-place shop?</span>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="sr-only peer"
+                  checked={shop}
+                  value={user.inplaceShop}
+                  onChange={handleShopToggle} // Toggle shop state on change
+                />
+                <div className="w-11 h-6 bg-gray-200 rounded-full peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 dark:bg-gray-700 peer-checked:bg-purple-600">
+                  <div className={`absolute top-0.5 left-[2px] h-5 w-5 bg-white border border-gray-300 rounded-full transition-transform ${shop ? 'translate-x-full' : ''}`}></div>
+                </div>
+              </label>
+              <span className="ml-2 text-gray-300">{user.inplaceShop}</span> {/* Displays "Yes" or "No" */}
+            </div>
+
+            {shop && (
+              <div>
+                {/* Street Address */}
+                <label htmlFor="streetAddress" className="block text-gray-300 font-semibold mb-2 mt-4">Street Address</label>
+                <input
+                  id="streetAddress"
+                  name="streetAddress"
+                  type="text"
+                  value={user.streetAddress}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
+                  placeholder="123 Main St"
+                />
+
+                {/* City */}
+                <label htmlFor="city" className="block text-gray-300 font-semibold mb-2 mt-4">City</label>
+                <input
+                  id="city"
+                  name="city"
+                  type="text"
+                  value={user.city}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
+                  placeholder="City Name"
+                />
+
+                {/* State/Province */}
+                <label htmlFor="state" className="block text-gray-300 font-semibold mb-2 mt-4">State/Province</label>
+                <input
+                  id="state"
+                  name="state"
+                  type="text"
+                  value={user.state}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
+                  placeholder="State or Province"
+                />
+
+                {/* Zip/Postal Code */}
+                <label htmlFor="zipCode" className="block text-gray-300 font-semibold mb-2 mt-4">Zip/Postal Code</label>
+                <input
+                  id="zipCode"
+                  name="zipCode"
+                  type="text"
+                  value={user.zipCode}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:border-purple-500 focus:outline-none"
+                  placeholder="ZIP or Postal Code"
+                />
+              </div>
+            )}
+
             <div>
               <label htmlFor="phoneNumber" className="block text-gray-300 font-semibold mb-2">Phone Number</label>
               <input
@@ -306,6 +384,3 @@ export default function Listing() {
     </div>
   );
 }
-
-
-

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Papa from 'papaparse';
-import DB from '../Data/sheet'; // Import your CSV file path
 import LoadingSpinner from '../smallcomponents/Loading'; // Import your loading spinner
-
 
 export default function Detailpage() {
     const { slug } = useParams(); // Get the slug from the URL
@@ -15,42 +12,36 @@ export default function Detailpage() {
         window.scrollTo(0, 0);
         const fetchConstructorDetails = async () => {
             try {
-                const response = await fetch(DB); // Fetch the CSV file
-                if (!response.ok) throw new Error('Network response was not ok'); // Check for errors
-                const data = await response.text(); // Get text from response
-                Papa.parse(data, {
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: (result) => {
-                        // Find the constructor based on slug
-                        const constructorData = result.data.find(serv =>
-                            serv.Name.toLowerCase().replace(/ /g, '-') === slug
-                        );
-                        if (constructorData) {
-                            setConstructorDetail(constructorData);
-                        } else {
-                            console.error('Constructor not found');
-                            setError('No details found for this constructor.'); // Set error message
-                        }
-                        setLoading(false);
-                    },
-                });
+                
+                const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?Name=${slug}`); 
+                if (!response.ok) throw new Error('Network response was not ok'); 
+
+                const data = await response.json(); 
+                
+                
+                if (data.length > 0) {
+                    setConstructorDetail(data[0]);
+                } else {
+                    console.error('Constructor not found');
+                    setError('No details found for this constructor.'); 
+                }
+                setLoading(false);
             } catch (err) {
                 console.error(err);
-                setError('Failed to fetch data.'); // Set error message on fetch failure
+                setError('Failed to fetch data.'); 
                 setLoading(false);
             }
         };
 
         fetchConstructorDetails();
-    }, [slug]); // Run effect when slug changes
+    }, [slug]); 
 
     if (loading) {
-        return <LoadingSpinner />; // Show your loading spinner
+        return <LoadingSpinner />; 
     }
 
     if (error) {
-        return <div>{error}</div>; // Display error message if any
+        return <div>{error}</div>; 
     }
 
     return (

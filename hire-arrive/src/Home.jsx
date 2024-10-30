@@ -1,35 +1,46 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import Papa from 'papaparse';
 import services from './Editable Tool/categories';
 import Subcatslider from './Components/Subcatslider';
 import Mediumposter from './Components/Mediumposter';
 import subslider from './Editable Tool/subslider';
-import DB from './Data/sheet';
 import Carousel from './Components/Carousel';
+import Shimmer from './smallcomponents/Shimmer';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [csvData, setCsvData] = useState([]);
+  const [apiData, setApiData] = useState([]); // Renamed from csvData to apiData
   const [clear, setClear] = useState(false);
   const [debouncedTerm, setDebouncedTerm] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  // Load CSV Data
+  // Fetch API data whenever the debouncedTerm changes
   useEffect(() => {
-    const googleSheet = DB;
-
     const fetchData = async () => {
-      const response = await fetch(googleSheet);
-      const data = await response.text();
-      Papa.parse(data, {
-        header: true,
-        skipEmptyLines: true,
-        complete: (result) => setCsvData(result.data),
-      });
+      if (debouncedTerm.trim()) {
+        setLoading(true);
+        try {
+          const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?Name=${debouncedTerm}`);
+          const data = await response.json();
+
+          if (data.error) {
+            setApiData([]);
+          } else {
+            setApiData(data);
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setApiData([]);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setApiData([]);
+      }
     };
 
     fetchData();
-  }, []);
+  }, [debouncedTerm]);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -53,13 +64,13 @@ export default function Home() {
   const filteredResults = useMemo(() => {
     if (!debouncedTerm.trim()) return [];
 
-    return csvData.filter(row =>
+    return apiData.filter(row =>
       row.Name?.toLowerCase().includes(debouncedTerm.toLowerCase()) ||
       row.Address?.toLowerCase().includes(debouncedTerm.toLowerCase()) ||
       row.Contact?.includes(debouncedTerm) ||
       row.Category?.toLowerCase().includes(debouncedTerm.toLowerCase())
     );
-  }, [debouncedTerm, csvData]);
+  }, [debouncedTerm, apiData]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -96,7 +107,10 @@ export default function Home() {
       </div>
 
       {/* Search Results */}
-      {searchTerm.trim() && filteredResults.length > 0 ? (
+      {loading ? (
+          <Shimmer/>
+      ):
+      searchTerm.trim() && filteredResults.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8">
           {filteredResults.map((result, index) => (
             <Link to={`/${result.Category}/${createSlug(result.Name)}`} key={index}>
@@ -168,10 +182,6 @@ export default function Home() {
               )
             ))}
           </div>
-
-
-
-
 
           <Subcatslider head={"Doctors"} title={Object.keys(subslider.Doctors)} />
           <div className='flex justify-center mo:flex-col'>

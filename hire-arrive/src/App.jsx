@@ -19,6 +19,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Error404 from './Error404';
 import Submenu from './Submenu';
 import Detailpage from './Categories/Detailpage';
+import Business from './Business';
 
 function MainApp() {
   const url = useLocation();
@@ -32,6 +33,7 @@ function MainApp() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/listing' element={<Listing />} />
+        <Route path='/business' element={<Business/>} />
         <Route path='/about' element={<Aboutus />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blog' element={<Blog />} />
