@@ -10,8 +10,8 @@ export default function Carousel({ title, description, image, bgcolor, link }) {
                         <h1 className="text-white text-4xl drop-shadow-lg font-anton">{title}</h1>
                         <h1 className="text-white font-bebas drop-shadow-lg mt-4 font-[300] text-2xl">{description}</h1>
                     </div>
-                    <div className="absolute bottom-0 right-5">
-                        <img className="w-40 h-fit transition-transform duration-300 ease-in-out hover:scale-110" src={`/tran/${image}.png`} alt="Image" />
+                    <div className="absolute bottom-0 right-5 ">
+                        <img className="w-40 h-50 transition-transform duration-300 ease-in-out hover:scale-110" src={`/tran/${image}.png`} alt="Image" />
                     </div>
                 </div>
             </Link>

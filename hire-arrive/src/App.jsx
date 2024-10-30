@@ -29,6 +29,7 @@ function MainApp() {
 
   return (
     <>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -187,7 +188,8 @@ function MainApp() {
 
 
       </Routes>
-      {!login && <Footer />} {/* Conditionally render Footer */}
+      {!login && <Footer />} 
+      </div>
     </>
   );
 }
