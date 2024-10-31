@@ -103,7 +103,7 @@ export default function Detailpage() {
 
             {/* Contact Section */}
             <h1 className='text-2xl font-spartan font-semibold my-6'>Alternate Contact Numbers</h1>
-            <div className='flex gap-4'>
+            <div className='flex mo:flex-col mo:gap-0 gap-4'>
                 
             {constructorDetail.Contact && callNumberSplit.map((number, index) => (
                 <div key={index} className="text-xl mb-6 ">
