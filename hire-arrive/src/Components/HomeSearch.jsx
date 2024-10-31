@@ -3,14 +3,79 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Shimmer from './smallcomponents/Shimmer';
 
-const HomeSearch = ({ searchTerm, setSearchTerm, filteredResults, loading }) => {
+const HomeSearch = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [apiData, setApiData] = useState([]); // Renamed from csvData to apiData
+  const [clear, setClear] = useState(false);
+  const [debouncedTerm, setDebouncedTerm] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // Fetch API data whenever the debouncedTerm changes
+  useEffect(() => {
+    const fetchData = async () => {
+      if (debouncedTerm.trim()) {
+        setLoading(true);
+        try {
+          const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?Name=${debouncedTerm}`);
+          const data = await response.json();
+
+          if (data.error) {
+            setApiData([]);
+          } else {
+            setApiData(data);
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setApiData([]);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setApiData([]);
+      }
+    };
+
+    fetchData();
+  }, [debouncedTerm]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedTerm(searchTerm);
+    }, 300);
+
+    return () => clearTimeout(handler);
+  }, [searchTerm]);
+
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
+    setClear(e.target.value !== '');
   };
 
+  const handleClear = useCallback(() => {
+    setSearchTerm('');
+    setDebouncedTerm('');
+    setClear(false);
+  }, []);
+
+  const filteredResults = useMemo(() => {
+    if (!debouncedTerm.trim()) return [];
+
+    return apiData.filter(row =>
+      row.Name?.toLowerCase().includes(debouncedTerm.toLowerCase()) ||
+      row.Address?.toLowerCase().includes(debouncedTerm.toLowerCase()) ||
+      row.Contact?.includes(debouncedTerm) ||
+      row.Category?.toLowerCase().includes(debouncedTerm.toLowerCase())
+    );
+  }, [debouncedTerm, apiData]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const createSlug = (name) => {
-    return name.toLowerCase().replace(/\s+/g, '-');
+    return name.toLowerCase().replace(/\s+/g, '-'); // Replace spaces with hyphens
   };
+  
 
   return (
     <>
