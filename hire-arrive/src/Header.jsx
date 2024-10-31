@@ -142,12 +142,14 @@ const Menus = () => {
 
     return (
         <ul className='flex mo:bg-gray-900 mo:border-2 opacity-90 border-purple-700 mo:rounded-3xl mo:z-50 mo:fixed mo:left-1/2 mo:bottom-[1rem] mo:transform mo:-translate-x-1/2 mo:justify-evenly items-center justify-center gap-4 py-4 font-spartan text-lg text-white w-full mo:max-w-[90%]'>
-            <Link to='/'>
+            
+            <a href="/">
                 <div className='flex flex-col px-4 py-2 justify-center rounded-xl items-center hover:bg-purple-700'>
                     <svg className='w-8 h-8' viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z" fill="#ffffff"></path> </g></svg>
                     <li className=' transition-opacity duration-300'>Home</li>
                 </div>
-            </Link>
+                </a>
+            
             {user === '' ? (
                     <Link to='/listing'>
                         <div className='flex flex-col px-4 py-2 justify-center rounded-xl items-center hover:bg-purple-700'>
