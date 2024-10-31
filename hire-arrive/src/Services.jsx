@@ -17,12 +17,12 @@ export default function Services() {
     },[])
 
     return (
-        <div className="bg-gray-900 text-white min-h-screen py-8 px-4">
+        <div className="bg-gray-900 font-spartan  text-white min-h-screen py-8 px-4">
             <div className="container mx-auto">
                 {/* Hero Section */}
                 <section className="text-center mb-12">
                     <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-                    <p className="text-lg max-w-3xl mx-auto">
+                    <p className="text-xl max-w-3xl mx-auto">
                         Explore the wide range of services we offer to help you grow and succeed. Our team is dedicated to providing top-notch solutions tailored to your needs.
                     </p>
                 </section>

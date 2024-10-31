@@ -7,7 +7,7 @@ export default function AboutUs() {
     })
 
     return (
-        <div className="bg-gray-900 text-white min-h-screen py-8 px-4">
+        <div className="bg-gray-900 font-spartan text-white min-h-screen py-8 px-4">
             <div className="container mx-auto">
                 {/* Hero Section */}
                 <section className="text-center mb-12">

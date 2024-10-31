@@ -1,17 +1,19 @@
 import React, { useEffect} from 'react'
+import Contact from './Editable Tool/contact'
 
 export default function PrivacyPolicy() {
   const updatedDate = '01/09/2024'
   const companyname = 'Hire Arrive'
-  const compmail = 'hirearrive@proton.me'
-  const website = 'https://www.hirearrive.vercel.app'
+  const compmail = Contact.email
+  const website = Contact.Website
+  
 
   useEffect(()=>{
     window.scrollTo(0, 0)
   },[])
 
   return (
-    <div className="bg-gray-900 text-gray-300 p-6 md:p-12">
+    <div className="bg-gray-900 font-spartan text-xl text-gray-300 p-6 md:p-12">
       <h1 className="text-4xl font-bold text-purple-500 mb-6">Privacy Policy</h1>
       <p className="mb-4">This Privacy Policy explains how {companyname} collects, uses, and discloses your personal information when you visit our website or use our services.</p>
       <p className="mb-8">Last updated: {updatedDate}</p>

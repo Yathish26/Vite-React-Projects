@@ -7,7 +7,7 @@ export default function Subcatslider({ head, title }) {
 
     return (
         <div className='my-8 mx-6'>
-            <h1 className='text-3xl my-2 font-bold'>{head}</h1>
+            <h1 className='text-3xl my-2 font-spartan font-semibold'>{head}</h1>
             <div className='flex gap-6 mo:overflow-y-auto mo:scrollbar-hide mo:flex-nowrap overflow-y-auto'>
                 {titlesArray.length > 0 ? (
                     titlesArray.map((item, index) => {
@@ -38,7 +38,7 @@ export default function Subcatslider({ head, title }) {
                                         alt="Placeholder"
                                     />
                                 )}
-                                <p className='text-center text-lg font-medium text-gray-700 mt-2'>
+                                <p className='text-center font-spartan text-lg font-medium text-gray-700 mt-2'>
                                     {item}
                                 </p>
                                 </Link>

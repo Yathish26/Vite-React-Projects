@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Contact from './Editable Tool/contact';
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-white py-8 mo:h-[35rem]">
+        <footer className="bg-gray-900 font-spartan text-lg text-white py-8 mo:h-[35rem]">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Contact Information */}
-                    {/* <div>
+                    <div>
                         <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-                        <p className="mb-2">Address: 1234 Your Street, City, Country</p>
-                        <p className="mb-2">Phone: +123 456 7890</p>
-                        <p className="mb-4">Email: <a href="mailto:info@yourdomain.com" className="text-purple-400 hover:underline">info@yourdomain.com</a></p>
+                        {/* <p className="mb-2">Address: 1234 Your Street, City, Country</p>
+                        <p className="mb-2">Phone: +123 456 7890</p> */}
+                        <p className="mb-4">Email: <a href={`mailto:${Contact.email}`} className="text-purple-400 hover:underline">{Contact.email}</a></p>
                         <div className="flex space-x-4">
-                            <a href="https://facebook.com" className="text-purple-400 hover:underline">Facebook</a>
-                            <a href="https://twitter.com" className="text-purple-400 hover:underline">Twitter</a>
-                            <a href="https://linkedin.com" className="text-purple-400 hover:underline">LinkedIn</a>
+                            <a href={Contact.Instagram} className="text-purple-400 hover:underline">Instagram</a>
+                            <a href={Contact.Linkedin} className="text-purple-400 hover:underline">LinkedIn</a>
                         </div>
-                    </div> */}
+                    </div>
 
                     {/* Navigation Links */}
                     <div>

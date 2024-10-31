@@ -45,7 +45,7 @@ export default function Home() {
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedTerm(searchTerm);
-    }, 2000);
+    }, 300);
 
     return () => clearTimeout(handler);
   }, [searchTerm]);
@@ -159,7 +159,7 @@ export default function Home() {
 
 
 
-            <h1 className='text-2xl text-center font-bold m-4 mb-8'>Top Categories</h1>
+            <h1 className='text-2xl text-center font-spartan font-semibold m-4 mb-8'>Top Categories</h1>
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
               {Object.keys(services).map((service, index) => (
                 services[service].display !== "none" && (
@@ -170,7 +170,7 @@ export default function Home() {
                         alt={service}
                         className="w-16 h-16 mx-auto mb-2"
                       />
-                      <h3 className="text-base font-semibold text-purple-700 text-center hidden md:block">
+                      <h3 className="text-lg font-spartan text-purple-700 text-center hidden md:block">
                         {service}
                       </h3>
                       {/* Mobile view */}

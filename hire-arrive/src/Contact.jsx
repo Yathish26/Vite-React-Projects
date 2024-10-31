@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import contacts from './Editable Tool/contact';
 
 export default function Contact() {
 
@@ -7,12 +8,12 @@ export default function Contact() {
     },[])
 
     return (
-        <div className="bg-gray-900 text-white min-h-screen py-8 px-4">
+        <div className="bg-gray-900 font-spartan text-xl text-white min-h-screen py-8 px-4">
             <div className="container mx-auto">
                 {/* Hero Section */}
                 <section className="text-center mb-12">
-                    <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-                    <p className="text-lg max-w-3xl mx-auto">
+                    <h1 className="text-4xl  font-bold mb-4">Contact Us</h1>
+                    <p className="text-xl max-w-3xl mx-auto">
                         We’d love to hear from you! Whether you have questions, feedback, or just want to get in touch, feel free to reach out to us.
                     </p>
                 </section>
@@ -35,15 +36,13 @@ export default function Contact() {
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold mb-2">Email Address</h3>
                             <p className="text-gray-400">
-                                <a href="mailto:hirearrive@proton.me" className="text-purple-400 hover:underline">hirearrive@proton.me</a>
+                                <a href={`mailto:${contacts.email}`} className="text-purple-400 hover:underline">{contacts.email}</a>
                             </p>
                         </div>
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
                             <div className="flex space-x-4">
-                                {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Facebook</a>
-                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Twitter</a> */}
-                                <a href="https://www.instagram.com/hire_arrive/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Instagram</a>
+                                <a href={contacts.Instagram} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">Instagram</a>
                             </div>
                         </div>
                     </div>

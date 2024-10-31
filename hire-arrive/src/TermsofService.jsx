@@ -10,7 +10,7 @@ export default function TermsofService() {
   }, [])
 
   return (
-    <div className="bg-gray-900 text-gray-300 p-6 md:p-12">
+    <div className="bg-gray-900 font-spartan text-xl text-gray-300 p-6 md:p-12">
       <h1 className="text-4xl font-bold text-purple-500 mb-6">Terms of Service</h1>
       <p className="mb-4">By using our website, you agree to be bound by these terms. If you do not agree to these terms, please do not use our website.</p>
       <p className="mb-8">Last updated: {updatedDate}</p>
