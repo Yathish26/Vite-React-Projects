@@ -39,8 +39,8 @@ export default function Submenu() {
   const { title, items } = getSubmenuTitleAndItems();
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-purple-200 via-gray-100 to-purple-100 p-6">
-      <h1 className="text-4xl font-bold text-purple-800 mb-8 ">
+    <div className="min-h-screen font-spartan flex flex-col items-center bg-gradient-to-b from-purple-200 via-gray-100 to-purple-100 p-6">
+      <h1 className="text-4xl font-semibold text-purple-800 mb-8 mo:mb-8 ">
         {title}
       </h1>
       <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
@@ -53,8 +53,8 @@ export default function Submenu() {
   
               return (
                 <Link to={serviceDetails.location} key={index}>
-                  <li className="p-4 flex items-center justify-between hover:bg-purple-600 rounded-lg hover:text-white transition-all duration-300 cursor-pointer text-gray-700">
-                    <span className="text-lg font-semibold">{serviceName}</span>
+                  <li className="p-4 flex items-center justify-between hover:bg-purple-200 rounded-lg  transition-all duration-300 cursor-pointer text-gray-700">
+                    <span className="text-xl ">{serviceName}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6 transition-transform transform hover:scale-110"
