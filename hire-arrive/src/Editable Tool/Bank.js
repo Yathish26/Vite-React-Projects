@@ -60,6 +60,3 @@ const DataBank = () =>{
 }
 
 export default DataBank
-
-
-console.log(DataBank().CategoryUILinks.length)

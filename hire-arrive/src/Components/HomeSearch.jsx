@@ -1,9 +1,8 @@
 // HomeSearch.jsx
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Shimmer from '../smallcomponents/Shimmer';
 import { CSSTransition } from 'react-transition-group';
-import { data } from 'autoprefixer';
 
 const HomeSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +12,7 @@ const HomeSearch = () => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0); // New state for pagination
   const resultsPerPage = 10;
+  const nodeRef = useRef(null)
 
   // Fetch data with pagination
   const fetchData = async (pageNum) => {
@@ -112,8 +112,9 @@ const HomeSearch = () => {
       timeout={300}
       classNames="slide"
       unmountOnExit
+      nodeRef={nodeRef}
     >
-      <div className='bg-purple-200 m-12 mo:m-4 rounded-3xl shadow-lg'>
+      <div ref={nodeRef} className='bg-purple-200 m-12 mo:m-4 rounded-3xl shadow-lg'>
         {loading ? (
           <Shimmer />
         ) : filteredResults.length > 0 ? (
