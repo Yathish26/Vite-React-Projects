@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import LoadingSpinner from '../smallcomponents/Loading'; // Import your loading spinner
 
 export default function Detailpage() {
-    const { slug } = useParams(); // Get the slug from the URL
+    const { slug } = useParams();
     const [constructorDetail, setConstructorDetail] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -13,7 +13,9 @@ export default function Detailpage() {
         const fetchConstructorDetails = async () => {
             try {
 
-                const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?Name=${slug}`);
+                const slugSplit = slug.split('*');
+                
+                const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?id=${slugSplit[1]}`);
                 if (!response.ok) throw new Error('Network response was not ok');
 
                 const data = await response.json();

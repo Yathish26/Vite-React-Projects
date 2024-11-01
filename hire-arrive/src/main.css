@@ -142,3 +142,22 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* ------------------------------Search Bar------------------------------------- */
+.slide-enter {
+  max-height: 0;
+  overflow: hidden;
+}
+.slide-enter-active {
+  max-height: 500px; /* Adjust this to your expected content height */
+  transition: max-height 300ms ease-in;
+}
+.slide-exit {
+  max-height: 500px; /* Adjust this to your expected content height */
+  overflow: hidden;
+}
+.slide-exit-active {
+  max-height: 0;
+  transition: max-height 300ms ease-out;
+}
+
