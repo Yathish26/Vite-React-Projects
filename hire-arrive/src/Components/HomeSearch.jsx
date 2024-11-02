@@ -15,8 +15,6 @@ const HomeSearch = () => {
   const nodeRef = useRef(null)
   const apikey = import.meta.env.VITE_SECURE_KEY;
 
-  console.log(apikey);
-
   // Fetch data with pagination
   const fetchData = async (pageNum) => {
     const start = pageNum * resultsPerPage;
