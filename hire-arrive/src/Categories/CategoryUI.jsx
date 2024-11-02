@@ -13,7 +13,6 @@ export default function CategoryUI() {
     const url = useLocation();
     const currentCategory = url.pathname.split('/')[1];
     const alias = Object.values(services).find(serv => serv.location === `/${currentCategory}`)?.alias;
-    const apikey = import.meta.env.VITE_SECURE_KEY;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -35,7 +34,7 @@ export default function CategoryUI() {
             try {
                 const start = (currentPage - 1) * itemsPerPage;
                 const end = start + itemsPerPage;
-                const response = await fetch(`https://hire-arrive-server.onrender.com/${apikey}/data?Category=${alias}&Entries=${start}-${end}`);
+                const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?Category=${alias}&Entries=${start}-${end}`);
                 const data = await response.json();
 
                 if (Array.isArray(data) && data.length > 0) {
