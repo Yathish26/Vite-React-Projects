@@ -131,7 +131,7 @@ export default function Weather() {
   };
 
   return (
-    <div className={`mo:justify-start flex flex-col items-center justify-center min-h-screen ${getBackgroundStyle()} text-white`}>
+    <div className={`mo:justify-start flex flex-col items-center justify-center flex-1 ${getBackgroundStyle()} text-white`}>
       <img className='mb-5 mt-2' src="weather/clear.svg" alt="" />
       <div className='text-3xl font-bona'>Weather Report</div>
       <form onSubmit={getData} className="flex flex-col items-center bg-white p-6 m-4 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">

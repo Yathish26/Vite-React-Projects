@@ -13,7 +13,7 @@ export default function Games() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 to-blue-600 p-6 flex items-center justify-center">
+    <div className="flex-1 bg-gradient-to-br from-purple-600 to-blue-600 p-6 flex items-center justify-center">
       <div className=" bg-white/30 backdrop-blur-md" />
       <div className="relative z-10 container flex flex-col items-center mx-auto">
         <img className='w-48 h-48' src="/icons/gamehill.svg" alt="" />

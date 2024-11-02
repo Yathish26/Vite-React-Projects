@@ -47,6 +47,7 @@ function App() {
 
   return (
     <>
+    <div className="flex flex-col min-h-screen">
       <Header title="Axios" app={appProp} />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -69,10 +70,12 @@ function App() {
         <Route path='/apps/qr-generator' element={<Applications/>}/>
         <Route path='/apps/audio-trimmer' element={<Applications/>}/>
         <Route path='/apps/image-bg-remove' element={<Applications/>}/>
+        <Route path='/apps/json-merger' element={<Applications/>}/>
         <Route path='/games' element={<Games/>}/>
         <Route path='/games/snake-xenzia' element={<Snake/>}/>
         <Route path='/games/sudoku' element={<Sudoku/>}/>
       </Routes>
+      </div>
     </>
   )
 }

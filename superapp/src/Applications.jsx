@@ -10,6 +10,8 @@ import CaseConverter from './CaseConverter';
 import QRgenerator from './QRgenerator';
 import Bgremove from './Bgremove';
 import Audiotrim from './Audiotrim';
+import JsonMerger from './JsonMerger';
+import apps from './Editable/Applist';
 
 export default function Applications() {
     const [isUnitopen, setIsUnitopen] = useState(false);
@@ -55,7 +57,7 @@ export default function Applications() {
 
     return (
         <>
-            <div className='flex mo:flex-col h-full'>
+            <div className='flex mo:flex-col flex-1'>
                 <nav className="mo:gap-2 mo:flex-row mo:justify-center mo:w-screen mo:h-fit bg-black text-white w-72 top-0 left-0 flex flex-col p-4">
                     <div className="mb-8">
                         {/* Logo or Brand Name */}
@@ -92,19 +94,14 @@ export default function Applications() {
 
                             {isUnitopen && (
                                 <ul className="r mt-4 ml-8 rounded mo:hidden  space-y-2 flex flex-col gap-2">
-                                    <li>
-                                        <Link to={'/apps/weightconverter'} className="hover:text-blue-300 flex gap-2 items-center">
-                                            <img className='w-6 h-6' src="/apps/weight.svg" alt="" />
-                                            <p className=''>Weight Converter</p>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'/apps/currencyconverter'} className="hover:text-blue-300 flex gap-2">
-                                            <img className='w-6 h-6' src="/apps/currency.svg" alt="" />
-                                            <p className=''>Currency Converter</p>
-                                        </Link>
-                                    </li>
-                                    {/* Add more submenu items here */}
+                                    {apps[0].subApps.map((app, id) => (
+                                        <li key={id}>
+                                            <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                                <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                                <p className=''>{app.name}</p>
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </li>
@@ -137,25 +134,14 @@ export default function Applications() {
 
                             {isSocialopen && (
                                 <ul className="r mt-4 ml-8 rounded mo:hidden space-y-2 flex flex-col gap-2">
-                                    <li>
-                                        <Link to={'/apps/instagram-post-generator'} className="hover:text-blue-300 flex gap-2 items-center">
-                                            <img className='w-6 h-6' src="/apps/insta.svg" alt="" />
-                                            <p className=''>Instagram Post Generator</p>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'/apps/tweet-generator'} className="hover:text-blue-300 flex gap-2">
-                                            <img className='w-6 h-6' src="/apps/tweet.svg" alt="" />
-                                            <p className=''>Tweet Generator</p>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'/apps/text-to-speech'} className="hover:text-blue-300 flex gap-2">
-                                            <img className='w-6 h-6' src="/apps/text2speech.svg" alt="" />
-                                            <p className=''>Text to Speech</p>
-                                        </Link>
-                                    </li>
-                                    {/* Add more submenu items here */}
+                                    {apps[1].subApps.map((app, id) => (
+                                        <li key={id}>
+                                            <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                                <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                                <p className=''>{app.name}</p>
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </li>
@@ -188,13 +174,14 @@ export default function Applications() {
 
                             {istextopen && (
                                 <ul className="r mt-4 ml-8 rounded mo:hidden space-y-2 flex flex-col gap-2">
-                                    <li>
-                                        <Link to={'/apps/text-case-converter'} className="hover:text-blue-300 flex gap-2 items-center">
-                                            <img className='w-6 h-6' src="/apps/textconv.svg" alt="" />
-                                            <p className=''>Text Case Converters</p>
-                                        </Link>
-                                    </li>
-                                    {/* Add more submenu items here */}
+                                    {apps[2].subApps.map((app, id) => (
+                                        <li key={id}>
+                                            <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                                <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                                <p className=''>{app.name}</p>
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </li>
@@ -227,25 +214,14 @@ export default function Applications() {
 
                             {isothertools && (
                                 <ul className="r mt-4 ml-8 rounded mo:hidden space-y-2 flex flex-col gap-2">
-                                    <li>
-                                        <Link to={'/apps/qr-generator'} className="hover:text-blue-300 flex gap-2 items-center">
-                                            <img className='w-6 h-6' src="/apps/qrcode.svg" alt="" />
-                                            <p className=''>QR Code Generator</p>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'/apps/image-bg-remove'} className="hover:text-blue-300 flex gap-2 items-center">
-                                            <img className='w-6 h-6' src="/apps/imagebg.svg" alt="" />
-                                            <p className=''>Image BG Remove</p>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'/apps/audio-trimmer'} className="hover:text-blue-300 flex gap-2 items-center">
-                                            <img className='w-6 h-6' src="/apps/audiotrim.svg" alt="" />
-                                            <p className=''>Audio Trimmer</p>
-                                        </Link>
-                                    </li>
-                                    {/* Add more submenu items here */}
+                                    {apps[3].subApps.map((app, id) => (
+                                        <li key={id}>
+                                            <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                                <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                                <p className=''>{app.name}</p>
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </li>
@@ -256,76 +232,50 @@ export default function Applications() {
                 <div className='hidden mo:block' >
                     {isUnitopen && (
                         <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
-                            <li>
-                                <Link to={'/apps/weightconverter'} className="hover:text-blue-300 flex gap-2 items-center">
-                                    <img className='w-6 h-6' src="/apps/weight.svg" alt="" />
-                                    <p className='text-white'>Weight Converter</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/apps/currencyconverter'} className="hover:text-blue-300 flex gap-2">
-                                    <img className='w-6 h-6' src="/apps/currency.svg" alt="" />
-                                    <p className='text-white'>Currency Converter</p>
-                                </Link>
-                            </li>
-                            {/* Add more submenu items here */}
+                            {apps[0].subApps.map((app, id) => (
+                                <li key={id}>
+                                    <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                        <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                        <p className='text-white'>{app.name}</p>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     )}
                     {isSocialopen && (
                         <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
-                            <li>
-                                <Link to={'/apps/instagram-post-generator'} className="hover:text-blue-300 flex gap-2 items-center">
-                                    <img className='w-6 h-6' src="/apps/insta.svg" alt="" />
-                                    <p className='text-white'>Instagram Post Generator</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/apps/tweet-generator'} className="hover:text-blue-300 flex gap-2">
-                                    <img className='w-6 h-6' src="/apps/tweet.svg" alt="" />
-                                    <p className='text-white'>Tweet Generator</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/apps/text-to-speech'} className="hover:text-blue-300 flex gap-2">
-                                    <img className='w-6 h-6' src="/apps/text2speech.svg" alt="" />
-                                    <p className='text-white'>Text to Speech</p>
-                                </Link>
-                            </li>
-                            {/* Add more submenu items here */}
+                            {apps[1].subApps.map((app, id) => (
+                                <li key={id}>
+                                    <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                        <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                        <p className='text-white'>{app.name}</p>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     )}
                     {istextopen && (
                         <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
-                            <li>
-                                <Link to={'/apps/text-case-converter'} className="hover:text-blue-300 flex gap-2 items-center">
-                                    <img className='w-6 h-6' src="/apps/textconv.svg" alt="" />
-                                    <p className='text-white'>Text Case Converters</p>
-                                </Link>
-                            </li>
-                            {/* Add more submenu items here */}
+                            {apps[2].subApps.map((app, id) => (
+                                <li key={id}>
+                                    <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                        <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                        <p className='text-white'>{app.name}</p>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     )}
                     {isothertools && (
                         <ul className=" bg-black mo:items-center py-4 space-y-2 flex flex-col gap-2">
-                            <li>
-                                <Link to={'/apps/qr-generator'} className="hover:text-blue-300 flex gap-2 items-center">
-                                    <img className='w-6 h-6' src="/apps/qrcode.svg" alt="" />
-                                    <p className='text-white'>QR Code Generator</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/apps/image-bg-remove'} className="hover:text-blue-300 flex gap-2 items-center">
-                                    <img className='w-6 h-6' src="/apps/imagebg.svg" alt="" />
-                                    <p className='text-white'>Image BG Remove</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/apps/audio-trimmer'} className="hover:text-blue-300 flex gap-2 items-center">
-                                    <img className='w-6 h-6' src="/apps/audiotrim.svg" alt="" />
-                                    <p className='text-white'>Audio Trimmer</p>
-                                </Link>
-                            </li>
-                            {/* Add more submenu items here */}
+                            {apps[3].subApps.map((app, id) => (
+                                <li key={id}>
+                                    <Link to={`/apps/${app.link}`} className="hover:text-blue-300 flex gap-2 items-center">
+                                        <img className='w-6 h-6' src={`/apps/${app.icon}.svg`} alt="" />
+                                        <p className='text-white'>{app.name}</p>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     )}
                 </div>
@@ -339,6 +289,7 @@ export default function Applications() {
                 {location.pathname === '/apps/qr-generator' && <QRgenerator />}
                 {location.pathname === '/apps/image-bg-remove' && <Bgremove />}
                 {location.pathname === '/apps/audio-trimmer' && <Audiotrim />}
+                {location.pathname === '/apps/json-merger' && <JsonMerger />}
             </div>
         </>
     );

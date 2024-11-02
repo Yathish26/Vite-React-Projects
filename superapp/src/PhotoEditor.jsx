@@ -58,7 +58,7 @@ export default function PhotoEditor() {
     };
 
     return (
-        <div className="mo:justify-start min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white">
+        <div className="mo:justify-start flex-1 flex flex-col items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white">
             <div className=" mo:mt-12 flex flex-col items-center">
                 {!image && (
                     <>

@@ -39,7 +39,7 @@ export default function Todolist() {
   }
 
   return (
-    <div className=" min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 flex lg:items-center justify-center p-4">
+    <div className=" flex-1 bg-gradient-to-br from-blue-900 to-purple-900 flex lg:items-center justify-center p-4">
       <div className="bg-white h-fit mt-4 bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-bold text-white mb-6 text-center">To Do List</h1>
         <div className="flex items-center mb-6">

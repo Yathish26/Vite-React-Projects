@@ -6,18 +6,10 @@ export default function AppUI() {
   const [newUser, setNewUser] = useState({ name: '', age: '' });
 
   useEffect(() => {
-    // Fetch users on component mount
     axios.get('http://localhost:3000/api/data')
       .then(res => setUsers(res.data))
       .catch(err => console.log(err));
   }, []);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   axios.post('http://localhost:3000/api/data', newUser)
-  //     .then(res => setUsers(res.data))  // Update the state with new user list
-  //     .catch(err => console.log(err));
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
