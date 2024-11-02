@@ -148,9 +148,9 @@ const services = {
     alias: "Nutritionist",
     display: 'none',
   },
-  "Mental Health Counseling": {
+  "Mental Health Counselling": {
     location: "/mental-health-counseling",
-    alias: "Mental Health Counseling",
+    alias: "Mental Health Counselling",
     display: 'none',
   },
   "Massage Therapy": {
@@ -197,7 +197,7 @@ const services = {
   },
   "Oil Change & Maintenance": {
     location: "/oil-change-maintenance",
-    alias: "Oil Change & Maintenance",
+    alias: "Oil Change and Maintenance",
     display: 'none',
   },
   "Vehicle Repair & Service": {
@@ -356,7 +356,7 @@ const services = {
   },
   "DJ Services": {
     location: "/dj-services",
-    alias: "DJ & Music",
+    alias: "DJ and Music",
     display: 'none',
   },
   "Catering Services": {

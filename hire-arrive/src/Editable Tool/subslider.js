@@ -120,7 +120,7 @@ const subslider = {
         'Dermatologist': {
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiBwE1vosLg_GMRpugTBL7io4co-ziAjn6bA&s',
             alt: 'Dermatologist',
-            location: '/dermatologist',
+            location: '/dermatology',
         },
         'Orthopedic Surgeon': {
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO0bbEoP15t_cPA_dLHDP9iHu2l_oq-NiOMw&s',

@@ -17,7 +17,7 @@ const subMenus = {
   'Health & Wellness': [
     { 'Personal Training': { location: '/personal-training' } },
     { 'Nutrition & Diet Counseling': { location: '/nutrition-diet-counseling' } },
-    { 'Mental Health Counseling': { location: '/mental-health-counseling' } },
+    { 'Mental Health Counselling': { location: '/mental-health-counseling' } },
     { 'Massage Therapy': { location: '/massage-therapy' } },
     { 'Physiotherapy': { location: '/physiotherapy' } },
     { 'Yoga & Meditation': { location: '/yoga-meditation' } },
