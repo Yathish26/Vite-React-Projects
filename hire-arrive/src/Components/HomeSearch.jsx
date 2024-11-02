@@ -13,6 +13,9 @@ const HomeSearch = () => {
   const [page, setPage] = useState(0); // New state for pagination
   const resultsPerPage = 10;
   const nodeRef = useRef(null)
+  const apikey = import.meta.env.VITE_SECURE_KEY;
+
+  console.log(apikey);
 
   // Fetch data with pagination
   const fetchData = async (pageNum) => {
@@ -21,7 +24,7 @@ const HomeSearch = () => {
     const hyphenatedTerm = debouncedTerm.replace(/\s+/g, '-');
     setLoading(true);
     try {
-      const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?All=${hyphenatedTerm}&Entries=${start}-${end}`);
+      const response = await fetch(`https://hire-arrive-server.onrender.com/${apikey}/data?All=${hyphenatedTerm}&Entries=${start}-${end}`);
       const data = await response.json();
       if (data.error) {
         setApiData([]);

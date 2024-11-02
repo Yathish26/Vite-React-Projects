@@ -7,6 +7,7 @@ export default function Detailpage() {
     const [constructorDetail, setConstructorDetail] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const apikey = import.meta.env.VITE_SECURE_KEY;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -15,7 +16,7 @@ export default function Detailpage() {
 
                 const slugSplit = slug.split('*');
                 
-                const response = await fetch(`https://hire-arrive-server.onrender.com/maxim26/data?id=${slugSplit[1]}`);
+                const response = await fetch(`https://hire-arrive-server.onrender.com/${apikey}/data?id=${slugSplit[1]}`);
                 if (!response.ok) throw new Error('Network response was not ok');
 
                 const data = await response.json();
