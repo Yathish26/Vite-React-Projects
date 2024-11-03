@@ -129,7 +129,7 @@ export default function Business() {
                 <div className="mt-8 flex justify-end space-x-4">
                     <Link to={'/listing'}>
                         <button className="px-4 py-2 bg-purple-500 text-white rounded-lg shadow hover:bg-purple-600 focus:ring-4 focus:ring-purple-300">
-                            Edit Profile
+                            Edit Business
                         </button>
                     </Link>
                     <button className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-600 focus:ring-4 focus:ring-gray-400">

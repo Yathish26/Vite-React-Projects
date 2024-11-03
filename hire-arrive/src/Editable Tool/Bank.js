@@ -54,7 +54,8 @@ const DataBank = () =>{
      '/prescription-delivery', '/meal-kit-delivery', '/gift-special-occasion-delivery',
 
      //Others
-     'bridal-makeup','skincare','doctors','contractors','gym'
+     'bridal-makeup','skincare','doctors','contractors','gym','pet-care-services','it-tech-support',
+     '/appliance-repair-services','/home-renovation-remodeling',
     ]
     return {CategoryUILinks}
 }

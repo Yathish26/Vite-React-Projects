@@ -28,7 +28,6 @@ const HomeSearch = () => {
         setApiData(data);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
       setApiData([]);
     } finally {
       setLoading(false);
@@ -47,7 +46,8 @@ const HomeSearch = () => {
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedTerm(searchTerm);
-    }, 0);
+      setLoading(true);
+    }, 1000);
     return () => clearTimeout(handler);
   }, [searchTerm]);
 
@@ -80,7 +80,7 @@ const HomeSearch = () => {
 
   const createSlug = (name, id) => {
     return `${name.toLowerCase().replace(/\s+/g, '-')}*${id}`;
-};
+  };
 
   return (
     <>
@@ -107,75 +107,77 @@ const HomeSearch = () => {
       </div>
 
       <CSSTransition
-      in={searchTerm.trim() !== ''}
-      timeout={300}
-      classNames="slide"
-      unmountOnExit
-      nodeRef={nodeRef}
-    >
-      <div ref={nodeRef} className='bg-purple-200 m-12 mo:m-4 rounded-3xl shadow-lg'>
-        {loading ? (
-          <Shimmer />
-        ) : filteredResults.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8">
-            {filteredResults.map((result, index) => (
-              <Link to={`/${result.Category}/${createSlug(result.Name , result._id)}`} key={index}>
-                <div className="bg-gray-800 p-6 rounded-2xl shadow-lg hover:bg-purple-700 transition duration-300">
-                  <h2 className="text-2xl font-semibold text-purple-500 mb-2">{result.Name}</h2>
-                  <div className="flex items-center">
-                    <img className="w-4 h-4 mr-2" src="/logos/address.svg" alt="Address:" />
-                    <p className="text-gray-300">{result.Address}</p>
-                  </div>
-                  <div className='flex justify-between'>
-                    <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
-                      {result.Category}
-                    </p>
-                    <div className="mt-2 flex gap-1 justify-center items-center px-3 py-1 border border-green-500 text-green-500 rounded-full text-sm">
-                      <svg className='w-4 h-4' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.6211 8.45C19.5711 3.83 15.5411 1.75 12.0011 1.75C12.0011 1.75 12.0011 1.75 11.9911 1.75C8.46107 1.75 4.42107 3.82 3.37107 8.44C2.20107 13.6 5.36107 17.97 8.22107 20.72C9.28107 21.74 10.6411 22.25 12.0011 22.25C13.3611 22.25 14.7211 21.74 15.7711 20.72C18.6311 17.97 21.7911 13.61 20.6211 8.45ZM12.0011 13.46C10.2611 13.46 8.85107 12.05 8.85107 10.31C8.85107 8.57 10.2611 7.16 12.0011 7.16C13.7411 7.16 15.1511 8.57 15.1511 10.31C15.1511 12.05 13.7411 13.46 12.0011 13.46Z" fill="#3F9C6E"></path> </g></svg>
-                      <p className='font-semibold'>{result.Location}</p>
+        in={searchTerm.trim() !== ''}
+        timeout={300}
+        classNames="slide"
+        unmountOnExit
+        nodeRef={nodeRef}
+      >
+        <div ref={nodeRef} className='bg-purple-200 m-12 mo:m-4 rounded-3xl shadow-lg'>
+          {loading ? (
+            <Shimmer />
+          ) : filteredResults.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8">
+              {filteredResults.map((result, index) => (
+                <Link to={`/${result.Category}/${createSlug(result.Name, result._id)}`} key={index}>
+                  <div className="bg-gray-800 p-6 rounded-2xl shadow-lg hover:bg-purple-700 transition duration-300">
+                    <h2 className="text-2xl font-semibold text-purple-500 mb-2">{result.Name}</h2>
+                    <div className="flex items-center">
+                      <img className="w-4 h-4 mr-2" src="/logos/address.svg" alt="Address:" />
+                      <p className="text-gray-300">{result.Address}</p>
+                    </div>
+                    <div className='flex justify-between'>
+                      <p className="mt-2 inline-block px-3 py-1 border border-purple-500 text-purple-500 rounded-full text-sm">
+                        {result.Category}
+                      </p>
+                      <div className="mt-2 flex gap-1 justify-center items-center px-3 py-1 border border-green-500 text-green-500 rounded-full text-sm">
+                        <svg className='w-4 h-4' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.6211 8.45C19.5711 3.83 15.5411 1.75 12.0011 1.75C12.0011 1.75 12.0011 1.75 11.9911 1.75C8.46107 1.75 4.42107 3.82 3.37107 8.44C2.20107 13.6 5.36107 17.97 8.22107 20.72C9.28107 21.74 10.6411 22.25 12.0011 22.25C13.3611 22.25 14.7211 21.74 15.7711 20.72C18.6311 17.97 21.7911 13.61 20.6211 8.45ZM12.0011 13.46C10.2611 13.46 8.85107 12.05 8.85107 10.31C8.85107 8.57 10.2611 7.16 12.0011 7.16C13.7411 7.16 15.1511 8.57 15.1511 10.31C15.1511 12.05 13.7411 13.46 12.0011 13.46Z" fill="#3F9C6E"></path> </g></svg>
+                        <p className='font-semibold'>{result.Location}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        ) : filteredResults.length === 0 && (
-          <div className="flex flex-col items-center justify-center mt-12 p-8">
-            <svg className="w-16 h-16 mb-4 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 14l-4-4m0 0l4-4m-4 4h12m-4 4l4-4m0 0l-4-4"></path>
-            </svg>
-            <p className="text-2xl text-black font-semibold mb-2">No results found</p>
-            <p className="text-gray-700 text-center">We couldn’t find any matches for "{searchTerm}". Please try again with a different keyword.</p>
-          </div>
-        )}
+                </Link>
+              ))}
+            </div>
+          ) : filteredResults.length === 0 && (
+            <div className="flex flex-col items-center justify-center mt-12 p-8 ">
+              <img className="w-20 h-20 mo:w-12 mo:h-12 mb-6 text-gray-400" src="/logos/no-result.svg" alt="No Result" />
+              <p className="text-2xl text-gray-800 font-bold mb-2">No results found</p>
+              <p className="text-gray-600 text-center max-w-md">
+                We couldn’t find any matches for
+                <span className="font-semibold text-gray-800"> "{searchTerm}"</span>.
+                Please try again with a different keyword.
+              </p>
+            </div>
+          )}
 
-        {/* Pagination Controls */}
-        {filteredResults.length > 0 && (
-          <div className="flex justify-center my-4">
-            <button
-              className="px-4 py-2 bg-gray-500 text-white rounded-l-lg"
-              onClick={() => setPage(page - 1)}
-              disabled={page === 0}
-            >
-              Previous
-            </button>
-            <button
-              className="px-4 py-2 bg-gray-500 text-white"
-              disabled
-            >
-              Page {page + 1}
-            </button>
-            <button
-              className="px-4 py-2 bg-gray-500 text-white rounded-r-lg"
-              onClick={() => setPage(page + 1)}
-              disabled={filteredResults.length < resultsPerPage}
-            >
-              Next
-            </button>
-          </div>
-        )}
-      </div>
-    </CSSTransition>
+          {/* Pagination Controls */}
+          {filteredResults.length > 0 && (
+            <div className="flex justify-center my-4">
+              <button
+                className="px-4 py-2 bg-gray-500 text-white rounded-l-lg"
+                onClick={() => setPage(page - 1)}
+                disabled={page === 0}
+              >
+                Previous
+              </button>
+              <button
+                className="px-4 py-2 bg-gray-500 text-white"
+                disabled
+              >
+                Page {page + 1}
+              </button>
+              <button
+                className="px-4 py-2 bg-gray-500 text-white rounded-r-lg"
+                onClick={() => setPage(page + 1)}
+                disabled={filteredResults.length < resultsPerPage}
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </div>
+      </CSSTransition>
     </>
   );
 };

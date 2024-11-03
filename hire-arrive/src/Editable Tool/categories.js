@@ -85,6 +85,26 @@ const services = {
     alias: "Skincare Clinic",
     display: 'none',
   },
+  "Pet Care Services": {
+    location: "/pet-care-services",
+    alias: "Pet Sitting",
+    display: 'none',
+  },
+  "IT Tech Support": {
+    location: "/it-tech-support",
+    alias: "IT Services",
+    display: 'none',
+  },
+  "Appliance Repair Services": {
+    location: "/appliance-repair-services",
+    alias: "Appliance Repair",
+    display: 'none',
+  },
+  "Home Renovation": {
+    location: "/home-renovation-remodeling",
+    alias: "Home Renovation",
+    display: 'none',
+  },
   // ---------------------Home Services----------------
   "Cleaning Services": {
     location: "/cleaning",

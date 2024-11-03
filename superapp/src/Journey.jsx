@@ -42,49 +42,34 @@ export default function Journey() {
     };
 
     useEffect(() => {
-        //     const handleScroll = () => {
-        //         const newScrollTop = window.scrollY;
-        //         const documentHeight = document.documentElement.scrollHeight;
-        //         const windowHeight = window.innerHeight;
-        //         const scrollPercent = (newScrollTop / (documentHeight - windowHeight)) * 100;
-
-        //         setScrollTop(newScrollTop);
-
-        //         const newGradient = `linear-gradient(${scrollPercent * 3.6}deg, hsl(${scrollPercent * 3.6}, 100%, 50%), black)`;
-        //         setGradient(newGradient);
-        //     };
-
-        //     // Scroll-triggered animations
-        //     window.addEventListener('scroll', handleScroll);
-
         // GSAP Animations
         gsap.fromTo(titleRef.current, { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' });
         gsap.fromTo(arrowRef.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 2, delay: 1.5, ease: 'bounce.out', repeat: -1 });
         gsap.fromTo('.head', { y: -150 }, { y: 0, duration: 1.2, ease: 'power2.out' });
         gsap.to(pyref.current, {
-            y: -300,
+            y: -600,
             x: -900,
             duration: 1,
-            ease: 'power1.inOut',  // Smoother ease for gliding effect
+            ease: 'power1.inOut',
             scrollTrigger: {
                 trigger: pyref.current,
-                start: 'top 30%',  // Adjust the scroll position for smoother trigger
+                start: 'top 80%',
                 end: 'bottom top',
-                scrub: 1,  // Use a scrub value to smooth the scrolling animation
-                pin: true,  // Pin the element during the animation
-                pinSpacing: false,  // Keep spacing to avoid layout shifts
+                scrub: 1,
+                pin: true,
+                pinSpacing: false,
                 toggleActions: 'restart pause reset',
-                markers: true,  // Useful for debugging, can be removed later
+                markers: true,
             },
         });
         gsap.to(flaskref.current, {
-            y: 0,
+            y: -600,
             x: 900,
             duration: 1,
             ease: 'power1.inOut',  // Smoother ease for gliding effect
             scrollTrigger: {
                 trigger: flaskref.current,
-                start: 'top 30%',  // Adjust the scroll position for smoother trigger
+                start: 'top 80%',  // Adjust the scroll position for smoother trigger
                 end: 'bottom top',
                 scrub: 1,  // Use a scrub value to smooth the scrolling animation
                 pin: true,  // Pin the element during the animation
