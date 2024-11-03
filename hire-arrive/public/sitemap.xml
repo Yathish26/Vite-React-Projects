@@ -1,166 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-
-  <!-- Main Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Core Pages -->
   <url>
     <loc>https://www.hirearrive.in/</loc>
-</url>
-<url>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/listing</loc>
-</url>
-<url>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/business</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/about</loc>
-</url>
-<url>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/contact</loc>
-</url>
-<url>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/blog</loc>
-</url>
-<url>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/services</loc>
-</url>
-<url>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/terms-of-service</loc>
-</url>
-<url>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/privacy-policy</loc>
-</url>
-<url>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Category Pages -->
+  <url>
+    <loc>https://www.hirearrive.in/homeservices</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/healthwellness</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/automotive-services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/professional-services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/education</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/events-entertainment</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/personal-services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/technology-repair</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/home-interior</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hirearrive.in/delivery-services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Dynamic Pages (Category and Slug-based) -->
+  <!-- Replace with dynamic URLs if possible -->
+  <!-- <url>
+    <loc>https://www.hirearrive.in/category/slug-example</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url> -->
+
+  <!-- User and Auth Pages (if needed for indexing) -->
+  <url>
     <loc>https://www.hirearrive.in/login</loc>
-</url>
-<url>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.hirearrive.in/register</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/user</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/user/editprofile</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/construction</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/electrical</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/plumbing</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/painting</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/carpenter</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/mechanical</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/welding</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/pest-control</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/security</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/energy</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/event</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/transport</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/interiordesigners</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/ac-repair</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/carpenters</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/cleaning</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/home-renovation</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/counselors</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/dentists</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/dieticians</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/doctors</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/massage-therapists</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/nursing</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/personal-trainer</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/physiotherapists</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/psychologists</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/spa-services</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/yoga-instructors</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/car-repair</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/bike-repair</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/car-wash</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/towing</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/driving-schools</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/vehicle-rental</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/tyre-battery</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/auto-mechanics</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/roadside-assistance</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/home-tutors</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/online-tutors</loc>
-</url>
-<url>
-    <loc>https://www.hirearrive.in/language-classes</loc>
-</url>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
 </urlset>
