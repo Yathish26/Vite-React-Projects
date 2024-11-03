@@ -1,6 +1,6 @@
 # Hire Arrive
 
-![Logo](https://ibb.co/fks9CTP) 
+[![Logo](https://iili.io/2xHQLsn.jpg)](https://hirearrive.in)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
