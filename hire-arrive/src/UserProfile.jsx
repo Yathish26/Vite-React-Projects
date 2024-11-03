@@ -11,6 +11,7 @@ export default function UserProfile() {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchUserData = async () => {
       const token = localStorage.getItem('token');
 

@@ -1,8 +1,42 @@
-# React + Vite
+# Hire Arrive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo](/public/favicon/favicon.svg) <!-- Optional: Add a logo or an image -->
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
+
+**Hire Arrive** is a comprehensive service marketplace that connects users with local service providers. The platform allows users to search for various services, and connect with businesses, facilitating a seamless experience for both service seekers and providers.
+
+## Features
+
+- User registration and login
+- Browse and search for services by category
+- Detailed service provider profiles
+- User reviews and ratings
+- Simple and intuitive user interface
+- Responsive design for mobile and desktop
+- Admin dashboard for managing services and users
+
+## Technologies Used
+
+- **Frontend:**
+  - React.js
+  - Tailwind CSS
+  - React Router
+
+- **Backend:**
+  - NodeJS Server
+  - MongoDB for database
+  - JSON Web Tokens (JWT) for authentication
+  - Google OAuth for social login
+  - Query Based API Calls
