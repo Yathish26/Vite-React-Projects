@@ -1,6 +1,6 @@
 # Hire Arrive
 
-![Logo](/public/Readme/HA.jpg) 
+![Logo](https://ibb.co/fks9CTP) 
 
 ## Table of Contents
 - [Project Overview](#project-overview)
