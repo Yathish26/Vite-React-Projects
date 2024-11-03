@@ -1,15 +1,11 @@
 # Hire Arrive
 
-![Logo](/public/favicon/favicon.svg) <!-- Optional: Add a logo or an image -->
+![Logo](/public/Readme/HA.jpg) 
 
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -22,17 +18,17 @@
 - User registration and login
 - Browse and search for services by category
 - Detailed service provider profiles
-- User reviews and ratings
+- Users can also register a Business or a Freelacing
 - Simple and intuitive user interface
 - Responsive design for mobile and desktop
-- Admin dashboard for managing services and users
 
 ## Technologies Used
 
 - **Frontend:**
   - React.js
   - Tailwind CSS
-  - React Router
+  - Vite
+  - Vercel
 
 - **Backend:**
   - NodeJS Server
@@ -40,3 +36,13 @@
   - JSON Web Tokens (JWT) for authentication
   - Google OAuth for social login
   - Query Based API Calls
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Contact
+
+If you have any questions or feedback, please reach out to [yathishkumar2013@gmail.com](mailto:yathishkumar2013@gmail.com) or Telegram [@iamyathz](https://t.me/iamyathz).
+
+## Thank you for your interest in Hire Arrive! 🎉
