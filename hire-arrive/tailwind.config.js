@@ -10,6 +10,7 @@ export default {
       screens: {
         'mo': { 'max': '1000px' },
         'mo2': { 'max': '450px' },
+        'bl': { 'min': '1260px' },
       },
       fontFamily: {
         spartan: ['League Spartan', 'sans-serif'],

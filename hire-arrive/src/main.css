@@ -161,3 +161,15 @@ input[type="number"]::-webkit-inner-spin-button {
   transition: max-height 300ms ease-out;
 }
 
+/* -----------------------------------Blog------------------------------------------- */
+
+/* Custom class for hiding scrollbars */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;     /* For Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* For Chrome, Safari, and Opera */
+}
+

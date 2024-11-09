@@ -42,7 +42,7 @@ const HomeSearch = () => {
     }
   }, [debouncedTerm, page]);
 
-  // Debounce effect for search term
+  
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedTerm(searchTerm);
@@ -66,13 +66,17 @@ const HomeSearch = () => {
 
   const filteredResults = useMemo(() => {
     if (!debouncedTerm.trim()) return [];
+
+    const searchWords = debouncedTerm.toLowerCase().split(" ");
+
     return apiData.filter(row =>
-      row.Name?.toLowerCase().includes(debouncedTerm.toLowerCase()) ||
-      row.Address?.toLowerCase().includes(debouncedTerm.toLowerCase()) ||
-      row.Contact?.includes(debouncedTerm) ||
-      row.Category?.toLowerCase().includes(debouncedTerm.toLowerCase())
+      searchWords.every(word =>
+        row.Name?.toLowerCase().includes(word) ||
+        row.Address?.toLowerCase().includes(word) ||
+        row.Category?.toLowerCase().includes(word)
+      )
     );
-  }, [debouncedTerm, apiData]);
+}, [apiData]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
