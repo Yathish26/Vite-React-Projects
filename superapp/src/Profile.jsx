@@ -80,9 +80,9 @@ export default function Profile() {
             <Link to={'mailto:yathishkumar2013@gmail.com'}><img src="/socials/mail.svg" alt="Mail" /></Link>
             <a href={'https://www.instagram.com/iam.yathz/'} target="_blank" rel="noopener noreferrer"><img src="/socials/instagram.svg" alt="Instagram" /></a>
           </div>
-          <Link to={'/profile/journey'}>
+          {/* <Link to={'/profile/journey'}>
             <img className='absolute top-0 right-0 border-2 border-white rounded-full gap-1' src="icons/journey.svg" alt="Journey" />
-          </Link>
+          </Link> */}
           <button
             className="absolute top-0 left-0 flex items-center space-x-3 px-4 py-2 rounded-lg bg-yellow-400 text-gray-800 transition-colors duration-300 hover:bg-green-500 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={setModalIsOpen}

@@ -154,7 +154,6 @@ export default function TweetGenerator() {
                                 <select value={theme} onChange={(e) => setTheme(e.target.value)} className="border rounded-lg w-full p-2">
                                     <option value="light">Light</option>
                                     <option value="dark">Dark</option>
-                                    <option value="dim">Dim</option>
                                 </select>
                             </div>
 
