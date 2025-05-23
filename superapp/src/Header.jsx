@@ -43,21 +43,21 @@ export default function Header(props) {
                 <img className='cursor-pointer p-2 transition ease-in-out duration-200 rounded hover:bg-slate-700' src="/icons/home.svg" alt="Home" />
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={'/weather'}>
                 <img className='cursor-pointer p-2 transition ease-in-out duration-200 rounded hover:bg-slate-700' src="/icons/weather.svg" alt="Weather" />
               </Link>
-            </li>
+            </li> */}
 
             {/* -------------------------Apps Section------------------------- */}
             <li className='relative group'>
               <img className='cursor-pointer p-2 transition ease-in-out duration-200 rounded hover:bg-slate-700' src="/icons/apps.svg" alt="Apps" />
               {/* Dropdown Menu */}
               <div className='absolute left-0 w-48 bg-black text-white rounded-lg shadow-lg menu'>
-                <Link to={'/todolist'} className='flex items-center p-3'>
+                {/* <Link to={'/todolist'} className='flex items-center p-3'>
                   <img className='w-6 h-6 mr-2' src="/icons/todolist.svg" alt="Todo List" />
                   Todo List
-                </Link>
+                </Link> */}
                 <Link to={'/photoeditor'} className='flex items-center p-3'>
                   <img className='w-6 h-6 mr-2' src="/icons/photoeditor.svg" alt="Photo Editor" />
                   Photo Editor

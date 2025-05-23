@@ -32,7 +32,7 @@ export default function Profile() {
       description: 'Hire Arrive is a service startup where users can connect with service providers.',
       previewLink: 'https://hirearrive.in',
       image: '/projects/hirearrive.png',
-      theme: 'purple'
+      theme: 'red'
     },
     {
       title: 'Axios Portfolio',
@@ -47,6 +47,27 @@ export default function Profile() {
       previewLink: 'https://t.me/masterwingbot',
       image: '/projects/wing.png',
       theme: 'blue'
+    },
+    {
+      title: 'Cuisineberg',
+      description: 'Fine Dine Booking Experience',
+      previewLink: 'https://cuisineberg.vercel.app',
+      image: 'https://cuisineberg.vercel.app/cuisine.png',
+      theme: 'blue'
+    },
+    {
+      title: 'HCWF',
+      description: "Our Client's MLM Based Fintech Project",
+      previewLink: 'https://hcwf.in',
+      image: '/projects/axios.png',
+      theme: 'blue'
+    },
+    {
+      title: 'Atomcrypt',
+      description: "International Fintech Farming",
+      previewLink: 'https://atomcrypt.com',
+      image: 'https://atomcrypt.com/favicon/leaf.svg',
+      theme: 'green'
     },
   ];
 
