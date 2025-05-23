@@ -73,7 +73,7 @@ export default function Profile() {
 
   const handlePinSubmit = (event) => {
     event.preventDefault();
-    if (pin === '2603') {
+    if (pin === '6262') {
       setContactVisible(true);
       setModalIsOpen(false);
     } else {
